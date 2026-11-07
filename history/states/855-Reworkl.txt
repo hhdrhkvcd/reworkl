@@ -1,0 +1,25 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 855
+    name = "RW26_STATE_855"
+    manpower = 2557059
+    state_category = rw26_slots_3
+    resources = { tungsten = 17 }
+    provinces = { 1550 4476 7546 7590 9603 12347 }
+    history = {
+        owner = CUB
+        add_core_of = CUB
+        victory_points = { 9603 5 }
+        victory_points = { 4476 3 }
+        victory_points = { 12347 3 }
+        victory_points = { 7590 3 }
+        victory_points = { 7546 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 1
+            air_base = 3
+            1550 = { naval_base = 3 }
+            7590 = { naval_base = 2 }
+        }
+    }
+}

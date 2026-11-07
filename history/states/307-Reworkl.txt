@@ -1,0 +1,18 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 307
+    name = "RW26_STATE_307"
+    manpower = 2053503
+    state_category = rw26_slots_2
+    resources = { tungsten = 41 chromium = 16 }
+    provinces = { 1817 1929 12907 3554 3518 3465 3514 13173 13478 13479 13480 13496 13497 13498 13499 13500 13501 13502 13503 13504 13505 13506 13507 13508 13509 13510 13511 13640 13641 }
+    history = {
+        owner = COG
+        add_core_of = COG
+        victory_points = { 3554 1 }
+        victory_points = { 3514 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

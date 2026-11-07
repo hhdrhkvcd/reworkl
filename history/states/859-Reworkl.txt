@@ -1,0 +1,17 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 859
+    name = "RW26_STATE_859"
+    manpower = 3601717
+    state_category = rw26_slots_2
+    provinces = { 1594 }
+    history = {
+        owner = HAI
+        add_core_of = HAI
+        victory_points = { 1594 3 }
+        buildings = {
+            infrastructure = 1
+            1594 = { naval_base = 1 }
+        }
+    }
+}

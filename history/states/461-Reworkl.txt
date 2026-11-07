@@ -1,0 +1,23 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 461
+    name = "RW26_STATE_461"
+    manpower = 12552072
+    state_category = rw26_slots_5
+    resources = { chromium = 82 }
+    provinces = { 1344 10756 4414 10897 7310 12779 10296 }
+    history = {
+        owner = RAJ
+        add_core_of = RAJ
+        victory_points = { 10756 5 }
+        victory_points = { 1344 5 }
+        victory_points = { 7310 1 }
+        victory_points = { 4414 1 }
+        victory_points = { 10296 1 }
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 2
+        }
+    }
+}

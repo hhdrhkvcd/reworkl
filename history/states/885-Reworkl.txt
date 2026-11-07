@@ -1,0 +1,26 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 885
+    name = "RW26_STATE_885"
+    manpower = 9704733
+    state_category = rw26_slots_8
+    resources = { steel = 5 aluminium = 1 tungsten = 3 }
+    provinces = { 5115 5208 8140 12959 12987 726 755 903 920 1346 1616 3447 3534 3579 14096 }
+    history = {
+        owner = BRA
+        add_core_of = BRA
+        victory_points = { 1616 15 }
+        victory_points = { 920 5 }
+        victory_points = { 5208 1 }
+        victory_points = { 5115 3 }
+        victory_points = { 12987 1 }
+        victory_points = { 12959 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 4
+            air_base = 2
+            arms_factory = 2
+            anti_air_building = 1
+        }
+    }
+}

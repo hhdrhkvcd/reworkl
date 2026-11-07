@@ -1,0 +1,23 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 315
+    name = "RW26_STATE_315"
+    manpower = 2528660
+    state_category = rw26_slots_4
+    resources = { oil = 7 }
+    provinces = { 8193 12975 3318 3327 3332 3340 13737 13738 13739 13740 13741 13742 13743 }
+    history = {
+        owner = RCG
+        add_core_of = RCG
+        victory_points = { 8193 10 }
+        victory_points = { 12975 5 }
+        victory_points = { 13738 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 1
+            air_base = 3
+            arms_factory = 1
+            12975 = { naval_base = 2 }
+        }
+    }
+}

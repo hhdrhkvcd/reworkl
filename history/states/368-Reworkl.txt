@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 368
+    name = "RW26_STATE_368"
+    manpower = 5371439
+    state_category = rw26_slots_3
+    resources = { steel = 6 aluminium = 1 }
+    provinces = { 10812 12751 9231 9247 12838 14829 14834 14835 }
+    history = {
+        owner = MLI
+        add_core_of = MLI
+        victory_points = { 12751 10 }
+        victory_points = { 14829 5 }
+        buildings = {
+            infrastructure = 1
+            air_base = 2
+            industrial_complex = 1
+        }
+    }
+}

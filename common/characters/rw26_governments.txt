@@ -1,0 +1,992 @@
+characters = {
+    RW26_ADO_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_AFG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ALB_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ALG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ANG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ANT_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ARG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ARM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_AST_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_AUS_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_AZR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BAH_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BAN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BAR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BEL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BHR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BHU_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BLR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BLZ_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BOL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BOS_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BOT_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BRA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BRD_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BRM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BRN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_BUL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_CAM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_CAN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_CAR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_CHA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_CHI_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_CHL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_CMR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_COG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_COL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_COM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_COS_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_CRO_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_CUB_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = leninism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_CYP_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_CZE_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_DAH_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_DEN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_DJI_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_DMI_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_DOM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ECU_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_EGY_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ELS_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ENG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_EQG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ERI_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_EST_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ETH_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_FIJ_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_FIN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_FRA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_FSM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_GAB_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_GAM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_GEO_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_GER_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_GHA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_GNA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_GNB_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_GRD_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_GRE_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_GUA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_GYA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_HAI_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_HOL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_HON_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_HUN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ICE_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_INS_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_IRE_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_IRQ_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ISR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ITA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_IVO_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_JAM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_JAP_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_JOR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_KAZ_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_KEN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_KIR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_KOR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_KOS_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_KUW_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_KYR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_LAO_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = leninism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_LAT_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_LBA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_LEB_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_LES_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_LIB_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_LIC_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_LIT_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_LUX_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MAC_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MAD_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MAL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MEX_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MLD_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MLI_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MLT_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MLW_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MNC_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MNT_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MOL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MON_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MOR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MRT_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MSH_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MUI_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_MZB_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_NAU_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_NEP_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_NGA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_NGR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_NIC_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_NKO_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = leninism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_NMB_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_NOR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_NZL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_OMA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_PAK_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_PAL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_PAN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_PAR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_PER_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_PHI_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_PLU_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_PNG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_POL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_POR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_PRC_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = leninism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_PRU_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_QAT_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_RAJ_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_RCG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ROM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_RWA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SAF_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SAM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SAO_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SAU_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SEN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SER_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SEY_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SIA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SIE_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SLO_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SLV_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SMA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SNG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SOL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SOM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SOV_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SPR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SRL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SSD_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_STK_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_STL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_STV_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SUD_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SUR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SWA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SWE_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SWI_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_SYR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_TAJ_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_TML_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_TMS_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_TOG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_TON_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_TRI_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_TUL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_TUN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_TUR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_TZN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_UAE_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_UGA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_UKR_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_URG_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_USA_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = conservatism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_UZB_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_VAN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_VAT_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_VEN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_VER_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_VIN_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = leninism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_VOL_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_WES_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_YEM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ZAM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+    RW26_ZIM_government = {
+        name = RW26_GENERIC_GOVERNMENT
+        portraits = { civilian = { large = GFX_portrait_RW26_government } }
+        country_leader = { ideology = despotism desc = RW26_GENERIC_GOVERNMENT_DESC expire = "2101.1.1" }
+    }
+}

@@ -1,0 +1,2 @@
+# Reworkl: vanilla scenario intentionally disabled.
+# See Y89_bookmarks.txt for World 2026 and alternative Serbia 1936.

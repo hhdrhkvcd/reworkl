@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 219
+    name = "RW26_STATE_219"
+    manpower = 273249
+    state_category = rw26_slots_3
+    resources = { oil = 1 }
+    provinces = { 1064 1080 4068 5069 7156 9957 10028 10126 12002 12889 }
+    history = {
+        owner = EGY
+        add_core_of = EGY
+        victory_points = { 9957 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 1
+            air_base = 2
+            12002 = { naval_base = 1 }
+        }
+    }
+}

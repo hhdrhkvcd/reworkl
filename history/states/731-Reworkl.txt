@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 731
+    name = "RW26_STATE_731"
+    manpower = 2161477
+    state_category = rw26_slots_2
+    resources = { tungsten = 7 }
+    provinces = { 2129 6117 6121 6126 6135 6149 10954 11004 11018 12428 12931 }
+    history = {
+        owner = PNG
+        add_core_of = PNG
+        victory_points = { 12428 2 }
+        victory_points = { 11004 1 }
+        victory_points = { 10954 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

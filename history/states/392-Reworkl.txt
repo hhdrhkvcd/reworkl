@@ -1,0 +1,18 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 392
+    name = "RW26_STATE_392"
+    manpower = 264922
+    state_category = rw26_slots_2
+    resources = { oil = 5 }
+    provinces = { 6295 6311 7985 9118 9119 9123 11912 12082 12866 }
+    history = {
+        owner = LBA
+        add_core_of = LBA
+        victory_points = { 6295 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 7
+        }
+    }
+}

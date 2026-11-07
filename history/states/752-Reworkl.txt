@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 752
+    name = "RW26_STATE_752"
+    manpower = 327036
+    state_category = rw26_slots_2
+    resources = { oil = 3 rubber = 1 }
+    provinces = { 7387 6034 }
+    history = {
+        owner = BRN
+        add_core_of = BRN
+        victory_points = { 6034 2 }
+        buildings = {
+            infrastructure = 3
+            air_base = 6
+            6034 = { naval_base = 4 }
+        }
+    }
+}

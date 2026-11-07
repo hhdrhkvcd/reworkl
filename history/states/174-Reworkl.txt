@@ -1,0 +1,24 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 174
+    name = "RW26_STATE_174"
+    manpower = 3432592
+    state_category = rw26_slots_3
+    resources = { oil = 154 aluminium = 27 }
+    provinces = { 1955 3374 3395 3462 3522 4932 5024 6513 7995 9032 9175 10791 10850 12702 12749 12821 14557 }
+    history = {
+        owner = SAU
+        add_core_of = SAU
+        victory_points = { 12702 11 }
+        victory_points = { 10791 5 }
+        victory_points = { 6513 4 }
+        victory_points = { 12749 3 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 1
+            air_base = 8
+            synthetic_refinery = 2
+            12702 = { naval_base = 8 }
+        }
+    }
+}

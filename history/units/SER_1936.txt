@@ -1,0 +1,114 @@
+division_template = {
+    name = "Pesadijska Divizija"
+
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 1 y = 1 }
+        infantry = { x = 1 y = 2 }
+        infantry = { x = 2 y = 0 }
+        infantry = { x = 2 y = 1 }
+        infantry = { x = 2 y = 2 }
+    }
+    support = {
+        engineer = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
+    }
+    priority = 1
+}
+
+division_template = {
+    name = "Gorska Pesadija"
+
+    regiments = {
+        mountaineers = { x = 0 y = 0 }
+        mountaineers = { x = 0 y = 1 }
+        mountaineers = { x = 0 y = 2 }
+    }
+    priority = 1
+}
+
+division_template = {
+    name = "Konjička Divizija"
+
+    regiments = {
+        cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 0 y = 2 }
+        cavalry = { x = 1 y = 0 }
+        cavalry = { x = 1 y = 1 }
+        cavalry = { x = 1 y = 2 }
+    }
+    priority = 1
+}
+
+division_template = {
+    name = "Tenkovski Bataljon"
+
+    regiments = {
+        light_armor = { x = 0 y = 0 }
+        light_armor = { x = 0 y = 1 }
+        cavalry = { x = 1 y = 0 }
+        cavalry = { x = 1 y = 1 }
+        cavalry = { x = 1 y = 2 }
+    }
+    support = {
+        artillery = { x = 0 y = 0 }
+    }
+    priority = 1
+}
+
+division_template = {
+    name = "Gardska Devizija"
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 1 y = 1 }
+        infantry = { x = 1 y = 2 }
+    }
+    priority = 1
+}
+
+units = {
+    division = {
+        name = "1st Infantry Division"
+        location = 3956
+        division_template = "Pesadijska Divizija"
+        start_equipment_factor = 0.75
+        start_experience_factor = 0.2
+    }
+    division = {
+        name = "2nd Infantry Division"
+        location = 11586
+        division_template = "Pesadijska Divizija"
+        start_equipment_factor = 0.7
+        start_experience_factor = 0.25
+    }
+    division = {
+        name = "3rd Infantry Division"
+        location = 3956
+        division_template = "Pesadijska Divizija"
+    }
+    division = {
+        name = "4th Infantry Division"
+        location = 11586
+        division_template = "Pesadijska Divizija"
+    }
+    division = {
+        name = "5th Infantry Division"
+        location = 11586
+        division_template = "Pesadijska Divizija"
+        start_equipment_factor = 0.75
+        start_experience_factor = 0.6
+    }
+    division = {
+        name = "6th Infantry Division"
+        location = 11586
+        division_template = "Pesadijska Divizija"
+        start_experience_factor = 0.4
+    }
+}

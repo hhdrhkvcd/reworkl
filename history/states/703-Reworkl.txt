@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 703
+    name = "RW26_STATE_703"
+    manpower = 3763929
+    state_category = rw26_slots_4
+    provinces = { 216 277 294 360 386 406 3267 3759 6292 9236 9249 11313 11322 11355 11370 11453 14480 }
+    history = {
+        owner = BLR
+        add_core_of = BLR
+        victory_points = { 11370 14 }
+        victory_points = { 11313 1 }
+        victory_points = { 216 1 }
+        victory_points = { 11453 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 1
+            arms_factory = 1
+            air_base = 6
+        }
+    }
+}

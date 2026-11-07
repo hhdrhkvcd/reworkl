@@ -1,0 +1,23 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 1066
+    name = "RW26_STATE_1066"
+    manpower = 2761318
+    state_category = rw26_slots_2
+    resources = { steel = 35 }
+    provinces = { 1369 1685 4665 4789 4793 7757 7822 12631 14110 14660 14930 }
+    history = {
+        owner = SOV
+        add_core_of = SOV
+        victory_points = { 7757 5 }
+        victory_points = { 1369 5 }
+        victory_points = { 4665 3 }
+        victory_points = { 1685 3 }
+        victory_points = { 4789 3 }
+        victory_points = { 4793 1 }
+        buildings = {
+            infrastructure = 2
+            air_base = 2
+        }
+    }
+}

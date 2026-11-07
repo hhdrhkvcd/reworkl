@@ -1,0 +1,32 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 596
+    name = "RW26_STATE_596"
+    manpower = 1915752
+    state_category = rw26_slots_3
+    resources = { steel = 7 oil = 25 chromium = 12 }
+    provinces = { 1723 1743 1787 1853 1868 4655 4729 4732 4786 4792 4801 4856 4862 4873 7717 7749 7823 7885 10554 10558 10575 10578 10632 10647 10689 10704 10708 12533 12539 12557 12605 12612 12629 12665 12669 12686 13945 13946 13947 13948 13949 13950 13951 13952 13953 13954 13955 13956 13957 13958 13959 13960 13961 13962 13963 13964 13965 13966 13967 13968 13969 13970 13971 13972 13973 13993 13994 13996 13998 14272 14278 14330 14362 14395 14425 14432 14433 14434 14590 15676 15677 }
+    history = {
+        owner = MON
+        add_core_of = MON
+        victory_points = { 4801 20 }
+        victory_points = { 13956 5 }
+        victory_points = { 13993 5 }
+        victory_points = { 13994 2 }
+        victory_points = { 13945 2 }
+        victory_points = { 13950 1 }
+        victory_points = { 12669 1 }
+        victory_points = { 7885 1 }
+        victory_points = { 7749 1 }
+        victory_points = { 13948 1 }
+        victory_points = { 12686 1 }
+        victory_points = { 13962 1 }
+        victory_points = { 4655 1 }
+        victory_points = { 14395 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 1
+            air_base = 4
+        }
+    }
+}

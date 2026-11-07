@@ -1,0 +1,25 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 600
+    name = "RW26_STATE_600"
+    manpower = 686933
+    state_category = rw26_slots_3
+    resources = { aluminium = 2 steel = 26 }
+    provinces = { 9955 4096 1175 14698 }
+    history = {
+        owner = CHI
+        add_core_of = CHI
+        add_claim_by = PRC
+        victory_points = { 4096 3 }
+        victory_points = { 1175 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 1
+            fuel_silo = 1
+            air_base = 10
+            radar_station = 1
+            4096 = { naval_base = 2 }
+            1175 = { naval_base = 4 }
+        }
+    }
+}

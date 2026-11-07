@@ -1,0 +1,16 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 1164
+    name = "RW26_STATE_1164"
+    manpower = 398102
+    state_category = rw26_slots_2
+    provinces = { 5101 9278 14778 14784 14789 14790 14791 14792 14796 14799 14840 14886 }
+    history = {
+        owner = MLI
+        add_core_of = MLI
+        victory_points = { 5101 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

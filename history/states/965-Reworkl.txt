@@ -1,0 +1,16 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 965
+    name = "RW26_STATE_965"
+    manpower = 69252
+    state_category = rw26_slots_2
+    provinces = { 3488 }
+    history = {
+        owner = BEL
+        add_core_of = BEL
+        victory_points = { 3488 1 }
+        buildings = {
+            infrastructure = 3
+        }
+    }
+}

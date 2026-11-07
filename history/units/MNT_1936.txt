@@ -1,0 +1,48 @@
+division_template = {
+    name = "Infantry Division"
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 0 y = 2 }
+    }
+    priority = 1
+}
+
+division_template = {
+    name = "Mountenier Division"
+    regiments = {
+        mountaineers = { x = 0 y = 0 }
+        mountaineers = { x = 0 y = 1 }
+        mountaineers = { x = 0 y = 2 }
+        mountaineers = { x = 1 y = 0 }
+        mountaineers = { x = 1 y = 1 }
+        mountaineers = { x = 1 y = 2 }
+    }
+    priority = 1
+}
+
+division_template = {
+    name = "Cavalry Division"
+    regiments = {
+        cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 0 y = 2 }
+    }
+    priority = 1
+}
+
+units = {
+    division = {
+        name = "1st Infantry Division"
+        location = 9821
+        division_template = "Infantry Division"
+        start_equipment_factor = 0.95
+    }
+    division = {
+        name = "1st Mountenier Division"
+        location = 9821
+        division_template = "Mountenier Division"
+        start_equipment_factor = 0.85
+        start_experience_factor = 0.25
+    }
+}

@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 866
+    name = "RW26_STATE_866"
+    manpower = 106253
+    state_category = rw26_slots_3
+    provinces = { 379 }
+    history = {
+        owner = STV
+        add_core_of = STV
+        victory_points = { 379 1 }
+        buildings = {
+            infrastructure = 2
+            air_base = 1
+            industrial_complex = 1
+            379 = { naval_base = 1 }
+        }
+    }
+}

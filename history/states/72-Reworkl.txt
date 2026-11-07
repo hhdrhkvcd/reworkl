@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 72
+    name = "RW26_STATE_72"
+    manpower = 1859910
+    state_category = rw26_slots_3
+    resources = { aluminium = 1 }
+    provinces = { 319 3612 6666 6683 11590 13124 }
+    history = {
+        owner = SWI
+        add_core_of = SWI
+        victory_points = { 6666 1 }
+        victory_points = { 11590 1 }
+        buildings = {
+            infrastructure = 3
+            air_base = 5
+            industrial_complex = 1
+        }
+    }
+}

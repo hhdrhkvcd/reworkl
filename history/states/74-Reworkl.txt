@@ -1,0 +1,25 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 74
+    name = "RW26_STATE_74"
+    manpower = 4867477
+    state_category = rw26_slots_5
+    resources = { steel = 2 aluminium = 2 chromium = 12 }
+    provinces = { 318 636 663 9620 9638 11601 11604 11623 }
+    history = {
+        owner = SWI
+        add_core_of = SWI
+        victory_points = { 663 1 }
+        victory_points = { 9638 1 }
+        victory_points = { 9620 3 }
+        victory_points = { 11623 3 }
+        buildings = {
+            infrastructure = 3
+            arms_factory = 1
+            industrial_complex = 2
+            air_base = 4
+            fuel_silo = 1
+            nuclear_reactor = 1
+        }
+    }
+}

@@ -1,0 +1,28 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 50
+    name = "RW26_STATE_50"
+    manpower = 5944000
+    state_category = rw26_slots_6
+    resources = { aluminium = 3 }
+    provinces = { 6446 6560 6598 9574 11419 13068 }
+    history = {
+        owner = BEL
+        add_core_of = BEL
+        victory_points = { 6598 4 }
+        victory_points = { 13068 2 }
+        victory_points = { 6560 1 }
+        victory_points = { 11419 1 }
+        buildings = {
+            infrastructure = 3
+            arms_factory = 1
+            dockyard = 1
+            industrial_complex = 2
+            air_base = 3
+            nuclear_reactor = 1
+            synthetic_refinery = 2
+            6560 = { naval_base = 3 }
+            6598 = { naval_base = 8 }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 751
+    name = "RW26_STATE_751"
+    manpower = 717329
+    state_category = rw26_slots_3
+    resources = { steel = 2 aluminium = 10 }
+    provinces = { 2197 2203 2211 4819 5195 7839 8204 8241 10650 12632 12966 12974 12988 }
+    history = {
+        owner = NZL
+        add_core_of = NZL
+        victory_points = { 2197 5 }
+        victory_points = { 2211 3 }
+        victory_points = { 8241 1 }
+        victory_points = { 5195 1 }
+        victory_points = { 12632 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 1
+            air_base = 2
+            2197 = { naval_base = 2 }
+        }
+    }
+}

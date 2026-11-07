@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 642
+    name = "RW26_STATE_642"
+    manpower = 955281
+    state_category = rw26_slots_7
+    provinces = { 348 395 3384 6332 14145 }
+    history = {
+        owner = SOV
+        add_core_of = SOV
+        victory_points = { 6332 4 }
+        buildings = {
+            infrastructure = 2
+            dockyard = 4
+            industrial_complex = 1
+            air_base = 8
+            anti_air_building = 3
+            radar_station = 1
+            6332 = { naval_base = 8 }
+        }
+    }
+}

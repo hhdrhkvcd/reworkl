@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 119
+    name = "RW26_STATE_119"
+    manpower = 2455308
+    state_category = rw26_slots_4
+    provinces = { 3484 9692 3716 11679 11522 }
+    history = {
+        owner = SLO
+        add_core_of = SLO
+        victory_points = { 9692 3 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 2
+            air_base = 3
+            nuclear_reactor = 1
+            synthetic_refinery = 1
+        }
+    }
+}

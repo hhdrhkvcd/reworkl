@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 510
+    name = "RW26_STATE_510"
+    manpower = 462940
+    state_category = rw26_slots_7
+    resources = { oil = 2 rubber = 94 tungsten = 2 }
+    provinces = { 7236 12131 4297 1279 }
+    history = {
+        owner = SIA
+        add_core_of = SIA
+        victory_points = { 7236 5 }
+        victory_points = { 12131 1 }
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 4
+            air_base = 4
+            7236 = { naval_base = 6 }
+        }
+    }
+}

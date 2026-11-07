@@ -1,0 +1,17 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 553
+    name = "RW26_STATE_553"
+    manpower = 862254
+    state_category = rw26_slots_3
+    provinces = { 6206 }
+    history = {
+        owner = LEB
+        add_core_of = LEB
+        victory_points = { 6206 1 }
+        buildings = {
+            infrastructure = 2
+            arms_factory = 1
+        }
+    }
+}

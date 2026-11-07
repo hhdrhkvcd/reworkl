@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 206
+    name = "RW26_STATE_206"
+    manpower = 952690
+    state_category = rw26_slots_3
+    resources = { aluminium = 8 }
+    provinces = { 1015 4088 7176 11970 }
+    history = {
+        owner = ISR
+        add_core_of = ISR
+        victory_points = { 11970 1 }
+        victory_points = { 4088 1 }
+        buildings = {
+            infrastructure = 3
+            arms_factory = 1
+            air_base = 6
+            anti_air_building = 3
+            1015 = { naval_base = 4 }
+        }
+    }
+}

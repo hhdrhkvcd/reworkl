@@ -1,0 +1,21 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 627
+    name = "RW26_STATE_627"
+    manpower = 1931323
+    state_category = rw26_slots_2
+    resources = { oil = 1 tungsten = 2 rubber = 16 }
+    provinces = { 12113 16288 16289 }
+    history = {
+        owner = INS
+        add_core_of = INS
+        victory_points = { 12113 5 }
+        victory_points = { 16288 1 }
+        victory_points = { 16289 1 }
+        buildings = {
+            infrastructure = 2
+            air_base = 4
+            12113 = { naval_base = 4 }
+        }
+    }
+}

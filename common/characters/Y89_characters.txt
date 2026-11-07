@@ -1,0 +1,98 @@
+characters = {
+
+	### Югославия 1989 ###
+	Y89_YUG_presidency = {
+		name = Y89_YUG_presidency
+		portraits = { civilian = { large = GFX_Y89_YUG_presidency small = GFX_Y89_YUG_presidency_small } }
+		country_leader = { ideology = marxism expire = "2100.1.1.1" id = -1 }
+	}
+	Y89_YUG_milosevic = {
+		name = Y89_YUG_milosevic
+		portraits = { civilian = { large = GFX_leader_unknown } }
+		country_leader = { ideology = leninism expire = "2100.1.1.1" id = -1 }
+	}
+	Y89_YUG_council_republics = {
+		name = Y89_YUG_council_republics
+		portraits = { civilian = { large = GFX_leader_unknown } }
+		country_leader = { ideology = liberalism expire = "2100.1.1.1" id = -1 }
+	}
+	Y89_YUG_dos = {
+		name = Y89_YUG_dos
+		portraits = { civilian = { large = GFX_leader_unknown } }
+		country_leader = { ideology = conservatism expire = "2100.1.1.1" id = -1 }
+	}
+
+	### Сербия ###
+	Y89_SER_government = {
+		name = Y89_SER_government
+		portraits = { civilian = { large = GFX_leader_unknown } }
+		country_leader = { ideology = conservatism expire = "2100.1.1.1" id = -1 }
+	}
+	
+
+	### Хорватия ###
+	Y89_CRO_tudjman = {
+		name = Y89_CRO_tudjman
+		portraits = { civilian = { large = GFX_leader_unknown } }
+		country_leader = { ideology = conservatism expire = "2100.1.1.1" id = -1 }
+	}
+	
+
+	### Словения ###
+	Y89_SLV_government = {
+		name = Y89_SLV_government
+		portraits = { civilian = { large = GFX_leader_unknown } }
+		country_leader = { ideology = liberalism expire = "2100.1.1.1" id = -1 }
+	}
+	
+
+	### Босния и Герцеговина ###
+	Y89_BOS_izetbegovic = {
+		name = Y89_BOS_izetbegovic
+		portraits = { civilian = { large = GFX_leader_unknown } }
+		country_leader = { ideology = conservatism expire = "2100.1.1.1" id = -1 }
+	}
+	
+
+	### Черногория ###
+	Y89_MNT_government = {
+		name = Y89_MNT_government
+		portraits = { civilian = { large = GFX_leader_unknown } }
+		country_leader = { ideology = conservatism expire = "2100.1.1.1" id = -1 }
+	}
+	
+
+	### Македония ###
+	Y89_MAC_government = {
+		name = Y89_MAC_government
+		portraits = { civilian = { large = GFX_leader_unknown } }
+		country_leader = { ideology = socialism expire = "2100.1.1.1" id = -1 }
+	}
+	
+
+	### Косово ###
+	Y89_KOS_government = {
+		name = Y89_KOS_government
+		portraits = { civilian = { large = GFX_leader_unknown } }
+		country_leader = { ideology = liberalism expire = "2100.1.1.1" id = -1 }
+	}
+	
+
+	# Генерический командир ЮНА для стартовой армии 1989 года.
+	Y89_JNA_commander = {
+		name = Y89_JNA_commander_name
+		portraits = {
+			army = {
+				large = GFX_Y89_JNA_commander
+				small = GFX_Y89_JNA_commander_small
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+}

@@ -1,0 +1,182 @@
+add_namespace = Y89_breakup
+
+country_event = {
+    id = Y89_breakup.1
+    title = Y89_breakup.1.t
+    desc = Y89_breakup.1.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        Y89_historical_breakup_allowed = yes
+        date > 1991.6.24
+        NOT = { has_country_flag = Y89_SLOVENIA_CROATIA_SEPARATED }
+    }
+    immediate = {
+        # The console can bypass event triggers; guard the effects as well.
+        if = {
+            limit = {
+                Y89_historical_breakup_allowed = yes
+                date > 1991.6.24
+                NOT = { has_country_flag = Y89_SLOVENIA_CROATIA_SEPARATED }
+            }
+            set_country_flag = Y89_SLOVENIA_CROATIA_SEPARATED
+            if = {
+                limit = { NOT = { country_exists = SLV } }
+                release = SLV
+                SLV = {
+                    if = { limit = { exists = yes num_divisions < 1 } load_oob = SLV_1936 }
+                }
+            }
+            complete_national_focus = Y89_slovenia_independence
+            if = {
+                limit = { NOT = { country_exists = CRO } }
+                release = CRO
+                CRO = {
+                    if = { limit = { exists = yes num_divisions < 1 } load_oob = CRO_1936 }
+                }
+            }
+            complete_national_focus = Y89_croatia_independence
+        }
+    }
+    option = { name = Y89_breakup.1.a }
+}
+
+country_event = {
+    id = Y89_breakup.2
+    title = Y89_breakup.2.t
+    desc = Y89_breakup.2.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        Y89_historical_breakup_allowed = yes
+        date > 1991.9.7
+        NOT = { has_country_flag = Y89_MACEDONIA_SEPARATED }
+    }
+    immediate = {
+        # The console can bypass event triggers; guard the effects as well.
+        if = {
+            limit = {
+                Y89_historical_breakup_allowed = yes
+                date > 1991.9.7
+                NOT = { has_country_flag = Y89_MACEDONIA_SEPARATED }
+            }
+            set_country_flag = Y89_MACEDONIA_SEPARATED
+            if = {
+                limit = { NOT = { country_exists = MAC } }
+                release = MAC
+                MAC = {
+                    if = { limit = { exists = yes num_divisions < 1 } load_oob = MAC_1936 }
+                }
+            }
+            complete_national_focus = Y89_macedonia_independence
+        }
+    }
+    option = { name = Y89_breakup.2.a }
+}
+
+country_event = {
+    id = Y89_breakup.3
+    title = Y89_breakup.3.t
+    desc = Y89_breakup.3.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        Y89_historical_breakup_allowed = yes
+        date > 1992.4.5
+        NOT = { has_country_flag = Y89_BOSNIA_SEPARATED }
+    }
+    immediate = {
+        # The console can bypass event triggers; guard the effects as well.
+        if = {
+            limit = {
+                Y89_historical_breakup_allowed = yes
+                date > 1992.4.5
+                NOT = { has_country_flag = Y89_BOSNIA_SEPARATED }
+            }
+            set_country_flag = Y89_BOSNIA_SEPARATED
+            if = {
+                limit = { NOT = { country_exists = BOS } }
+                release = BOS
+                BOS = {
+                    if = { limit = { exists = yes num_divisions < 1 } load_oob = BOS_1936 }
+                }
+            }
+            complete_national_focus = Y89_bosnia_independence
+        }
+    }
+    option = { name = Y89_breakup.3.a }
+}
+
+country_event = {
+    id = Y89_breakup.4
+    title = Y89_breakup.4.t
+    desc = Y89_breakup.4.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        Y89_historical_breakup_allowed = yes
+        date > 2006.6.2
+        NOT = { has_country_flag = Y89_MONTENEGRO_SEPARATED }
+    }
+    immediate = {
+        # The console can bypass event triggers; guard the effects as well.
+        if = {
+            limit = {
+                Y89_historical_breakup_allowed = yes
+                date > 2006.6.2
+                NOT = { has_country_flag = Y89_MONTENEGRO_SEPARATED }
+            }
+            set_country_flag = Y89_MONTENEGRO_SEPARATED
+            if = {
+                limit = { NOT = { country_exists = MNT } }
+                release = MNT
+                MNT = {
+                    if = { limit = { exists = yes num_divisions < 1 } load_oob = MNT_1936 }
+                }
+            }
+            complete_national_focus = Y89_montenegro_independence
+            set_cosmetic_tag = YUG_SRB
+        }
+    }
+    option = { name = Y89_breakup.4.a }
+}
+
+country_event = {
+    id = Y89_breakup.5
+    title = Y89_breakup.5.t
+    desc = Y89_breakup.5.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        Y89_historical_breakup_allowed = yes
+        date > 2008.2.16
+        NOT = { has_country_flag = Y89_KOSOVO_SEPARATED }
+    }
+    immediate = {
+        # The console can bypass event triggers; guard the effects as well.
+        if = {
+            limit = {
+                Y89_historical_breakup_allowed = yes
+                date > 2008.2.16
+                NOT = { has_country_flag = Y89_KOSOVO_SEPARATED }
+            }
+            set_country_flag = Y89_KOSOVO_SEPARATED
+            if = {
+                limit = { NOT = { country_exists = KOS } }
+                release = KOS
+                KOS = {
+                    if = { limit = { exists = yes num_divisions < 1 } load_oob = KOS_1936 }
+                }
+            }
+            complete_national_focus = Y89_kosovo_declaration
+            remove_ideas = Y89_unmik
+        }
+    }
+    option = { name = Y89_breakup.5.a }
+}
+

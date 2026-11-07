@@ -1,0 +1,58 @@
+name: Validate merged mod
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python scripts/validate_mod.py
+      - run: python -m unittest discover -s tests -v
+
+  windows-release-installer:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Require real PowerShell, not skipped integration tests
+        shell: pwsh
+        run: python -c "import shutil; assert shutil.which('pwsh') or shutil.which('powershell')"
+      - name: Exercise standalone ZIP installer on Windows
+        shell: pwsh
+        run: python -m unittest discover -s tests -p test_release_installer.py -v
+
+  windows-bat-workflow:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        powershell: ['powershell.exe', 'pwsh.exe']
+    env:
+      REWORKL_TEST_POWERSHELL: ${{ matrix.powershell }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Require the selected real PowerShell runtime
+        shell: pwsh
+        run: python -c "import os,shutil; assert shutil.which(os.environ['REWORKL_TEST_POWERSHELL'])"
+      - name: Test isolated BAT installation, launch preparation and rollback
+        shell: pwsh
+        run: python -m unittest discover -s tests -p test_bat_workflow.py -v
+      - name: Test RU2 localisation-only update and rollback
+        shell: pwsh
+        run: python -m unittest discover -s tests -p test_russian_fix.py -v

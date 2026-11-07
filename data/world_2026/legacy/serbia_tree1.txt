@@ -1,0 +1,2696 @@
+focus_tree = {
+    id = serbia_tree1
+    default = no
+    country = {
+        factor = 0
+        modifier = {
+            add = 1000
+            tag = SER
+            has_start_date < 1937.1.1
+        }
+    }
+    continuous_focus_position = { x = -926 y = 1462 }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_86_3
+        icon = GFX_focus_CHI_popular_army
+        x = -37
+        y = 0
+        cost = 8
+        completion_reward = {
+            army_experience = 25
+            remove_ideas = noorg
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_fixkosovo
+        icon = GFX_goal_old_world_old_world_serbia_fixkosovo
+        x = -28
+        y = 0
+        cost = 10
+        available = {
+            controls_state = 802
+        }
+        completion_reward = {
+            # Targets the state ID for Kosovo
+                    802 = {
+                        # 1. Adds 2 extra shared building slots
+                        add_extra_state_shared_building_slots = 2
+                        # 2. Creates 2 Civilian Factories instantly inside those slots
+                        add_building_construction = {
+                            type = industrial_complex
+                            level = 2
+                            instant_build = yes
+                        }
+                        # 3. Creates 1 level of Infrastructure
+                        add_building_construction = {
+                            type = infrastructure
+                            level = 1
+                            instant_build = yes
+                        }}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_killkosovo
+        icon = GFX_goal_old_world_old_world_serbia_killkosovo
+        x = -18
+        y = 0
+        cost = 7
+        bypass = {
+                  NOT = {
+                        country_exists = KOS
+                                   }
+        }
+        completion_reward = {
+            create_wargoal = {
+                target = KOS
+                type = annex_everything
+            }
+            add_war_support = 0.10
+        }
+        ai_will_do = {
+            		factor = 1
+            		modifier = {
+            			factor = 15
+            			is_historical_focus_on = yes
+            		}
+
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_8
+        icon = GFX_focus_PRC_develop_yanan_soviet
+        x = -2
+        y = 0
+        cost = 3
+        completion_reward = {
+            add_political_power = 75
+        }
+        ai_will_do = {
+            		factor = 1
+            		modifier = {
+            			factor = 10
+            			is_historical_focus_on = yes
+            		}
+
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_88
+        icon = GFX_goal_generic_allies_build_infantry
+        x = -38
+        y = 1
+        cost = 8
+        prerequisite = { focus = old_world_serbia_tree1_focus_86_3 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_87 }
+        completion_reward = {
+            		add_tech_bonus = {
+            			name = infantry_bonus
+            			bonus = 1.0
+            			uses = 2
+            			category = infantry_weapons
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_87
+        icon = GFX_focus_generic_heavy_tank
+        x = -36
+        y = 1
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_86_3 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_88 }
+        completion_reward = {
+            		add_tech_bonus = {
+            			name = armour_bonus
+            			bonus = 1.0
+            			uses = 2
+            			category = armor
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_2
+        icon = GFX_focus_CHL_enlarge_the_textile_industries
+        x = -28
+        y = 1
+        cost = 5
+        prerequisite = { focus = old_world_serbia_fixkosovo }
+        completion_reward = {
+            add_timed_idea = {
+                idea = Worker_bonuses
+                days = 365
+            }
+             swap_ideas = {
+                    remove_idea = Serbian_Economy
+                    add_idea = Serbian_Economy_copy }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_11
+        icon = GFX_focus_GER_german_army_invincible
+        x = -26
+        y = 1
+        cost = 5
+        prerequisite = { focus = old_world_serbia_fixkosovo }
+        completion_reward = {
+            remove_ideas = Serbian_arms
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_4
+        icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
+        x = -18
+        y = 1
+        cost = 5
+        prerequisite = { focus = old_world_serbia_killkosovo }
+        available = {
+            has_idea = warready
+        }
+        completion_reward = {
+            add_ideas = Serbian_army
+            add_war_support = 0.05
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_15
+        icon = GFX_focus_CZE_czechoslovak_legion
+        x = -16
+        y = 1
+        cost = 10
+        prerequisite = { focus = old_world_serbia_killkosovo }
+        completion_reward = {
+            add_ideas = Internacionalna_Legija
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_9
+        icon = GFX_focus_AFG_against_kabul
+        x = -4
+        y = 1
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_8 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_10 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_14 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_17 }
+        allow_branch = {
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_10 }
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_14 }
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_17 }
+        }
+        completion_reward = {
+            add_political_power = 50
+            add_popularity = {
+                ideology = neutrality
+                popularity = 0.10
+                add_popularity = {
+                    ideology = fascism
+                    popularity = 0.05
+                }
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_10
+        icon = GFX_focus_generic_democratic_asia
+        x = 3
+        y = 1
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_8 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_9 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_14 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_17 }
+        allow_branch = {
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_17 }
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_14 }
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_9 }
+        }
+        completion_reward = {
+            add_political_power = 50
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.20
+                add_popularity = {
+                    ideology = neutrality
+                    popularity = 0.05
+                }
+            }
+        }
+        ai_will_do = {
+            		factor = 1
+            		modifier = {
+            			factor = 10
+            			is_historical_focus_on = yes
+            		}
+
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_14
+        icon = GFX_focus_YUG_pan_slavic_congress
+        x = 9
+        y = 1
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_8 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_10 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_9 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_17 }
+        allow_branch = {
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_17 }
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_10 }
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_9 }
+        }
+        completion_reward = {
+                add_popularity = {
+                    ideology = communism
+                    popularity = 0.3
+                }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_17
+        icon = GFX_focus_CZE_german_puppet
+        x = 16
+        y = 1
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_8 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_14 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_10 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_9 }
+        allow_branch = {
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_14 }
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_10 }
+            NOT = { has_completed_focus = old_world_serbia_tree1_focus_9 }
+        }
+        completion_reward = {
+            add_stability = -0.05
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_89
+        icon = GFX_goal_generic_army_artillery2
+        x = -38
+        y = 2
+        cost = 4
+        prerequisite = { focus = old_world_serbia_tree1_focus_88 }
+        completion_reward = {
+            		add_tech_bonus = {
+            			name = artillery_bonus
+            			bonus = 1.0
+            			uses = 1
+            			category = artillery
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_90
+        icon = GFX_focus_generic_mechanized
+        x = -36
+        y = 2
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_87 }
+        completion_reward = {
+            		add_tech_bonus = {
+            			name = armour_bonus
+            			bonus = 1.0
+            			uses = 2
+            			category = armor
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_12
+        icon = GFX_goal_generic_construct_infrastructure
+        x = -28
+        y = 2
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_2 }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = Serbian_Economy_copy
+                add_idea = Serbian_Economy_copy_copy
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_5
+        icon = GFX_focus_BUL_restore_the_bulgarian_patriarchate
+        x = -21
+        y = 2
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_4 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_5_copy }
+        available = {
+            NOT = {has_government = communism}
+        }
+        completion_reward = {
+            add_political_power = 25
+            add_state_claim = 104
+            add_state_claim = 106
+            add_state_claim = 970
+            set_cosmetic_tag = Greater_Serbia
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_5_copy
+        icon = GFX_focus_YUG_dissolve_serbia
+        x = -15
+        y = 2
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_4 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_5 }
+        available = {
+            NOT = {
+                has_government = fascism
+            }
+        }
+        completion_reward = {
+            add_state_claim = 104
+            add_state_claim = 106
+            add_state_claim = 970
+            add_state_claim =109
+            add_state_claim =103
+            add_state_claim =853
+            add_state_claim =102
+            set_cosmetic_tag = Serbia_union
+        }
+        ai_will_do = {
+            		factor = 1
+            		modifier = {
+            			factor = 10
+            			is_historical_focus_on = yes
+            		}
+
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_30
+        icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+        x = -6
+        y = 2
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_9 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_31 }
+        completion_reward = {
+            add_popularity = {
+                ideology = fascism
+                popularity = 0.2
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_31
+        icon = GFX_focus_generic_monarchy_1
+        x = -4
+        y = 2
+        cost = 4
+        prerequisite = { focus = old_world_serbia_tree1_focus_9 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_30 }
+        completion_reward = {
+            add_political_power = 50
+            add_stability = 0.05
+            add_popularity = {
+                ideology = fascism
+                popularity = -0.1
+            }
+            add_popularity = {
+                ideology = neutrality
+                popularity = 0.20
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_97_3
+        icon = GFX_focus_PER_stage_mass_protests
+        x = 5
+        y = 2
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_10 }
+        completion_reward = {
+            		add_popularity = {
+            			ideology = neutrality
+            			popularity = -0.05
+            		}
+            		add_popularity = {
+            			ideology = democratic
+            			popularity = 0.20
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_104
+        icon = GFX_focus_BRA_ban_communist_party
+        x = 9
+        y = 2
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_14 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_105 }
+        available_if_capitulated = yes
+        completion_reward = {
+            promote_character = {
+                character = Kocapopovic
+                ideology = marxism
+            }
+                set_politics = {
+                    ruling_party = communism
+                    elections_allowed = no
+                }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_105
+        icon = GFX_focus_GER_party_chancellor_bormann
+        x = 11
+        y = 2
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_14 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_104 }
+        completion_reward = {
+            add_stability = 0.05
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_18
+        icon = GFX_focus_AFG_shadows_of_the_king
+        x = 16
+        y = 2
+        cost = 3
+        prerequisite = { focus = old_world_serbia_tree1_focus_17 }
+        completion_reward = {
+            add_stability = -0.1
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_95_2
+        icon = GFX_focus_generic_armored_air_support
+        x = -38
+        y = 3
+        cost = 4
+        prerequisite = { focus = old_world_serbia_tree1_focus_89 }
+        completion_reward = {
+            add_manpower = 10000
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_94
+        icon = GFX_goal_generic_construct_civ_factory
+        x = -36
+        y = 3
+        cost = 3
+        prerequisite = { focus = old_world_serbia_tree1_focus_90 }
+        completion_reward = {
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_22
+        icon = GFX_focus_JAP_ministry_of_colonial_affairs
+        x = -32
+        y = 3
+        cost = 6
+        prerequisite = { focus = old_world_serbia_tree1_focus_12 }
+        available = {
+                  any_controlled_state = {
+                        NOT = {
+                            is_on_continent = europe
+                        }
+                    }
+        }
+        completion_reward = {
+            add_ideas = Col_comp
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_23
+        icon = GFX_goal_generic_construct_civ_factory
+        x = -30
+        y = 3
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_12 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_24 }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = Serbian_Economy_copy_copy
+                add_idea = Serbian_Economy_copy_copy_copy
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_24
+        icon = GFX_focus_generic_aircraft_production
+        x = -24
+        y = 3
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_12 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_23 }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = Serbian_Economy_copy_copy
+                add_idea = Serbian_Economy_copy_copy_copy_2
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_7
+        icon = GFX_focus_generic_annex_country_2
+        x = -21
+        y = 3
+        cost = 7
+        prerequisite = { focus = old_world_serbia_tree1_focus_5 }
+        completion_reward = {
+            create_wargoal = {
+                target = MNT
+                type = annex_everything
+            }
+             add_state_core = 105
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_13
+        icon = GFX_focus_generic_army_attack
+        x = -15
+        y = 3
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_5_copy }
+        completion_reward = {
+            MNT = {
+                country_event = {
+                    id = conquermont.1
+                    days = 1
+                }
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_32
+        icon = GFX_focus_PER_march_on_saadabad
+        x = -8
+        y = 3
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_30 }
+        completion_reward = {
+                    add_popularity = {
+                        ideology = fascism
+                        popularity = 0.30
+                    }
+                    set_politics = {
+                        ruling_party = fascism
+                        elections_allowed = no
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_37
+        icon = GFX_goal_generic_propaganda
+        x = -6
+        y = 3
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_30 }
+        completion_reward = {
+            add_political_power = 50
+            add_popularity = {
+                ideology = fascism
+                popularity = 0.30
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_98
+        icon = GFX_focus_GER_monarchy_compromise
+        x = 3
+        y = 3
+        cost = 8
+        prerequisite = { focus = old_world_serbia_tree1_focus_10 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_99 }
+        completion_reward = {
+            promote_character = {
+                character = KingPeter
+                ideology = conservatism
+            }
+            add_stability = 0.10
+            set_politics = {
+                ruling_party = democratic
+                elections_allowed = yes
+            }
+        }
+        ai_will_do = {
+            		factor = 1
+            		modifier = {
+            			factor = 10
+            			is_historical_focus_on = yes
+            		}
+
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_99
+        icon = GFX_focus_ARG_defense_and_democracy
+        x = 5
+        y = 3
+        cost = 3
+        prerequisite = { focus = old_world_serbia_tree1_focus_97_3 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_98 }
+        completion_reward = {
+            set_politics = {
+                ruling_party = democratic
+                elections_allowed = yes
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_107
+        icon = GFX_focus_JAP_incorporate_buddhist_socialism
+        x = 10
+        y = 3
+        cost = 8
+        prerequisite = { focus = old_world_serbia_tree1_focus_104 }
+        completion_reward = {
+            add_ideas = moderatesocialism
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_108
+        icon = GFX_goal_support_communism
+        x = 12
+        y = 3
+        cost = 9
+        prerequisite = { focus = old_world_serbia_tree1_focus_105 }
+        completion_reward = {
+                set_politics = {
+                    ruling_party = communism
+                    elections_allowed = no
+                }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_106
+        icon = GFX_focus_eng_liberate_the_home_of_marx
+        x = 14
+        y = 3
+        cost = 6
+        prerequisite = { focus = old_world_serbia_tree1_focus_105 }
+        completion_reward = {
+            add_ideas = marxpop
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_19
+        icon = GFX_focus_SIA_sacred_hierarchy
+        x = 16
+        y = 3
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_18 }
+        completion_reward = {
+            set_party_name = {
+                ideology = fascism
+                long_name = Slavic_Barbarians
+                name = Slavic_Barbarians
+            }
+            set_party_name = {
+                ideology = communism
+                long_name = Sandzak_Communists
+                name = Sandzak_Communists
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_95
+        icon = GFX_focus_ARG_march_to_la_casa_rosada
+        x = -39
+        y = 4
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_95_2 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_96 }
+        completion_reward = {
+            add_ideas = Infarmy
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_96
+        icon = GFX_focus_generic_army_doctrines_2
+        x = -37
+        y = 4
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_94 focus = old_world_serbia_tree1_focus_95_2 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_97 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_95 }
+        completion_reward = {
+            add_ideas = mixedarmy
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_97
+        icon = GFX_focus_NOR_rikstanken
+        x = -35
+        y = 4
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_94 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_96 }
+        completion_reward = {
+            add_ideas = Tank_Focused_Army
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_86_2
+        icon = GFX_focus_generic_africa_factory
+        x = -32
+        y = 4
+        cost = 6
+        prerequisite = { focus = old_world_serbia_tree1_focus_22 }
+        available = {
+            458 = {
+            is_fully_controlled_by = yes
+            }
+        }
+        completion_reward = {
+            458 = { add_core_of = SER }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_42
+        icon = GFX_goal_generic_construction
+        x = -30
+        y = 4
+        cost = 9
+        prerequisite = { focus = old_world_serbia_tree1_focus_23 }
+        completion_reward = {
+                    108 = {
+                        # 1. Adds 3 extra shared building slots
+                        add_extra_state_shared_building_slots = 3
+                        # 2. Creates 3 Civilian Factories instantly inside those slots
+                        add_building_construction = {
+                            type = industrial_complex
+                            level = 3
+                            instant_build = yes
+                        }
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_25
+        icon = GFX_focus_generic_mineral_prospecting
+        x = -27
+        y = 4
+        cost = 7
+        prerequisite = { focus = old_world_serbia_tree1_focus_23 focus = old_world_serbia_tree1_focus_24 }
+        completion_reward = {
+            add_ideas = Beta
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_41
+        icon = GFX_focus_SWE_let_fly_all_guns
+        x = -24
+        y = 4
+        cost = 9
+        prerequisite = { focus = old_world_serbia_tree1_focus_24 }
+        completion_reward = {
+            107 = {
+                        add_extra_state_shared_building_slots = 3
+                        add_building_construction = {
+                            type = arms_factory
+                            level = 3
+                            instant_build = yes
+                        }
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_70
+        icon = GFX_focus_generic_total_war
+        x = -21
+        y = 4
+        cost = 9
+        prerequisite = { focus = old_world_serbia_tree1_focus_7 }
+        completion_reward = {
+            create_wargoal = {
+                type = annex_everything
+                target = BOS
+            }
+            add_state_core = 104
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_69_2
+        icon = GFX_goal_generic_construct_naval_dockyard
+        x = -18
+        y = 4
+        cost = 6
+        prerequisite = { focus = old_world_serbia_tree1_focus_7 focus = old_world_serbia_tree1_focus_13 }
+        available = {
+            controls_state = 105
+        }
+        completion_reward = {
+                    105 = {
+                        add_extra_state_shared_building_slots = 2
+                        add_building_construction = {
+                            type = dockyard
+                            level = 2
+                            instant_build = yes
+                        }
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_71
+        icon = GFX_focus_YUG_safeguard_bosnia
+        x = -15
+        y = 4
+        cost = 4
+        prerequisite = { focus = old_world_serbia_tree1_focus_13 }
+        completion_reward = {
+            		create_wargoal = {
+            			type = annex_everything
+            			target = BOS
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_33
+        icon = GFX_focus_generic_fascist_propaganda
+        x = -10
+        y = 4
+        cost = 4
+        prerequisite = { focus = old_world_serbia_tree1_focus_32 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_36 }
+        completion_reward = {
+            add_political_power = 50
+            add_stability = 0.05
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_36
+        icon = GFX_focus_generic_farmland
+        x = -7
+        y = 4
+        cost = 3
+        prerequisite = { focus = old_world_serbia_tree1_focus_32 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_33 }
+        completion_reward = {
+            promote_character = {
+                character = Dimitrije
+                ideology = falangism
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_34
+        icon = GFX_focus_BEL_christian_corporatism
+        x = -4
+        y = 4
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_31 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_35 }
+        completion_reward = {
+            promote_character = {
+                character = draza
+                ideology = despotism
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_35
+        icon = GFX_focus_generic_monarchist_sentiment
+        x = 0
+        y = 4
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_31 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_34 }
+        completion_reward = {
+            add_political_power = 50
+            promote_character = {
+                character = RegentPaul
+                ideology = despotism
+            }
+            add_popularity = {
+                ideology = neutrality
+                popularity = 0.20
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_99_2
+        icon = GFX_focus_ARG_join_the_allies
+        x = 4
+        y = 4
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_99 focus = old_world_serbia_tree1_focus_98 }
+        completion_reward = {
+            		FRA = {
+            			add_opinion_modifier = {
+            				target = SER
+            				modifier = huge_increase
+            			}
+            		}
+            		ENG = {
+            			add_opinion_modifier = {
+            				target = SER
+            				modifier = huge_increase
+            			}
+            		}
+        }
+        ai_will_do = {
+            		factor = 1
+            		modifier = {
+            			factor = 10
+            			is_historical_focus_on = yes
+            		}
+
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_109
+        icon = GFX_focus_PRC_revolutionary_war_of_the_masses
+        x = 12
+        y = 4
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_108 focus = old_world_serbia_tree1_focus_107 }
+        completion_reward = {
+            add_political_power = 50
+            add_stability = 0.15
+            add_war_support = 0.10
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_20
+        icon = GFX_focus_ETH_scavenging_tactics
+        x = 16
+        y = 4
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_19 }
+        completion_reward = {
+             set_politics = {
+                        ruling_party = fascism
+                        elections_allowed = no
+                    }
+                    # 2. Ignites the civil war split across the nation
+                    start_civil_war = {
+                        ideology = communism
+                        size = 0.10             # 50% split of army divisions and states
+                        side = rebel            # Forces the player to control the rising fascist rebel side
+                        keep_unit_leaders = yes # Ensures your existing generals don't all abandon you
+                    }
+            add_ideas = Primal_Nation
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_96_2
+        icon = GFX_focus_NZL_bob_semple_tank
+        x = -37
+        y = 5
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_95 focus = old_world_serbia_tree1_focus_97 focus = old_world_serbia_tree1_focus_96 }
+        completion_reward = {
+            add_ideas = jobsoild
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_44
+        icon = GFX_focus_DEN_limited_regulations
+        x = -27
+        y = 5
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_25 }
+        completion_reward = {
+            add_ideas = productivecompanies
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_72
+        icon = GFX_focus_GER_divide_and_conquer
+        x = -21
+        y = 5
+        cost = 9
+        prerequisite = { focus = old_world_serbia_tree1_focus_70 }
+        completion_reward = {
+            add_state_core = 106
+            add_state_core = 970
+            		create_wargoal = {
+            			type = annex_everything
+            			target = MAC}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_73
+        icon = GFX_focus_eng_concessions_to_the_trade_unions
+        x = -15
+        y = 5
+        cost = 3
+        prerequisite = { focus = old_world_serbia_tree1_focus_71 }
+        completion_reward = {
+            		create_wargoal = {
+            			type = annex_everything
+            			target = MAC
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_48
+        icon = GFX_focus_generic_german_trade
+        x = -11
+        y = 5
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_33 }
+        completion_reward = {
+                    add_equipment_to_stockpile = {
+                        type = infantry_equipment_1     # The archetype ID for standard infantry gear
+                        amount = 2500                  # The raw quantity to deliver
+                        producer = GER                # Marks your country as the manufacturer
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_46
+        icon = GFX_idea_LIT_invested_in_farms
+        x = -8
+        y = 5
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_36 }
+        completion_reward = {
+            add_ideas = happyfarms
+            add_stability = 0.05
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_39
+        icon = GFX_focus_generic_monarchy_2
+        x = -6
+        y = 5
+        cost = 7
+        prerequisite = { focus = old_world_serbia_tree1_focus_36 focus = old_world_serbia_tree1_focus_34 }
+        completion_reward = {
+            add_war_support = 0.10
+            add_ideas = AllywiththeKaradjordjevices
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_52
+        icon = GFX_focus_PHI_philippine_independent_church
+        x = -4
+        y = 5
+        cost = 7
+        prerequisite = { focus = old_world_serbia_tree1_focus_34 }
+        completion_reward = {
+            add_political_power = 50
+            add_stability = 0.1
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_53
+        icon = GFX_focus_generic_military_dictatorship
+        x = 0
+        y = 5
+        cost = 4
+        prerequisite = { focus = old_world_serbia_tree1_focus_35 }
+        completion_reward = {
+            add_political_power = 25
+            add_stability = 0.05
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_100
+        icon = GFX_focus_generic_social_democracy
+        x = 3
+        y = 5
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_99_2 }
+        completion_reward = {
+            add_ideas = TAXSWEL
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_111
+        icon = GFX_focus_generic_currency_reforms
+        x = 9
+        y = 5
+        cost = 8
+        prerequisite = { focus = old_world_serbia_tree1_focus_109 }
+        completion_reward = {
+            add_ideas = reformsocialism
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_26
+        icon = GFX_goal_generic_propaganda
+        x = 16
+        y = 5
+        cost = 3
+        prerequisite = { focus = old_world_serbia_tree1_focus_20 }
+        completion_reward = {
+            promote_character = Pagangod
+            set_cosmetic_tag = PRIMALBLUDS
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_114
+        icon = GFX_idea_extensive_conscription
+        x = -37
+        y = 6
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_96_2 }
+        completion_reward = {
+            add_ideas = reducedage
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_68
+        icon = GFX_focus_research
+        x = -27
+        y = 6
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_44 }
+        completion_reward = {
+            add_research_slot = 1
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_74
+        icon = GFX_focus_generic_crush_the_military
+        x = -21
+        y = 6
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_72 }
+        completion_reward = {
+            add_state_core = 109
+            add_state_core = 103
+            		add_state_core = 163
+            add_state_core = 852
+            		create_wargoal = {
+            			type = annex_everything
+            			target = CRO}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_76
+        icon = GFX_focus_YUG_banovina_of_croatia
+        x = -15
+        y = 6
+        cost = 6
+        prerequisite = { focus = old_world_serbia_tree1_focus_73 }
+        completion_reward = {
+            		create_wargoal = {
+            			type = annex_everything
+            			target  = CRO
+            }
+            		create_wargoal = {
+            			type = annex_everything
+            			target = SLV
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_61_2
+        icon = GFX_focus_BRA_acquire_german_tanks
+        x = -11
+        y = 6
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_48 }
+        completion_reward = {
+            add_ideas = germantech
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_130
+        icon = GFX_focus_rom_royal_dictatorship
+        x = -6
+        y = 6
+        cost = 9
+        prerequisite = { focus = old_world_serbia_tree1_focus_39 }
+        completion_reward = {
+            add_ideas = royalfac
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_62_2
+        icon = GFX_focus_RAJ_i_am_death
+        x = -4
+        y = 6
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_52 }
+        completion_reward = {
+            add_ideas = Cetniks
+            division_template = {
+             name = "Serbian Militia"
+                        regiments = {
+                            infantry = { x = 0 y = 0 }
+                            infantry = { x = 0 y = 1 }
+                            infantry = { x = 0 y = 2 }
+                            infantry = { x = 1 y = 0 }
+                            infantry = { x = 1 y = 1 }
+                        }
+                        priority = 1
+                    }
+                    # 2. Scope directly to the state ID for Serbia/Belgrade (107) to drop the units
+                    107 = {
+                        create_unit = {
+                            division = "name = \"1. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"2. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"3. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"4. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"5. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_55
+        icon = GFX_focus_CZE_state_defense_guard
+        x = 0
+        y = 6
+        cost = 8
+        prerequisite = { focus = old_world_serbia_tree1_focus_53 }
+        completion_reward = {
+            add_ideas = royalguard
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_112
+        icon = GFX_focus_NOR_a_new_norway_Trotsky_communism
+        x = 11
+        y = 6
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_109 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_113 }
+        available = {
+            		NOT = {
+            			CRO = {
+            				has_government = communism
+            			}
+            		}
+        }
+        completion_reward = {
+            promote_character = {
+                character = tito
+                ideology = leninism
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_113
+        icon = GFX_focus_chi_mission_to_the_soviet_union
+        x = 13
+        y = 6
+        cost = 3
+        prerequisite = { focus = old_world_serbia_tree1_focus_109 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_112 }
+        completion_reward = {
+            		SOV = {
+            			add_opinion_modifier = {
+            				target = SER
+            				modifier = huge_increase
+            			}
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_27
+        icon = GFX_focus_usa_tank_destroyer_doctrine
+        x = 16
+        y = 6
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_26 }
+        completion_reward = {
+            add_ideas = Sacrifice
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_131
+        icon = GFX_focus_research2
+        x = -29
+        y = 7
+        cost = 11
+        prerequisite = { focus = old_world_serbia_tree1_focus_68 }
+        completion_reward = {
+            add_research_slot = 1
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_45
+        icon = GFX_focus_generic_industry_3
+        x = -27
+        y = 7
+        cost = 15
+        prerequisite = { focus = old_world_serbia_tree1_focus_68 }
+        completion_reward = {
+            add_ideas = gloryindustry
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_75
+        icon = GFX_focus_BEL_legacy_of_the_great_war
+        x = -21
+        y = 7
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_74 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_77 }
+        complete_tooltip = {
+            add_state_core = 82
+            add_state_core = 804
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_77
+        icon = GFX_focus_invite_yugoslavia
+        x = -15
+        y = 7
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_76 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_75 }
+        completion_reward = {
+            add_state_core = 106
+            add_state_core = 970
+            add_state_core = 105
+            add_state_core = 104
+            add_state_core = 804
+            add_state_core = 1083
+            add_state_core = 103
+            add_state_core = 109
+            add_state_core = 163
+            add_state_core = 736
+            add_state_core = 102
+            add_state_core = 103
+            add_state_core = 853
+            set_cosmetic_tag = yugo
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_47
+        icon = GFX_goal_generic_small_arms
+        x = -9
+        y = 7
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_36 focus = old_world_serbia_tree1_focus_33 }
+        completion_reward = {
+            division_template = {
+             name = "Serbian Militia"
+                        regiments = {
+                            infantry = { x = 0 y = 0 }
+                            infantry = { x = 0 y = 1 }
+                            infantry = { x = 0 y = 2 }
+                            infantry = { x = 1 y = 0 }
+                            infantry = { x = 1 y = 1 }
+                        }
+                        priority = 1
+                    }
+                    # 2. Scope directly to the state ID for Serbia/Belgrade (107) to drop the units
+                    107 = {
+                        create_unit = {
+                            division = "name = \"1. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"2. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"3. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"4. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"5. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_63_2
+        icon = GFX_focus_JAP_implement_army_reforms
+        x = -4
+        y = 7
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_62_2 }
+        completion_reward = {
+            add_ideas = christianarmy
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_59
+        icon = GFX_goal_fortify_the_westwall
+        x = 0
+        y = 7
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_55 }
+        completion_reward = {
+            add_ideas = Serbia_First
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_38
+        icon = GFX_focus_generic_balkan_diplomacy
+        x = 3
+        y = 7
+        cost = 7
+        prerequisite = { focus = old_world_serbia_tree1_focus_36 focus = old_world_serbia_tree1_focus_34 focus = old_world_serbia_tree1_focus_35 focus = old_world_serbia_tree1_focus_33 focus = old_world_serbia_tree1_focus_99_2 focus = old_world_serbia_tree1_focus_109 }
+        completion_reward = {
+            add_ideas = warready
+            add_war_support = 0.1
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_101
+        icon = GFX_focus_SIA_the_duty_of_the_thai_people_during_the_war_act
+        x = 5
+        y = 7
+        cost = 7
+        prerequisite = { focus = old_world_serbia_tree1_focus_99_2 }
+        completion_reward = {
+            add_ideas = liberty
+        }
+        ai_will_do = {
+            		factor = 1
+            		modifier = {
+            			factor = 10
+            			is_historical_focus_on = yes
+            		}
+
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_116
+        icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+        x = 11
+        y = 7
+        cost = 9
+        prerequisite = { focus = old_world_serbia_tree1_focus_112 }
+        completion_reward = {
+            add_ideas = titoism
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_115
+        icon = GFX_focus_GER_integration_of_puppet_economies
+        x = 13
+        y = 7
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_113 }
+        completion_reward = {
+            add_ideas = sovieteconomists
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_28
+        icon = GFX_focus_GER_divide_and_conquer
+        x = 16
+        y = 7
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_27 }
+        completion_reward = {
+             every_country = {
+                        limit = {
+                            # Prevents you from gaining a war goal on yourself
+                            NOT = { tag = ROOT }
+                        }
+                        # ROOT represents the country running this focus tree
+                        ROOT = {
+                            create_wargoal = {
+                                type = annex_everything
+                                target = PREV      # Targets the country from the loop
+                            }
+                        }
+                    }
+                    # 2. Loops through every single state ID on the global map
+                    every_state = {
+                        # ROOT represents the country running this focus tree
+                        ROOT = {
+                            add_state_core = PREV        # Instantly turns the state into a national core
+                        }
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_78
+        icon = GFX_focus_generic_attack_slovenia
+        x = -23
+        y = 8
+        cost = 3
+        prerequisite = { focus = old_world_serbia_tree1_focus_75 }
+        completion_reward = {
+            add_political_power = 50
+            create_wargoal = {
+                target = SLV
+                type = puppet_wargoal_focus
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_79
+        icon = GFX_focus_generic_happy_cheer
+        x = -21
+        y = 8
+        cost = 6
+        prerequisite = { focus = old_world_serbia_tree1_focus_75 }
+        completion_reward = {
+            add_ideas = Imperialdream
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_84
+        icon = GFX_focus_JAP_social_and_cultural_revolution
+        x = -16
+        y = 8
+        cost = 9
+        prerequisite = { focus = old_world_serbia_tree1_focus_77 }
+        completion_reward = {
+            add_ideas = Colture
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_83
+        icon = GFX_focus_CZE_unify_the_fascist_parties
+        x = -14
+        y = 8
+        cost = 3
+        prerequisite = { focus = old_world_serbia_tree1_focus_77 }
+        completion_reward = {
+            create_wargoal = {
+                target = ALB
+                type = annex_everything
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_49
+        icon = GFX_focus_generic_mountain_troops
+        x = -10
+        y = 8
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_47 }
+        completion_reward = {
+            add_ideas = fascisttraining
+            add_war_support = 0.05
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_97_2
+        icon = GFX_focus_attack_soviet
+        x = -8
+        y = 8
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_47 }
+        completion_reward = {
+            add_political_power = 50
+            create_wargoal = {
+                target = SOV
+                type = puppet_wargoal_focus
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_64
+        icon = GFX_focus_spr_crush_the_revolution
+        x = -4
+        y = 8
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_63_2 }
+        completion_reward = {
+            add_ideas = Meritocracy
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_58
+        icon = GFX_focus_generic_monarchist_sentiment
+        x = 0
+        y = 8
+        cost = 9
+        prerequisite = { focus = old_world_serbia_tree1_focus_59 }
+        completion_reward = {
+            division_template = {
+             name = "Serbian Militia"
+                        regiments = {
+                            infantry = { x = 0 y = 0 }
+                            infantry = { x = 0 y = 1 }
+                            infantry = { x = 0 y = 2 }
+                            infantry = { x = 1 y = 0 }
+                            infantry = { x = 1 y = 1 }
+                        }
+                        priority = 1
+                    }
+                    # 2. Scope directly to the state ID for Serbia/Belgrade (107) to drop the units
+                    107 = {
+                        create_unit = {
+                            division = "name = \"1. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"2. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"3. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"4. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                        create_unit = {
+                            division = "name = \"5. Srpska Milicija\" division_template = \"Serbian Militia\" start_experience_factor = 0.25 start_equipment_factor = 1.0"
+                            owner = ROOT
+                        }
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_124
+        icon = GFX_focus_AFG_work_with_german_inteligence
+        x = 3
+        y = 8
+        cost = 4
+        prerequisite = { focus = old_world_serbia_tree1_focus_38 }
+        completion_reward = {
+            add_political_power = 50
+            add_ideas = intag
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_102
+        icon = GFX_focus_generic_strike_at_democracy2
+        x = 5
+        y = 8
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_101 }
+        completion_reward = {
+            		create_wargoal = {
+            			type = overthrow_government_war_goal
+            			target = CRO
+            		}
+        }
+        ai_will_do = {
+            		factor = 1
+            		modifier = {
+            			factor = 10
+            			is_historical_focus_on = yes
+            		}
+
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_110
+        icon = GFX_focus_CHL_suppress_the_nacistas
+        x = 7
+        y = 8
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_101 }
+        completion_reward = {
+            add_stability = 0.20
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_103
+        icon = GFX_focus_prc_agrarian_socialism
+        x = 9
+        y = 8
+        cost = 12
+        prerequisite = { focus = old_world_serbia_tree1_focus_101 focus = old_world_serbia_tree1_focus_111 }
+        completion_reward = {
+            add_ideas = libworkers
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_117
+        icon = GFX_focus_CHI_prepare_war_zones
+        x = 11
+        y = 8
+        cost = 6
+        prerequisite = { focus = old_world_serbia_tree1_focus_116 }
+        completion_reward = {
+            add_war_support = 0.10
+            add_ideas = warsocialism
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_115_2
+        icon = GFX_focus_generic_heavy_tank
+        x = 13
+        y = 8
+        cost = 8
+        prerequisite = { focus = old_world_serbia_tree1_focus_115 }
+        completion_reward = {
+            		SOV = {
+            			send_equipment = {
+            				target = SER
+            				type = light_tank_equipment_2
+            				amount = 250
+            			}
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_29
+        icon = GFX_focus_ICE_embrace_the_workers_revolution
+        x = 16
+        y = 8
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_28 }
+        completion_reward = {
+            add_manpower = 10000
+                add_equipment_to_stockpile = {
+                      type = infantry_equipment_1     # The archetype ID for standard infantry gear
+                        amount = 25000                  # The raw quantity to deliver
+                        producer = ROOT                 # Marks your country as the manufacturer
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_80
+        icon = GFX_focus_BUL_consolidate_the_third_bulgarian_state
+        x = -22
+        y = 9
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_79 }
+        completion_reward = {
+            add_state_core = 48
+            add_state_core = 211
+            add_state_core = 212
+            add_state_core = 801
+            		create_wargoal = {
+            			type = annex_everything
+            			target = BUL
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_81
+        icon = GFX_focus_generic_desert_training
+        x = -20
+        y = 9
+        cost = 9
+        prerequisite = { focus = old_world_serbia_tree1_focus_79 }
+        completion_reward = {
+            add_state_core = 44
+            add_state_core = 934
+            add_state_core = 805
+            		create_wargoal = {
+            			type = annex_everything
+            			target = ALB
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_85
+        icon = GFX_focus_SOV_panslavic_nationalism
+        x = -14
+        y = 9
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_83 }
+        completion_reward = {
+            create_wargoal = {
+                target = BUL
+                type = annex_everything
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_51
+        icon = GFX_focus_RAJ_war_taxes
+        x = -9
+        y = 9
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_47 }
+        completion_reward = {
+            add_political_power = 50
+            add_ideas = hightax
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_67
+        icon = GFX_focus_CHL_taking_back_patagonia_monarchist
+        x = -5
+        y = 9
+        cost = 3
+        prerequisite = { focus = old_world_serbia_tree1_focus_64 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_65 }
+        completion_reward = {
+            add_political_power = 50
+            add_stability = 0.05
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_65
+        icon = GFX_focus_generic_monarchy_1
+        x = -3
+        y = 9
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_64 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_67 }
+        completion_reward = {
+                    draza = {
+                        add_trait = { trait = jap_staunch_traditionalist_trait }
+                        add_trait = { trait = jap_protector_of_the_eternal_kingdom }
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_60
+        icon = GFX_focus_RAJ_sikh_religious_guarantees
+        x = -1
+        y = 9
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_58 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_61 }
+        completion_reward = {
+            add_political_power = 25
+            add_ideas = Religiousminorities
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_61
+        icon = GFX_focus_generic_expropriate_industrialist
+        x = 1
+        y = 9
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_58 }
+        mutually_exclusive = { focus = old_world_serbia_tree1_focus_60 }
+        completion_reward = {
+            add_political_power = 50
+            add_ideas = ASSIMILATEDMINORITIES
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_126
+        icon = GFX_focus_generic_communism_anti_fascism
+        x = 11
+        y = 9
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_117 }
+        completion_reward = {
+            add_ideas = ownpath
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_118
+        icon = GFX_focus_spr_class_war
+        x = 13
+        y = 9
+        cost = 4
+        prerequisite = { focus = old_world_serbia_tree1_focus_115_2 }
+        available = {
+            is_major = yes
+        }
+        completion_reward = {
+            add_political_power = 50
+            add_war_support = 0.05
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_82
+        icon = GFX_focus_ETH_the-italo_ethiopian_empire
+        x = -21
+        y = 10
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_81 }
+        prerequisite = { focus = old_world_serbia_tree1_focus_80 }
+        completion_reward = {
+            set_cosmetic_tag = serempire
+            add_state_core = 184
+            add_state_core = 731
+            		add_state_core = 185
+            		create_wargoal = {
+            			type = annex_everything
+            			target = GRE
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_86
+        icon = GFX_focus_generic_balkan_diplomacy
+        x = -15
+        y = 10
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_84 }
+        prerequisite = { focus = old_world_serbia_tree1_focus_85 }
+        completion_reward = {
+            add_state_core = 48
+            add_state_core = 211
+            add_state_core = 212
+            add_state_core = 801
+            add_state_core = 44
+            add_state_core = 934
+            add_state_core = 805
+            set_cosmetic_tag = greatyugoslavia
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_66
+        icon = GFX_focus_RAJ_kingmaker
+        x = -4
+        y = 10
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_65 focus = old_world_serbia_tree1_focus_67 }
+        completion_reward = {
+            add_political_power = 50
+            add_ideas = withfaith
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_62
+        icon = GFX_focus_generic_monarchy_2
+        x = 0
+        y = 10
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_61 focus = old_world_serbia_tree1_focus_60 }
+        completion_reward = {
+            add_ideas = slavasrbiji
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_127
+        icon = GFX_focus_focus_fra_maquis
+        x = 11
+        y = 10
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_126 }
+        cancel_if_invalid = no
+        completion_reward = {
+            add_political_power = 50
+            add_stability = 0.15
+            add_war_support = 0.05
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_119
+        icon = GFX_focus_generic_attack_vichy_france
+        x = 13
+        y = 10
+        cost = 11
+        prerequisite = { focus = old_world_serbia_tree1_focus_118 }
+        completion_reward = {
+            		every_country = {
+            			limit = {
+            				has_government = democratic
+            				capital_scope = {
+            					is_on_continent = europe
+            				}
+            			}
+            			SER = {
+            				create_wargoal = {
+            					type = annex_everything
+            					target = PREV
+            				}
+            			}
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_120
+        icon = GFX_focus_generic_attack_bulgaria
+        x = 15
+        y = 10
+        cost = 11
+        prerequisite = { focus = old_world_serbia_tree1_focus_118 }
+        completion_reward = {
+            		every_country = {
+            			limit = {
+            				has_government = neutrality
+            				capital_scope = {
+            					is_on_continent = europe
+            				}
+            			}
+            			SER = {
+            				create_wargoal = {
+            					type = annex_everything
+            					target = PREV
+            				}
+            			}
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_121
+        icon = GFX_focus_attack_germany
+        x = 17
+        y = 10
+        cost = 11
+        prerequisite = { focus = old_world_serbia_tree1_focus_118 }
+        completion_reward = {
+            		every_country = {
+            			limit = {
+            				has_government = fascism
+            				capital_scope = {
+            					is_on_continent = europe
+            				}
+            			}
+            			SER = {
+            				create_wargoal = {
+            					type = annex_everything
+            					target = PREV
+            				}
+            			}
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_63
+        icon = GFX_focus_spr_crush_the_revolution
+        x = -0
+        y = 11
+        cost = 5
+        prerequisite = { focus = old_world_serbia_tree1_focus_62 }
+        available = {
+            country_exists = CRO
+                    CRO = {
+                        ruling_party = fascism
+                    }
+        }
+        completion_reward = {
+             create_wargoal = {
+                        type = puppet_wargoal_focus
+                        target = CRO
+                        expire = 12 }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_128
+        icon = GFX_focus_generic_attack_greece
+        x = 9
+        y = 11
+        cost = 6
+        prerequisite = { focus = old_world_serbia_tree1_focus_127 }
+        completion_reward = {
+            GRE = {
+                declare_war_on = {
+                    target = SER
+                    type = annex_everything
+                }
+            }
+                add_timed_idea = {
+                    idea = plndof
+                    days = 50
+                }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_125
+        icon = GFX_focus_generic_balkan_diplomacy
+        x = 11
+        y = 11
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_127 }
+        available = {
+                            controls_state = 48   # Sofia, Bulgaria
+                            controls_state = 46   # Bucharest, Romania
+                            controls_state = 44   # Tirana, Albania
+                            controls_state = 109  # Zagreb, Croatia
+                            controls_state = 47   # Athens, Greece
+        }
+        completion_reward = {
+            every_state = {
+                limit = {
+                    OR = {
+                        is_core_of = YUG
+                        is_core_of = SER
+                        is_core_of = ALB
+                        is_core_of = BUL
+                        is_core_of = ROM
+                        is_core_of = GRE
+                        is_core_of = MNT
+                        is_core_of = BOS
+                        is_core_of = CRO
+                        is_core_of = SLV
+                        is_core_of = MAC
+                        is_core_of = KOS
+                    }
+                }
+                add_core_of = SER
+            }
+            set_cosmetic_tag = balkansfr
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_122
+        icon = GFX_focus_focus_fra_revolution_utmost
+        x = 14
+        y = 11
+        cost = 13
+        prerequisite = { focus = old_world_serbia_tree1_focus_120 }
+        prerequisite = { focus = old_world_serbia_tree1_focus_121 }
+        prerequisite = { focus = old_world_serbia_tree1_focus_119 }
+        completion_reward = {
+            every_country = {
+            			limit = {
+            				NOT = { has_government = communism }
+            			}
+            			SER = {
+            				create_wargoal = {
+            					type = annex_everything
+            					target = PREV
+            				}
+            			}
+            		}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_129
+        icon = GFX_focus_attack_soviet
+        x = 11
+        y = 12
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_125 }
+        completion_reward = {
+                add_timed_idea = {
+                    idea = plndof
+                    days = 50
+                }
+                    create_wargoal = {
+                        type = annex_everything
+                        target = SOV
+                    }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = {
+        id = old_world_serbia_tree1_focus_123
+        icon = GFX_focus_HUN_establish_the_mavag_aircraft_factory
+        x = 14
+        y = 12
+        cost = 10
+        prerequisite = { focus = old_world_serbia_tree1_focus_122 }
+        completion_reward = {
+            add_political_power = 50
+            add_stability = 0.25
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+}

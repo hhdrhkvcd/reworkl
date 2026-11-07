@@ -1,0 +1,98 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_portrait_old_world_Pagangod
+        texturefile = "gfx/leaders/SER/old_world_Pagangod_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_Pagangod
+        texturefile = "gfx/leaders/SER/old_world_Pagangod_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_old_world_draza
+        texturefile = "gfx/leaders/SER/old_world_draza_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_draza
+        texturefile = "gfx/leaders/SER/old_world_draza_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_old_world_KingPeter
+        texturefile = "gfx/leaders/SER/old_world_KingPeter_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_KingPeter
+        texturefile = "gfx/leaders/SER/old_world_KingPeter_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_old_world_RegentPaul
+        texturefile = "gfx/leaders/SER/old_world_RegentPaul_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_RegentPaul
+        texturefile = "gfx/leaders/SER/old_world_RegentPaul_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_old_world_MilanNedic
+        texturefile = "gfx/leaders/SER/old_world_MilanNedic_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_MilanNedic
+        texturefile = "gfx/leaders/SER/old_world_MilanNedic_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_old_world_Dimitrije
+        texturefile = "gfx/leaders/SER/old_world_Dimitrije_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_Dimitrije
+        texturefile = "gfx/leaders/SER/old_world_Dimitrije_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_old_world_Milangrol
+        texturefile = "gfx/leaders/SER/old_world_Milangrol_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_Milangrol
+        texturefile = "gfx/leaders/SER/old_world_Milangrol_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_old_world_kostageneral
+        texturefile = "gfx/leaders/SER/old_world_kostageneral_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_kostageneral
+        texturefile = "gfx/leaders/SER/old_world_kostageneral_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_old_world_petar_nedeljkovic
+        texturefile = "gfx/leaders/SER/old_world_petar_nedeljkovic_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_petar_nedeljkovic
+        texturefile = "gfx/leaders/SER/old_world_petar_nedeljkovic_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_old_world_Kocapopovic
+        texturefile = "gfx/leaders/SER/old_world_Kocapopovic_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_Kocapopovic
+        texturefile = "gfx/leaders/SER/old_world_Kocapopovic_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_old_world_milovan
+        texturefile = "gfx/leaders/SER/old_world_milovan_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_milovan
+        texturefile = "gfx/leaders/SER/old_world_milovan_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_old_world_tito
+        texturefile = "gfx/leaders/SER/old_world_tito_large.dds"
+    }
+    spriteType = {
+        name = GFX_idea_old_world_tito
+        texturefile = "gfx/leaders/SER/old_world_tito_small.dds"
+    }
+}

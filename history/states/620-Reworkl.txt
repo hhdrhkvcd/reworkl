@@ -1,0 +1,17 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 620
+    name = "RW26_STATE_620"
+    manpower = 1
+    state_category = rw26_slots_2
+    provinces = { 13026 }
+    history = {
+        owner = JAP
+        add_core_of = JAP
+        victory_points = { 13026 1 }
+        buildings = {
+            infrastructure = 3
+            13026 = { naval_base = 1 }
+        }
+    }
+}

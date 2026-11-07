@@ -1,0 +1,223 @@
+characters = {
+    Pagangod = {
+        name = Pagangod
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_Pagangod
+                small = GFX_idea_old_world_Pagangod
+            }
+        }
+        country_leader = {
+            ideology = nazism
+            expire = "1965.1.1"
+            id = -1
+        }
+    }
+    draza = {
+        name = draza
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_draza
+                small = GFX_idea_old_world_draza
+            }
+        }
+        country_leader = {
+            ideology = despotism
+            traits = { charismatic_leader }
+            expire = "1965.1.1"
+            id = -1
+        }
+        corps_commander = {
+            skill = 3
+            attack_skill = 2
+            defense_skill = 3
+            planning_skill = 2
+            logistics_skill = 3
+            legacy_id = -1
+        }
+    }
+    KingPeter = {
+        name = KingPeter
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_KingPeter
+                small = GFX_idea_old_world_KingPeter
+            }
+        }
+        country_leader = {
+            ideology = conservatism
+            traits = { underage_monarch }
+            expire = "1965.1.1"
+            id = -1
+        }
+    }
+    RegentPaul = {
+        name = RegentPaul
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_RegentPaul
+                small = GFX_idea_old_world_RegentPaul
+            }
+        }
+        country_leader = {
+            ideology = despotism
+            expire = "1965.1.1"
+            id = -1
+        }
+    }
+    MilanNedic = {
+        name = MilanNedic
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_MilanNedic
+                small = GFX_idea_old_world_MilanNedic
+            }
+        }
+        country_leader = {
+            ideology = nazism
+            traits = { dictator }
+            expire = "1965.1.1"
+            id = -1
+        }
+        corps_commander = {
+            skill = 2
+            attack_skill = 2
+            defense_skill = 2
+            planning_skill = 1
+            logistics_skill = 1
+            legacy_id = -1
+        }
+    }
+    Dimitrije = {
+        name = Dimitrije
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_Dimitrije
+                small = GFX_idea_old_world_Dimitrije
+            }
+        }
+        country_leader = {
+            ideology = falangism
+            traits = { nationalist_education_enthusiast }
+            expire = "1965.1.1"
+            id = -1
+        }
+        corps_commander = {
+            skill = 2
+            attack_skill = 2
+            defense_skill = 1
+            planning_skill = 1
+            logistics_skill = 2
+            legacy_id = -1
+        }
+    }
+    Milangrol = {
+        name = Milangrol
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_Milangrol
+                small = GFX_idea_old_world_Milangrol
+            }
+        }
+        country_leader = {
+            ideology = liberalism
+            expire = "1965.1.1"
+            id = -1
+        }
+    }
+    kostageneral = {
+        name = kostageneral
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_kostageneral
+                small = GFX_idea_old_world_kostageneral
+            }
+        }
+        field_marshal = {
+            skill = 4
+            attack_skill = 2
+            defense_skill = 4
+            planning_skill = 3
+            logistics_skill = 1
+            legacy_id = -1
+        }
+    }
+    petar_nedeljkovic = {
+        name = petar_nedeljkovic
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_petar_nedeljkovic
+                small = GFX_idea_old_world_petar_nedeljkovic
+            }
+        }
+        corps_commander = {
+            skill = 1
+            attack_skill = 2
+            defense_skill = 1
+            planning_skill = 2
+            logistics_skill = 1
+            legacy_id = -1
+        }
+    }
+    Kocapopovic = {
+        name = Kocapopovic
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_Kocapopovic
+                small = GFX_idea_old_world_Kocapopovic
+            }
+        }
+        country_leader = {
+            ideology = marxism
+            expire = "1965.1.1"
+            id = -1
+        }
+        corps_commander = {
+            skill = 2
+            attack_skill = 2
+            defense_skill = 2
+            planning_skill = 3
+            logistics_skill = 1
+            legacy_id = -1
+        }
+    }
+    milovan = {
+        name = milovan
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_milovan
+                small = GFX_idea_old_world_milovan
+            }
+        }
+        country_leader = {
+            ideology = marxism
+            expire = "1965.1.1"
+            id = -1
+        }
+    }
+    tito = {
+        name = tito
+        portraits = {
+            civilian = {
+                large = GFX_portrait_old_world_tito
+                small = GFX_idea_old_world_tito
+            }
+        }
+        country_leader = {
+            ideology = leninism
+            expire = "1965.1.1"
+            id = -1
+        }
+        corps_commander = {
+            skill = 3
+            attack_skill = 2
+            defense_skill = 2
+            planning_skill = 3
+            logistics_skill = 4
+            visible = {
+                has_completed_focus = old_world_serbia_tree1_focus_112
+            }
+            legacy_id = -1
+        }
+    }
+}

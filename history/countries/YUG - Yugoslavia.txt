@@ -1,0 +1,5 @@
+# Releasable 1936 focus tag; not an active 1989/2026 federation.
+capital = 131
+set_research_slots = 3
+set_stability = 0.5
+set_war_support = 0.2

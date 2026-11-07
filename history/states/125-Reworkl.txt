@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 125
+    name = "RW26_STATE_125"
+    manpower = 790155
+    state_category = rw26_slots_3
+    resources = { aluminium = 4 }
+    provinces = { 665 3654 6672 9596 }
+    history = {
+        owner = SLV
+        add_core_of = SLV
+        victory_points = { 9596 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 1
+            nuclear_reactor = 1
+        }
+    }
+}

@@ -1,0 +1,26 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 216
+    name = "RW26_STATE_216"
+    manpower = 18150322
+    state_category = rw26_slots_8
+    resources = { oil = 7 }
+    provinces = { 992 1071 4076 4145 7079 7091 7164 9989 10061 10073 11910 11967 }
+    history = {
+        owner = EGY
+        add_core_of = EGY
+        victory_points = { 4076 29 }
+        victory_points = { 10073 2 }
+        victory_points = { 7091 1 }
+        victory_points = { 11967 1 }
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            dockyard = 1
+            industrial_complex = 4
+            air_base = 7
+            synthetic_refinery = 1
+            4076 = { naval_base = 8 }
+        }
+    }
+}

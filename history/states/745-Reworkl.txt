@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 745
+    name = "RW26_STATE_745"
+    manpower = 1373504
+    state_category = rw26_slots_2
+    resources = { oil = 13 tungsten = 6 chromium = 18 }
+    provinces = { 1773 2205 2219 5138 5183 5197 5211 5225 7567 7623 8165 8186 8206 8220 10925 10927 12906 12910 12918 12924 13131 13169 13170 13171 13172 }
+    history = {
+        owner = AST
+        add_core_of = AST
+        victory_points = { 12910 5 }
+        victory_points = { 8186 1 }
+        victory_points = { 1773 1 }
+        victory_points = { 2219 1 }
+        buildings = {
+            infrastructure = 3
+            air_base = 2
+            12910 = { naval_base = 2 }
+        }
+    }
+}

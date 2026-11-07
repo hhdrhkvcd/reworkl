@@ -1,0 +1,21 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 724
+    name = "RW26_STATE_724"
+    manpower = 4193712
+    state_category = rw26_slots_3
+    resources = { aluminium = 7 }
+    provinces = { 1384 1713 4542 7224 12218 12250 12430 14131 }
+    history = {
+        owner = TAJ
+        add_core_of = TAJ
+        victory_points = { 1384 5 }
+        victory_points = { 12218 3 }
+        victory_points = { 7224 3 }
+        buildings = {
+            infrastructure = 1
+            air_base = 2
+            industrial_complex = 1
+        }
+    }
+}

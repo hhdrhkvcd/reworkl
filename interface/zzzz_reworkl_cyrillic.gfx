@@ -1,0 +1,124 @@
+# Make the built-in Cyrillic variants available with either UI language.
+# Font path compatibility reference: Millennium Dawn c5143e00268ee9125accefc7130066989de89bce.
+# No third-party font bitmaps or replacement core.gfx are bundled.
+bitmapfonts = {
+    bitmapfont_override = {
+        name = "cg_16b"
+        fontfiles = {
+            "gfx/fonts/hoi_16tooltip3"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "hoi4_typewriter16"
+        fontfiles = {
+            "gfx/fonts/hoi_16typewriter"
+            "gfx/fonts/hoi_16typewriter_cryllic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "hoi4_typewriter16_inverted"
+        fontfiles = {
+            "gfx/fonts/hoi_16typewriter_inverted"
+            "gfx/fonts/hoi_16typewriter_cryllic_inverted"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "hoi4_typewriter22"
+        fontfiles = {
+            "gfx/fonts/hoi_22typewriter"
+            "gfx/fonts/hoi_22typewriter_cryllic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "hoi4_typewriter22_inverted"
+        fontfiles = {
+            "gfx/fonts/hoi_22typewriter_inverted"
+            "gfx/fonts/hoi_22typewriter_cryllic_inverted"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "hoi_20b"
+        fontfiles = {
+            "gfx/fonts/hoi_20b"
+            "gfx/fonts/hoi_20b_cryllic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "hoi_20bs"
+        fontfiles = {
+            "gfx/fonts/hoi_20bs"
+            "gfx/fonts/hoi_20bs_cryllic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "hoi_24header"
+        fontfiles = {
+            "gfx/fonts/hoi_20bs"
+            "gfx/fonts/hoi_20bs_cryllic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "hoi_30"
+        fontfiles = {
+            "gfx/fonts/hoi_30"
+            "gfx/fonts/hoi_30_cyrillic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "hoi_30header"
+        fontfiles = {
+            "gfx/fonts/hoi_20bs"
+            "gfx/fonts/hoi_20bs_cryllic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "hoi_36header"
+        fontfiles = {
+            "gfx/fonts/hoi_26mbs"
+            "gfx/fonts/hoi_26mbs_cryllic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "nsb_hoi_24header"
+        fontfiles = {
+            "gfx/fonts/hoi_20bs"
+            "gfx/fonts/hoi_20bs_cryllic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "vic_18"
+        fontfiles = {
+            "gfx/fonts/hoi_18"
+            "gfx/fonts/hoi_18_cryllic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "vic_22"
+        fontfiles = {
+            "gfx/fonts/hoi_18"
+            "gfx/fonts/hoi_18_cryllic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+    bitmapfont_override = {
+        name = "vic_36"
+        fontfiles = {
+            "gfx/fonts/hoi_26mbs"
+            "gfx/fonts/hoi_26mbs_cryllic"
+        }
+        languages = { "l_english" "l_russian" }
+    }
+}

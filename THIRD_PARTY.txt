@@ -1,0 +1,54 @@
+Reworkl World 2026 — third-party notices and component licences
+
+1. Millennium Dawn geography reference
+   Project: Millennium Dawn, by the Millennium Dawn contributors.
+   Source: https://github.com/MillenniumDawn/Millennium-Dawn
+   Pinned source: c5143e00268ee9125accefc7130066989de89bce
+   Licence: Creative Commons Attribution-ShareAlike 4.0 International.
+   Full licence: licenses/Millennium-Dawn-CC-BY-SA-4.0.txt
+   Source history/credits:
+   https://github.com/MillenniumDawn/Millennium-Dawn/tree/c5143e00268ee9125accefc7130066989de89bce
+
+   Derived components: the matched map rasters and their compressed source
+   archive, province definitions, strategic/supply geometry, positions,
+   data/world_2026/world.json, history/states, the geographic country palettes
+   and state/country/place-name localisation derived from this reference.
+   These geographic derivatives and our changes to them are offered under
+   CC-BY-SA-4.0. Attribution and this licence notice must accompany reuse.
+   This notice does not relicense unrelated original Reworkl music or artwork.
+
+   Changes: converted the reference's own province/state/tag namespace to a
+   standalone Reworkl world; normalised country tags and modern independent
+   countries; consolidated obsolete insurgencies; separated Timor-Leste;
+   applied an explicit disputed-territory policy; removed MD-only buildings,
+   resources, terrain types, state effects, DLC models and all gameplay;
+   migrated Reworkl's 1936 references. Corrected two cross-state Solomon
+   Islands victory points and clamped an out-of-range Uganda palette channel.
+   Population/industry are baseline reference values, not 2026 statistics.
+
+   Only geography and font-configuration compatibility facts are reused.
+   No Millennium Dawn focus tree, leader portrait, soundtrack, technology,
+   special-project system or game-rule package is included. Millennium Dawn
+   is NOT a runtime dependency. No endorsement by its authors is implied.
+   The Cyrillic configuration refers to fonts in the user's licensed base
+   game; no font atlas was copied from the reference or from the game.
+
+2. National flags
+   Project: flag-icons, Copyright (c) 2013 Panayiotis Lipiridis/contributors.
+   Source: https://github.com/lipis/flag-icons
+   Pinned source: ac7e0eb3259eb62aa6100c435607e2fe03896a97
+   Licence: MIT; full notice in licenses/flag-icons-MIT.txt.
+   Changes: national SVGs rasterised/resized to 82x52, 41x26, 10x7 TGA files
+   named RW26_<country>. Detailed source/hashes: data/world_2026/flags.json.
+
+3. Other components
+   Original Reworkl/Serbia focus content, 23 original audio tracks and the
+   previously selected loading artwork are retained under their existing
+   respective terms. Nothing here changes the rights to those components.
+   The neutral government-building placeholder is original SVG artwork for
+   this scenario; it is not a photograph of a real head of government.
+
+This is a Hearts of Iron IV mod, not a standalone game. A legitimate licensed
+base game is required. No base-game executable, DLC unlocker or DRM bypass is
+provided. Country boundaries and disputed labels are game abstractions and
+are not a legal recognition statement. See WORLD_2026_RU.txt.

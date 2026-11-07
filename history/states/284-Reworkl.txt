@@ -1,0 +1,23 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 284
+    name = "RW26_STATE_284"
+    manpower = 1000296
+    state_category = rw26_slots_5
+    resources = { oil = 7 }
+    provinces = { 646 657 687 3076 9635 14287 }
+    history = {
+        owner = ROM
+        add_core_of = ROM
+        victory_points = { 657 2 }
+        buildings = {
+            infrastructure = 2
+            air_base = 1
+            dockyard = 1
+            arms_factory = 1
+            industrial_complex = 1
+            nuclear_reactor = 1
+            657 = { naval_base = 6 }
+        }
+    }
+}

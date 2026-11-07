@@ -1,0 +1,18 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 318
+    name = "RW26_STATE_318"
+    manpower = 373719
+    state_category = rw26_slots_2
+    provinces = { 8244 13787 13788 }
+    history = {
+        owner = EQG
+        add_core_of = EQG
+        victory_points = { 8244 5 }
+        buildings = {
+            infrastructure = 1
+            air_base = 1
+            8244 = { naval_base = 2 }
+        }
+    }
+}

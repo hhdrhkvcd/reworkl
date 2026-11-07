@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 128
+    name = "RW26_STATE_128"
+    manpower = 1895065
+    state_category = rw26_slots_4
+    resources = { aluminium = 2 }
+    provinces = { 6799 9922 11872 11899 370 378 }
+    history = {
+        owner = BOS
+        add_core_of = BOS
+        victory_points = { 11899 2 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 2
+            air_base = 2
+        }
+    }
+}

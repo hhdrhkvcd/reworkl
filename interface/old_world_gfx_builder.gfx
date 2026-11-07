@@ -1,0 +1,30 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_goal_old_world_new_gfx_serbian_industry
+        texturefile = "gfx/interface/hmb_gfx/old_world/old_world_3624eff5e4864180a08bd7791c5cc4b9.dds"
+        legacy_lazy_load = no
+    }
+    spriteType = {
+        name = GFX_goal_old_world_new_gfx_greaterserbiaflag
+        texturefile = "gfx/interface/hmb_gfx/old_world/old_world_0480399422e947efa93a6daed7e21ce1.dds"
+        legacy_lazy_load = no
+    }
+    spriteType = {
+        name = GFX_goal_old_world_new_gfx_greaterserbiaflag_shine
+        texturefile = "gfx/interface/hmb_gfx/old_world/old_world_0480399422e947efa93a6daed7e21ce1.dds"
+        effectFile = "gfx/FX/buttonstate.lua"
+        animation = {
+            animationmaskfile = "gfx/interface/hmb_gfx/old_world/old_world_0480399422e947efa93a6daed7e21ce1.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = -90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        legacy_lazy_load = no
+    }
+}

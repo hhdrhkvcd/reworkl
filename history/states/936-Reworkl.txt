@@ -1,0 +1,17 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 936
+    name = "RW26_STATE_936"
+    manpower = 62958
+    state_category = rw26_slots_2
+    provinces = { 6198 14184 }
+    history = {
+        owner = INS
+        add_core_of = INS
+        buildings = {
+            air_base = 1
+            infrastructure = 1
+            6198 = { naval_base = 1 }
+        }
+    }
+}

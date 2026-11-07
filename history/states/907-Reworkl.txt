@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 907
+    name = "RW26_STATE_907"
+    manpower = 650599
+    state_category = rw26_slots_2
+    resources = { oil = 13 }
+    provinces = { 8075 10888 10166 10179 14078 }
+    history = {
+        owner = ECU
+        add_core_of = ECU
+        victory_points = { 8075 1 }
+        victory_points = { 10888 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 1
+        }
+    }
+}

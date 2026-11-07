@@ -1,0 +1,28 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 743
+    name = "RW26_STATE_743"
+    manpower = 4759736
+    state_category = rw26_slots_5
+    resources = { oil = 16 steel = 8 aluminium = 1 }
+    provinces = { 1759 2130 2155 4776 4791 7755 7798 7811 10581 10622 12932 }
+    history = {
+        owner = AST
+        add_core_of = AST
+        victory_points = { 7798 10 }
+        victory_points = { 4776 1 }
+        victory_points = { 2130 1 }
+        victory_points = { 7811 1 }
+        victory_points = { 1759 1 }
+        buildings = {
+            infrastructure = 3
+            dockyard = 1
+            industrial_complex = 1
+            arms_factory = 1
+            fuel_silo = 2
+            air_base = 2
+            synthetic_refinery = 1
+            7798 = { naval_base = 2 }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 1
+    name = "RW26_STATE_1"
+    manpower = 15
+    state_category = rw26_slots_2
+    provinces = { 13058 16356 16357 16358 16359 16360 16361 16362 16363 16364 16365 16366 16367 16368 16369 }
+    history = {
+        owner = DEN
+        add_core_of = DEN
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

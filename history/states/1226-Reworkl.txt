@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 1226
+    name = "RW26_STATE_1226"
+    manpower = 787340
+    state_category = rw26_slots_2
+    resources = { oil = 1 rubber = 8 }
+    provinces = { 1326 12190 }
+    history = {
+        owner = TML
+        add_core_of = TML
+        victory_points = { 1326 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 1
+            12190 = { naval_base = 1 }
+        }
+    }
+}

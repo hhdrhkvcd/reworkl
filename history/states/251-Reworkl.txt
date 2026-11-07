@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 251
+    name = "RW26_STATE_251"
+    manpower = 6743000
+    state_category = rw26_slots_3
+    resources = { tungsten = 3 }
+    provinces = { 2220 6540 13639 }
+    history = {
+        owner = BRD
+        add_core_of = BRD
+        victory_points = { 2220 10 }
+        victory_points = { 6540 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 1
+            industrial_complex = 1
+        }
+    }
+}

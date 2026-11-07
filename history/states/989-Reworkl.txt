@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 989
+    name = "RW26_STATE_989"
+    manpower = 23493317
+    state_category = rw26_slots_8
+    resources = { aluminium = 34 tungsten = 1 steel = 15 }
+    provinces = { 1059 1101 1538 4104 4513 9229 10060 10088 10428 12063 }
+    history = {
+        owner = RAJ
+        add_core_of = RAJ
+        victory_points = { 10088 5 }
+        victory_points = { 4104 1 }
+        victory_points = { 1538 5 }
+        buildings = {
+            infrastructure = 1
+            arms_factory = 2
+            industrial_complex = 4
+            10088 = { naval_base = 2 }
+        }
+    }
+}

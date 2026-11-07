@@ -1,0 +1,26 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 601
+    name = "RW26_STATE_601"
+    manpower = 6335990
+    state_category = rw26_slots_2
+    resources = { steel = 13 aluminium = 4 tungsten = 7 oil = 5 }
+    provinces = { 852 898 959 3803 3852 3860 3904 3981 6822 6922 6928 6944 9899 11878 3191 3210 3245 }
+    history = {
+        owner = NKO
+        add_core_of = NKO
+        victory_points = { 6928 6 }
+        victory_points = { 6822 5 }
+        victory_points = { 6922 2 }
+        victory_points = { 6944 1 }
+        victory_points = { 11878 1 }
+        victory_points = { 898 1 }
+        victory_points = { 3852 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 10
+            6944 = { naval_base = 2 }
+            3852 = { naval_base = 2 }
+        }
+    }
+}

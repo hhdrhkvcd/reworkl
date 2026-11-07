@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 1175
+    name = "RW26_STATE_1175"
+    manpower = 1981988
+    state_category = rw26_slots_3
+    provinces = { 989 1111 6436 7116 7958 12100 15463 15464 15465 15466 15467 15501 }
+    history = {
+        owner = MOR
+        add_core_of = MOR
+        victory_points = { 989 4 }
+        victory_points = { 12100 1 }
+        victory_points = { 1111 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 1
+        }
+    }
+}

@@ -1,0 +1,35 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 93
+    name = "RW26_STATE_93"
+    manpower = 7230266
+    state_category = rw26_slots_13
+    resources = { tungsten = 5 steel = 8 oil = 10 }
+    provinces = { 279 747 875 950 1090 1176 1192 3810 4182 6744 7068 7098 7183 9815 9979 10063 10111 11749 11956 12038 12070 14155 }
+    history = {
+        owner = SPR
+        add_core_of = SPR
+        victory_points = { 7183 5 }
+        victory_points = { 9979 5 }
+        victory_points = { 875 2 }
+        victory_points = { 950 1 }
+        victory_points = { 1176 1 }
+        victory_points = { 14155 1 }
+        victory_points = { 12038 1 }
+        victory_points = { 7068 1 }
+        victory_points = { 12070 1 }
+        victory_points = { 279 1 }
+        victory_points = { 10111 1 }
+        victory_points = { 747 1 }
+        buildings = {
+            infrastructure = 2
+            arms_factory = 1
+            dockyard = 9
+            industrial_complex = 1
+            air_base = 3
+            279 = { naval_base = 5 }
+            9979 = { naval_base = 2 }
+            747 = { naval_base = 1 }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 113
+    name = "RW26_STATE_113"
+    manpower = 2313805
+    state_category = rw26_slots_4
+    resources = { steel = 23 }
+    provinces = { 362 389 3380 11288 11316 676 14485 14487 }
+    history = {
+        owner = POL
+        add_core_of = POL
+        victory_points = { 362 5 }
+        victory_points = { 14485 2 }
+        victory_points = { 676 1 }
+        buildings = {
+            infrastructure = 2
+            dockyard = 1
+            air_base = 5
+            industrial_complex = 1
+            362 = { naval_base = 10 }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 1079
+    name = "RW26_STATE_1079"
+    manpower = 2510271
+    state_category = rw26_slots_4
+    resources = { steel = 30 }
+    provinces = { 375 478 3207 3499 9428 9496 11219 11444 14394 }
+    history = {
+        owner = GER
+        add_core_of = GER
+        victory_points = { 3499 1 }
+        buildings = {
+            infrastructure = 2
+            arms_factory = 1
+            industrial_complex = 1
+            air_base = 6
+            radar_station = 2
+        }
+    }
+}

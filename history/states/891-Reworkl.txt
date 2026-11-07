@@ -1,0 +1,25 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 891
+    name = "RW26_STATE_891"
+    manpower = 6192307
+    state_category = rw26_slots_2
+    resources = { steel = 3 aluminium = 12 tungsten = 6 rubber = 6 }
+    provinces = { 2035 2214 5008 8172 10874 10956 12853 12999 3901 3926 3928 4095 6668 6789 6949 6962 6996 7147 14092 14093 14094 14095 14491 }
+    history = {
+        owner = BRA
+        add_core_of = BRA
+        victory_points = { 12853 10 }
+        victory_points = { 2035 3 }
+        victory_points = { 4095 3 }
+        victory_points = { 10956 1 }
+        victory_points = { 12999 1 }
+        victory_points = { 5008 1 }
+        victory_points = { 6789 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 3
+            12853 = { naval_base = 6 }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 417
+    name = "RW26_STATE_417"
+    manpower = 2368325
+    state_category = rw26_slots_2
+    resources = { tungsten = 2 steel = 5 }
+    provinces = { 5105 8044 7975 4990 7847 }
+    history = {
+        owner = PAK
+        add_core_of = PAK
+        victory_points = { 5105 5 }
+        victory_points = { 7975 1 }
+        victory_points = { 7847 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

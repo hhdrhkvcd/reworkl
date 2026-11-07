@@ -1,0 +1,137 @@
+music = {
+    name = "reworkl_Remove_Kebab"
+    file = "Remove_Kebab.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_Serbia_strong"
+    file = "Serbia_strong.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_armia"
+    file = "armia.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_balada"
+    file = "balada.ogg"
+    volume = 0.50
+}
+
+music = {
+    name = "reworkl_bridalthemepiano"
+    file = "bridalthemepiano.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_cossack_march"
+    file = "cossack_march.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_cradleofthegalaxypiano"
+    file = "cradleofthegalaxypiano.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_creationandbeyondpiano"
+    file = "creationandbeyondpiano.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_cri"
+    file = "cri.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_darkskies"
+    file = "darkskies.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_distantnebulapiano"
+    file = "distantnebulapiano.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_eternalcitypiano"
+    file = "eternalcitypiano.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_fasterthanlightpiano"
+    file = "fasterthanlightpiano.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_garda"
+    file = "garda.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_hil"
+    file = "hil.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_miro"
+    file = "miro.ogg"
+    volume = 0.70
+}
+
+music = {
+    name = "reworkl_plavi"
+    file = "plavi.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_ponos"
+    file = "ponos.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_sevensacramentspiano"
+    file = "sevensacramentspiano.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_snowiscomingpiano"
+    file = "snowiscomingpiano.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_tuga"
+    file = "tuga.ogg"
+    volume = 0.70
+}
+
+music = {
+    name = "reworkl_xristos"
+    file = "xristos.ogg"
+    volume = 0.80
+}
+
+music = {
+    name = "reworkl_zelene"
+    file = "zelene.ogg"
+    volume = 0.70
+}

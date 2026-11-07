@@ -1,0 +1,17 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 980
+    name = "RW26_STATE_980"
+    manpower = 2318822
+    state_category = rw26_slots_2
+    resources = { rubber = 12 }
+    provinces = { 1497 11742 }
+    history = {
+        owner = RAJ
+        add_core_of = RAJ
+        victory_points = { 11742 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

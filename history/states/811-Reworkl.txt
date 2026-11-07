@@ -1,0 +1,68 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 811
+    name = "RW26_STATE_811"
+    manpower = 33931647
+    state_category = rw26_slots_16
+    resources = { oil = 21 chromium = 2 }
+    provinces = { 823 941 1562 1651 4657 4727 6881 7517 7986 9814 9855 9911 10387 10483 11757 11795 11859 11876 12303 12374 1601 1432 7667 3784 986 3840 9637 9671 3678 6699 6694 6876 11763 4518 6861 3677 710 9713 11658 677 6681 6757 9730 610 3644 6482 6665 4331 10159 11698 766 9697 3588 6745 768 6772 781 15239 15240 15241 15242 15243 15244 15245 15246 15247 15248 15249 15250 15251 15252 15253 15254 15255 }
+    history = {
+        owner = USA
+        add_core_of = USA
+        victory_points = { 9814 15 }
+        victory_points = { 1562 13 }
+        victory_points = { 11859 7 }
+        victory_points = { 11795 9 }
+        victory_points = { 9911 8 }
+        victory_points = { 11757 6 }
+        victory_points = { 6881 7 }
+        victory_points = { 7986 3 }
+        victory_points = { 823 3 }
+        victory_points = { 941 3 }
+        victory_points = { 15244 2 }
+        victory_points = { 9855 7 }
+        victory_points = { 9671 9 }
+        victory_points = { 3678 7 }
+        victory_points = { 6876 6 }
+        victory_points = { 9637 4 }
+        victory_points = { 6699 5 }
+        victory_points = { 4518 4 }
+        victory_points = { 6694 3 }
+        victory_points = { 986 2 }
+        victory_points = { 9713 10 }
+        victory_points = { 15254 3 }
+        victory_points = { 15252 3 }
+        victory_points = { 3588 4 }
+        victory_points = { 610 2 }
+        victory_points = { 11658 4 }
+        victory_points = { 12374 1 }
+        victory_points = { 7517 4 }
+        victory_points = { 11876 1 }
+        victory_points = { 3784 1 }
+        victory_points = { 15250 1 }
+        victory_points = { 3677 3 }
+        victory_points = { 677 2 }
+        victory_points = { 15240 1 }
+        victory_points = { 6681 1 }
+        victory_points = { 6757 1 }
+        victory_points = { 15239 1 }
+        victory_points = { 3840 1 }
+        victory_points = { 6861 2 }
+        victory_points = { 10483 3 }
+        buildings = {
+            infrastructure = 3
+            arms_factory = 3
+            dockyard = 6
+            air_base = 10
+            industrial_complex = 5
+            radar_station = 2
+            nuclear_reactor = 1
+            synthetic_refinery = 1
+            1562 = { naval_base = 10 }
+            9814 = { naval_base = 6 }
+            9671 = { naval_base = 4 }
+            3678 = { naval_base = 2 }
+            610 = { naval_base = 2 }
+        }
+    }
+}

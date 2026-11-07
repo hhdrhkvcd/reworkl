@@ -1,0 +1,32 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 669
+    name = "RW26_STATE_669"
+    manpower = 2401209
+    state_category = rw26_slots_4
+    resources = { steel = 1 }
+    provinces = { 705 3686 3722 6724 9419 9677 9680 9718 11649 14328 16520 16521 16522 16523 }
+    history = {
+        owner = UKR
+        add_core_of = UKR
+        add_claim_by = SOV
+        victory_points = { 3686 4 }
+        victory_points = { 705 2 }
+        victory_points = { 3722 1 }
+        victory_points = { 6724 1 }
+        victory_points = { 9680 1 }
+        victory_points = { 11649 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 1
+            dockyard = 1
+            air_base = 4
+            radar_station = 2
+            anti_air_building = 3
+            fuel_silo = 1
+            3686 = { naval_base = 2 }
+            11649 = { naval_base = 1 }
+            9680 = { naval_base = 1 }
+        }
+    }
+}

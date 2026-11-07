@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 886
+    name = "RW26_STATE_886"
+    manpower = 3091652
+    state_category = rw26_slots_2
+    resources = { rubber = 20 }
+    provinces = { 2111 2142 2147 2204 5148 8175 817 845 3621 3857 3874 }
+    history = {
+        owner = BRA
+        add_core_of = BRA
+        victory_points = { 845 5 }
+        victory_points = { 5148 3 }
+        victory_points = { 2204 1 }
+        victory_points = { 8175 1 }
+        victory_points = { 2142 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 1
+        }
+    }
+}

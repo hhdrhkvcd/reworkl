@@ -1,0 +1,21 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 179
+    name = "RW26_STATE_179"
+    manpower = 2413510
+    state_category = rw26_slots_4
+    resources = { oil = 15 aluminium = 38 }
+    provinces = { 10904 3709 3725 }
+    history = {
+        owner = UAE
+        add_core_of = UAE
+        victory_points = { 3725 25 }
+        victory_points = { 10904 1 }
+        buildings = {
+            infrastructure = 3
+            air_base = 2
+            arms_factory = 2
+            synthetic_refinery = 1
+        }
+    }
+}

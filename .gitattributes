@@ -1,0 +1,22 @@
+*.txt text eol=lf
+*.mod text eol=lf
+*.lua text eol=lf
+*.gfx text eol=lf
+*.gui text eol=lf
+*.asset text eol=lf
+*.yml text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.ogg binary
+*.dds binary
+*.tga binary
+*.png binary
+*.zip binary
+*.z01 binary
+*.z02 binary
+
+# Portable Windows ZIP helpers
+*.cmd text eol=crlf
+*.ps1 text eol=lf

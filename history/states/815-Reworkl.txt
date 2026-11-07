@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 815
+    name = "RW26_STATE_815"
+    manpower = 3900640
+    state_category = rw26_slots_2
+    provinces = { 1440 13327 13328 13329 }
+    history = {
+        owner = USA
+        add_core_of = USA
+        victory_points = { 1440 5 }
+        victory_points = { 13327 1 }
+        buildings = {
+            infrastructure = 2
+            air_base = 2
+            fuel_silo = 1
+            1440 = { naval_base = 2 }
+        }
+    }
+}

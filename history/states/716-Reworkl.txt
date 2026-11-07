@@ -1,0 +1,23 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 716
+    name = "RW26_STATE_716"
+    manpower = 2536272
+    state_category = rw26_slots_4
+    resources = { oil = 2 aluminium = 4 }
+    provinces = { 1243 1375 1402 4238 4250 4281 4333 4389 4595 4764 7298 7326 7332 7337 7383 7392 7405 7407 7425 10161 10211 10220 10239 10268 10277 10290 10308 10452 10508 10653 12111 12152 12177 12635 14360 }
+    history = {
+        owner = KAZ
+        add_core_of = KAZ
+        victory_points = { 10308 10 }
+        victory_points = { 4333 5 }
+        victory_points = { 4238 1 }
+        victory_points = { 1243 1 }
+        victory_points = { 7383 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 2
+            air_base = 3
+        }
+    }
+}

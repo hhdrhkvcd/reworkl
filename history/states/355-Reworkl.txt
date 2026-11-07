@@ -1,0 +1,17 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 355
+    name = "RW26_STATE_355"
+    manpower = 839212
+    state_category = rw26_slots_2
+    resources = { rubber = 14 chromium = 12 }
+    provinces = { 8006 13237 13238 }
+    history = {
+        owner = LIB
+        add_core_of = LIB
+        victory_points = { 13238 2 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

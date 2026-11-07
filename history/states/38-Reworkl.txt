@@ -1,0 +1,31 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 38
+    name = "RW26_STATE_38"
+    manpower = 8584865
+    state_category = rw26_slots_13
+    resources = { steel = 17 oil = 24 }
+    provinces = { 241 309 526 3234 3271 3326 6263 6349 6377 9238 9264 9281 9375 11264 11360 11388 11493 14632 }
+    history = {
+        owner = GER
+        add_core_of = GER
+        victory_points = { 3326 5 }
+        victory_points = { 6377 4 }
+        victory_points = { 9375 1 }
+        victory_points = { 14632 1 }
+        victory_points = { 11388 1 }
+        victory_points = { 9375 1 }
+        victory_points = { 11493 1 }
+        buildings = {
+            air_base = 5
+            infrastructure = 2
+            industrial_complex = 3
+            arms_factory = 2
+            anti_air_building = 1
+            dockyard = 6
+            fuel_silo = 5
+            nuclear_reactor = 2
+            241 = { naval_base = 8 }
+        }
+    }
+}

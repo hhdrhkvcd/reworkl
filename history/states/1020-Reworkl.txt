@@ -1,0 +1,16 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 1020
+    name = "RW26_STATE_1020"
+    manpower = 235575
+    state_category = rw26_slots_2
+    provinces = { 4985 13790 }
+    history = {
+        owner = DJI
+        add_core_of = DJI
+        victory_points = { 4985 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

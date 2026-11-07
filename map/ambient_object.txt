@@ -1,0 +1,1 @@
+# Use no mod-specific decorative 3D models.

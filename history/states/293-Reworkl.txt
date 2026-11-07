@@ -1,0 +1,18 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 293
+    name = "RW26_STATE_293"
+    manpower = 2627371
+    state_category = rw26_slots_2
+    resources = { tungsten = 15 chromium = 14 }
+    provinces = { 12504 12677 9592 9705 }
+    history = {
+        owner = ZAM
+        add_core_of = ZAM
+        victory_points = { 12677 5 }
+        victory_points = { 12504 4 }
+        buildings = {
+            infrastructure = 2
+        }
+    }
+}

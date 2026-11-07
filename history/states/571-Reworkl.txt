@@ -1,0 +1,16 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 571
+    name = "RW26_STATE_571"
+    manpower = 1309404
+    state_category = rw26_slots_2
+    provinces = { 1056 1072 11124 14599 }
+    history = {
+        owner = SYR
+        add_core_of = SYR
+        victory_points = { 14599 8 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

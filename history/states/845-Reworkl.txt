@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 845
+    name = "RW26_STATE_845"
+    manpower = 240406
+    state_category = rw26_slots_3
+    resources = { steel = 5 }
+    provinces = { 2077 11570 }
+    history = {
+        owner = BLZ
+        add_core_of = BLZ
+        victory_points = { 2077 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 1
+            air_base = 1
+            2077 = { naval_base = 1 }
+        }
+    }
+}

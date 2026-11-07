@@ -1,0 +1,51 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            if = {
+                limit = { RW26_is_2026_campaign = yes NOT = { has_global_flag = RW26_WORLD_INITIALIZED } }
+                set_global_flag = RW26_WORLD_INITIALIZED
+                every_country = {
+                    limit = { exists = yes }
+                    load_focus_tree = { tree = rw26_world_tree keep_completed = yes }
+                }
+                USA = { create_faction = RW26_NATO }
+                USA = { add_to_faction = ENG }
+                USA = { add_to_faction = FRA }
+                USA = { add_to_faction = GER }
+                USA = { add_to_faction = ITA }
+                USA = { add_to_faction = CAN }
+                USA = { add_to_faction = POR }
+                USA = { add_to_faction = SPR }
+                USA = { add_to_faction = NOR }
+                USA = { add_to_faction = ICE }
+                USA = { add_to_faction = DEN }
+                USA = { add_to_faction = HOL }
+                USA = { add_to_faction = BEL }
+                USA = { add_to_faction = LUX }
+                USA = { add_to_faction = GRE }
+                USA = { add_to_faction = TUR }
+                USA = { add_to_faction = POL }
+                USA = { add_to_faction = CZE }
+                USA = { add_to_faction = HUN }
+                USA = { add_to_faction = BUL }
+                USA = { add_to_faction = ROM }
+                USA = { add_to_faction = EST }
+                USA = { add_to_faction = LAT }
+                USA = { add_to_faction = LIT }
+                USA = { add_to_faction = SLO }
+                USA = { add_to_faction = SLV }
+                USA = { add_to_faction = CRO }
+                USA = { add_to_faction = ALB }
+                USA = { add_to_faction = MNT }
+                USA = { add_to_faction = MAC }
+                USA = { add_to_faction = FIN }
+                USA = { add_to_faction = SWE }
+            }
+            if = {
+                limit = { has_start_date < 1937.1.1 country_exists = SER NOT = { has_global_flag = REWORKL_SERBIA_INITIALIZED } }
+                set_global_flag = REWORKL_SERBIA_INITIALIZED
+                SER = { load_focus_tree = { tree = serbia_tree1 keep_completed = yes } }
+            }
+        }
+    }
+}

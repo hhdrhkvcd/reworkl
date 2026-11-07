@@ -1,0 +1,16 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 394
+    name = "RW26_STATE_394"
+    manpower = 48459
+    state_category = rw26_slots_2
+    impassable = yes
+    provinces = { 6348 }
+    history = {
+        owner = ALG
+        add_core_of = ALG
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

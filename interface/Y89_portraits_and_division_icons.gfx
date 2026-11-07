@@ -1,0 +1,34 @@
+spriteTypes = {
+	 spriteType = {
+		 name = GFX_Y89_YUG_presidency
+		 texturefile = "gfx/leaders/YUG/Y89_YUG_presidency.dds"
+	 }
+	 spriteType = {
+		 name = GFX_Y89_YUG_presidency_small
+		 texturefile = "gfx/leaders/YUG/Y89_YUG_presidency_small.dds"
+	 }
+	 spriteType = {
+		 name = GFX_Y89_JNA_commander
+		 texturefile = "gfx/leaders/YUG/Y89_JNA_commander.dds"
+	 }
+	 spriteType = {
+		 name = GFX_Y89_JNA_commander_small
+		 texturefile = "gfx/leaders/YUG/Y89_JNA_commander_small.dds"
+	 }
+	 spriteType = {
+		 name = GFX_div_templ_40_large
+		 texturefile = "gfx/interface/counters/divisions_large/Y89_JNA_infantry.dds"
+	 }
+	 spriteType = {
+		 name = GFX_div_templ_40_small
+		 texturefile = "gfx/interface/counters/divisions_small/Y89_JNA_infantry.dds"
+	 }
+	 spriteType = {
+		 name = GFX_div_templ_41_large
+		 texturefile = "gfx/interface/counters/divisions_large/Y89_JNA_light_brigade.dds"
+	 }
+	 spriteType = {
+		 name = GFX_div_templ_41_small
+		 texturefile = "gfx/interface/counters/divisions_small/Y89_JNA_light_brigade.dds"
+	 }
+}

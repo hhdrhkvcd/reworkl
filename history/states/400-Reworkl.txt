@@ -1,0 +1,25 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 400
+    name = "RW26_STATE_400"
+    manpower = 3991139
+    state_category = rw26_slots_2
+    resources = { oil = 30 steel = 2 aluminium = 5 }
+    provinces = { 421 555 649 3865 4928 4966 5089 6485 6604 8117 10881 12832 14266 14269 14270 14451 14670 14682 }
+    history = {
+        owner = PER
+        add_core_of = PER
+        victory_points = { 14682 12 }
+        victory_points = { 3865 1 }
+        victory_points = { 14270 1 }
+        victory_points = { 14670 1 }
+        victory_points = { 14266 1 }
+        victory_points = { 4928 1 }
+        buildings = {
+            infrastructure = 2
+            air_base = 5
+            nuclear_reactor = 1
+            anti_air_building = 2
+        }
+    }
+}

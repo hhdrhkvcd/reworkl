@@ -1,0 +1,7 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_reworkl_turbofolk_album_art"
+        texturefile = "gfx/reworkl_turbofolk_album_art.dds"
+        noOfFrames = 2
+    }
+}

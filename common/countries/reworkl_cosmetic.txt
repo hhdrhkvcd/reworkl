@@ -1,0 +1,28 @@
+balkansfr = {
+    color = rgb { 247 89 91 }
+    color_ui = rgb { 247 89 91 }
+}
+Greater_Serbia = {
+    color = rgb { 0 101 148 }
+    color_ui = rgb { 0 101 148 }
+}
+greatyugoslavia = {
+    color = rgb { 36 45 148 }
+    color_ui = rgb { 36 45 148 }
+}
+PRIMALBLUDS = {
+    color = rgb { 64 66 61 }
+    color_ui = rgb { 64 66 61 }
+}
+Serbia_union = {
+    color = rgb { 87 85 173 }
+    color_ui = rgb { 87 85 173 }
+}
+serempire = {
+    color = rgb { 227 221 153 }
+    color_ui = rgb { 227 221 153 }
+}
+yugo = {
+    color = rgb { 95 136 191 }
+    color_ui = rgb { 95 136 191 }
+}

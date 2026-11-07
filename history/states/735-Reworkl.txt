@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 735
+    name = "RW26_STATE_735"
+    manpower = 2813159
+    state_category = rw26_slots_2
+    resources = { steel = 3 aluminium = 4 }
+    provinces = { 4101 4214 4233 6061 6073 7325 7439 10252 12213 16345 16346 }
+    history = {
+        owner = PHI
+        add_core_of = PHI
+        victory_points = { 6073 1 }
+        victory_points = { 16345 5 }
+        victory_points = { 16346 5 }
+        buildings = {
+            infrastructure = 1
+            air_base = 2
+        }
+    }
+}

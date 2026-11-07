@@ -1,0 +1,21 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 274
+    name = "RW26_STATE_274"
+    manpower = 3324257
+    state_category = rw26_slots_3
+    resources = { steel = 12 aluminium = 7 tungsten = 4 chromium = 28 }
+    provinces = { 2171 1431 1537 1611 }
+    history = {
+        owner = SAF
+        add_core_of = SAF
+        victory_points = { 1537 5 }
+        victory_points = { 1611 1 }
+        victory_points = { 1431 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 1
+            synthetic_refinery = 1
+        }
+    }
+}

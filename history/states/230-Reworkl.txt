@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 230
+    name = "RW26_STATE_230"
+    manpower = 496425
+    state_category = rw26_slots_3
+    provinces = { 8124 }
+    history = {
+        owner = DJI
+        add_core_of = DJI
+        victory_points = { 8124 5 }
+        buildings = {
+            infrastructure = 1
+            air_base = 8
+            industrial_complex = 1
+            8124 = { naval_base = 8 }
+        }
+    }
+}

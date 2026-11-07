@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 551
+    name = "RW26_STATE_551"
+    manpower = 8408
+    state_category = rw26_slots_2
+    provinces = { 13048 13049 13053 }
+    history = {
+        owner = KIR
+        add_core_of = KIR
+        victory_points = { 13048 1 }
+        victory_points = { 13049 1 }
+        victory_points = { 13053 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 1
+            13048 = { naval_base = 1 }
+            13049 = { naval_base = 1 }
+            13053 = { naval_base = 1 }
+        }
+    }
+}

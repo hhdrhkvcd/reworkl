@@ -1,0 +1,21 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 261
+    name = "RW26_STATE_261"
+    manpower = 3851026
+    state_category = rw26_slots_2
+    provinces = { 2123 2202 2217 5164 11421 11435 11476 }
+    history = {
+        owner = MZB
+        add_core_of = MZB
+        victory_points = { 2123 5 }
+        victory_points = { 2202 5 }
+        victory_points = { 11435 5 }
+        victory_points = { 5164 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 2
+            5164 = { naval_base = 2 }
+        }
+    }
+}

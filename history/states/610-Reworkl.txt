@@ -1,0 +1,25 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 610
+    name = "RW26_STATE_610"
+    manpower = 3570189
+    state_category = rw26_slots_12
+    resources = { aluminium = 3 }
+    provinces = { 4094 4179 7046 7197 9965 11997 12028 6161 14860 }
+    history = {
+        owner = JAP
+        add_core_of = JAP
+        victory_points = { 4179 5 }
+        victory_points = { 4094 3 }
+        victory_points = { 7197 3 }
+        victory_points = { 9965 2 }
+        buildings = {
+            infrastructure = 3
+            industrial_complex = 6
+            arms_factory = 2
+            dockyard = 2
+            fuel_silo = 1
+            nuclear_reactor = 2
+        }
+    }
+}

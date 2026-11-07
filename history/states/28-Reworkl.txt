@@ -1,0 +1,18 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 28
+    name = "RW26_STATE_28"
+    manpower = 1045091
+    state_category = rw26_slots_2
+    resources = { steel = 1 }
+    provinces = { 6289 6405 7394 9284 9310 11237 11334 13943 }
+    history = {
+        owner = IRE
+        add_core_of = IRE
+        victory_points = { 7394 1 }
+        buildings = {
+            infrastructure = 2
+            7394 = { naval_base = 3 }
+        }
+    }
+}

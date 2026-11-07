@@ -1,0 +1,1 @@
+# No inherited 1936 wars or faction setup. NATO is initialised once by the 2026 start hook.

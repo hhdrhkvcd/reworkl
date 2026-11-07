@@ -1,0 +1,4 @@
+types_source = "map/cities.bmp"
+pixel_step_x = 2
+pixel_step_y = 2
+# Decorative city meshes omitted; cities still have victory points and names.

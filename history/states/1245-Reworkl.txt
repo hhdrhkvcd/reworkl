@@ -1,0 +1,21 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 1245
+    name = "RW26_STATE_1245"
+    manpower = 3821414
+    state_category = rw26_slots_3
+    provinces = { 785 928 6864 6912 9887 9921 11778 11848 11898 }
+    history = {
+        owner = TUR
+        add_core_of = TUR
+        victory_points = { 928 2 }
+        victory_points = { 6912 1 }
+        victory_points = { 11778 2 }
+        victory_points = { 9921 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 1
+            air_base = 6
+        }
+    }
+}

@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 1080
+    name = "RW26_STATE_1080"
+    manpower = 1876985
+    state_category = rw26_slots_4
+    resources = { tungsten = 5 chromium = 3 }
+    provinces = { 6325 9347 }
+    history = {
+        owner = GER
+        add_core_of = GER
+        victory_points = { 9347 14 }
+        buildings = {
+            infrastructure = 3
+            industrial_complex = 1
+            dockyard = 1
+            9347 = { naval_base = 5 }
+        }
+    }
+}

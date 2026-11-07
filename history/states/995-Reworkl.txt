@@ -1,0 +1,17 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 995
+    name = "RW26_STATE_995"
+    manpower = 282133
+    state_category = rw26_slots_2
+    resources = { oil = 1 }
+    provinces = { 901 1634 6374 }
+    history = {
+        owner = SYR
+        add_core_of = SYR
+        victory_points = { 6374 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

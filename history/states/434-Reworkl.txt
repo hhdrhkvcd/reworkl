@@ -1,0 +1,26 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 434
+    name = "RW26_STATE_434"
+    manpower = 17602933
+    state_category = rw26_slots_2
+    resources = { steel = 105 }
+    provinces = { 828 881 900 952 1052 1137 1590 3830 3900 3955 6904 6937 6969 9768 9776 9905 10331 10397 10480 11801 11822 12043 14004 15662 15666 15672 15673 15674 }
+    history = {
+        owner = PRC
+        add_core_of = PRC
+        victory_points = { 12043 5 }
+        victory_points = { 3900 3 }
+        victory_points = { 881 5 }
+        victory_points = { 6937 1 }
+        victory_points = { 6969 1 }
+        victory_points = { 900 1 }
+        victory_points = { 6904 5 }
+        victory_points = { 828 1 }
+        buildings = {
+            infrastructure = 2
+            air_base = 3
+            3900 = { naval_base = 4 }
+        }
+    }
+}

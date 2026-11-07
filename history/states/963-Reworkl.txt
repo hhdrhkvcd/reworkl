@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 963
+    name = "RW26_STATE_963"
+    manpower = 1125696
+    state_category = rw26_slots_3
+    provinces = { 698 3646 3650 3666 6698 9642 9658 }
+    history = {
+        owner = FRA
+        add_core_of = FRA
+        victory_points = { 9642 1 }
+        buildings = {
+            infrastructure = 3
+            air_base = 2
+            industrial_complex = 1
+            radar_station = 2
+        }
+    }
+}

@@ -1,0 +1,548 @@
+
+ideas = {
+    country = {
+        Worker_bonuses = {
+            picture = JAP_japanese_economy
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = 0.1
+            }
+        }
+        Serbian_Economy = {
+            picture = AFG_parliament_building_damaged
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                production_speed_buildings_factor = -0.10
+                industrial_capacity_factory = -0.20
+                supply_factor = 0.10
+            }
+        }
+        Serbian_army = {
+            picture = MEX_politicised_army
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                army_attack_factor = 0.10
+            }
+            rule = { can_create_factions = yes }
+        }
+        Serbian_Economy_copy = {
+            picture = AFG_parliament_building_damaged
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                production_speed_buildings_factor = -0.05
+                industrial_capacity_factory = -0.10
+                supply_factor = 0.10
+            }
+        }
+        Serbian_Economy_copy_copy = {
+            picture = AFG_parliament_building
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                supply_factor = 0.10
+            }
+        }
+        Serbian_arms = {
+            picture = generic_economic_crisis
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                production_factory_efficiency_gain_factor = -0.10
+                production_factory_max_efficiency_factor = -0.05
+            }
+        }
+        Col_comp = {
+            picture = por_colonial_assimilation
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                non_core_manpower = 0.10
+                consumer_goods_factor = -0.07
+            }
+        }
+        Serbian_Economy_copy_copy_copy = {
+            picture = AFG_parliament_building
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                supply_factor = 0.10
+                production_speed_buildings_factor = 0.10
+                consumer_goods_factor = -0.1
+            }
+        }
+        Serbian_Economy_copy_copy_copy_2 = {
+            picture = AFG_parliament_building
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                supply_factor = 0.10
+                line_change_production_efficiency_factor = 0.10
+                production_factory_max_efficiency_factor = 0.20
+                production_factory_efficiency_gain_factor = 0.10
+            }
+        }
+        Primal_Nation = {
+            picture = ETH_scavenging_tactics
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = -0.10
+                recruitable_population_factor = 0.30
+                recruitable_population = 0.30
+                industrial_capacity_factory = -0.50
+                consumer_goods_factor = 0.5
+                army_attack_factor = -0.2
+
+
+                                conscription = 0.25
+
+            }
+        }
+        Sacrifice = {
+            picture = centralized_control_spirit
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = -0.50
+                stability_weekly = -0.10
+                puppet_cost_factor = 1
+                army_org = -0.10
+                weekly_manpower = -0.10
+                equipment_capture = 0.10
+            }
+        }
+        Internacionalna_Legija = {
+            picture = SPR_international_brigades
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                send_volunteers_tension = -1
+                send_volunteer_divisions_required = -0.20
+                send_volunteer_size = -0.10
+            }
+        }
+        AllywiththeKaradjordjevices = {
+            picture = por_monarchist_uprising
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.20
+            }
+        }
+        warready = {
+            picture = air_war_plans_division_focus
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                experience_gain_army = 0.10
+                justify_war_goal_time = -0.20
+                generate_wargoal_tension = -0.20
+            }
+        }
+        Beta = {
+            picture = generic_economic_increase
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                local_resources = 0.20
+                state_resources_factor = 0.10
+                consumer_goods_factor = -0.05
+            }
+        }
+        productivecompanies = {
+            picture = ARG_public_works_investment
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                production_speed_buildings_factor = 0.20
+                consumer_goods_factor = -0.05
+            }
+        }
+        gloryindustry = {
+            picture = tur_balkan_central_bank_wealthy_greece
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                production_speed_buildings_factor = 0.10
+                production_factory_max_efficiency_factor = 0.30
+                production_speed_buildings_powered_factor = 0.10
+                equipment_conversion_speed = 0.10
+                consumer_goods_factor = -0.10
+            }
+        }
+        happyfarms = {
+            picture = LIT_invested_in_farms
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                supply_consumption_factor = -0.20
+                equipment_capture = 0.30
+            }
+        }
+        fascisttraining = {
+            picture = GFX_focus_SMB_atacama_training
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                army_attack_factor = 0.20
+                army_defence_factor = 0.10
+                training_time_factor = 0.10
+                minimum_training_level = 0.05
+            }
+        }
+        hightax = {
+            picture = ETH_taxed_nobility
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = -0.05
+            }
+        }
+        royalguard = {
+            picture = generic_constitutional_guarantees
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                conscription = 0.03
+            }
+        }
+        Serbia_First = {
+            picture = FRA_fortification_focus
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                army_defence_factor = 0.10
+                max_dig_in_factor = 0.25
+            }
+        }
+        Religiousminorities = {
+            picture = free_trade
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                non_core_manpower = 0.10
+            }
+        }
+        ASSIMILATEDMINORITIES = {
+            picture = closed_economy
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                required_garrison_factor = -0.30
+                justify_war_goal_time = -0.10
+            }
+        }
+        slavasrbiji = {
+            picture = SOV_restore_the_glory_of_the_motherland_ccp_sov_compatibility
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                army_attack_factor = 0.10
+                production_speed_buildings_factor = 0.10
+            }
+        }
+        germantech = {
+            picture = generic_acquire_tanks
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.05
+                armor_factor = 0.15
+            }
+        }
+        Cetniks = {
+            picture = chi_army_corruption3
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                army_infantry_attack_factor = 0.10
+            }
+        }
+        christianarmy = {
+            picture = chi_army_corruption3
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                conscription = -0.005
+                army_attack_factor = 0.20
+                army_defence_factor = 0.20
+            }
+        }
+        Meritocracy = {
+            picture = CHI_corruption_armed_forces
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                production_speed_buildings_factor = 0.15
+            }
+        }
+        withfaith = {
+            picture = SOV_new_old_church
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                conscription = 0.01
+                army_infantry_defence_factor = 0.10
+                production_factory_max_efficiency_factor = 0.10
+            }
+        }
+        Imperialdream = {
+            picture = ITA_new_roman_empire_ns
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                industrial_capacity_factory = 0.15
+            }
+        }
+        Colture = {
+            picture = raj_marginalized_muslim_community_happy
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                required_garrison_factor = -0.10
+                industrial_capacity_factory = 0.05
+            }
+        }
+        noorg = {
+            picture = tur_disorganised_armed_forces
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                army_org = -0.20
+                defence = -0.10
+            }
+        }
+        Infarmy = {
+            picture = generic_infantry_equipment_manufacturer_2
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                defence = 0.10
+                conscription = 0.01
+                army_infantry_attack_factor = 0.10
+            }
+        }
+        mixedarmy = {
+            picture = FRA_army_of_aggression_focus
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.05
+                army_speed_factor = 0.12
+            }
+        }
+        Tank_Focused_Army = {
+            picture = man_five_year_plan_tank
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                breakthrough_factor = 0.10
+                army_armor_attack_factor = 0.20
+                army_armor_defence_factor = 0.10
+            }
+        }
+        jobsoild = {
+            picture = NORDIC_industry_monarchis
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = -0.10
+                production_speed_buildings_factor = 0.10
+                supply_factor = 0.10
+                consumer_goods_factor = -0.05
+            }
+        }
+        TAXSWEL = {
+            picture = ARG_social_welfare_fund_ns
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = -0.10
+                democratic_drift = 0.05
+            }
+        }
+        liberty = {
+            picture = generic_production
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                compliance_growth = 0.10
+                compliance_gain = 0.10
+            }
+        }
+        libworkers = {
+            picture = JAP_socialist_pioneers
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = 0.05
+                industrial_capacity_factory = 0.10
+            }
+        }
+        marxpop = {
+            picture = AUS_austromarxism
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                communism_drift = 0.1
+            }
+        }
+        moderatesocialism = {
+            picture = socialist_science_focus
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                communism_drift = 0.1
+                industrial_capacity_factory = 0.10
+                consumer_goods_factor = 0.02
+            }
+        }
+        reformsocialism = {
+            picture = ARG_civilian_economy_boost
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                industrial_capacity_factory = 0.04
+                consumer_goods_factor = -0.02
+            }
+        }
+        reducedage = {
+            picture = limited_conscription
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                conscription = 0.02
+                experience_gain_army = -0.10
+            }
+        }
+        sovieteconomists = {
+            picture = saf_soviet_advisers
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                industrial_capacity_factory = 0.15
+            }
+        }
+        titoism = {
+            picture = can_defence_of_canada_regulations_communism
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = 0.05
+                industrial_capacity_factory = 0.10
+            }
+        }
+        warsocialism = {
+            picture = tur_kemalism_with_socialist_characteristics
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                justify_war_goal_time = -0.20
+                generate_wargoal_tension = -0.10
+                experience_gain_army = 0.10
+            }
+        }
+        intag = {
+            picture = generic_spy_intel
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                operative_slot = 1
+            }
+        }
+        ownpath = {
+            picture = SOV_factionalism_modifier
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                puppet_cost_factor = -0.10
+            }
+            rule = { can_create_factions = yes }
+        }
+        plndof = {
+            picture = war_economy
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                army_attack_factor = 0.10
+            }
+        }
+        royalfac = {
+            picture = GFX_focus_HABSBURG_bring_back_royal_and_imperial_hussars
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.10
+                puppet_cost_factor = -0.10
+            }
+            rule = { can_create_factions = yes }
+        }
+    }
+}

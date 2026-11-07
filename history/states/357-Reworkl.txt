@@ -1,0 +1,17 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 357
+    name = "RW26_STATE_357"
+    manpower = 1788197
+    state_category = rw26_slots_2
+    resources = { chromium = 52 }
+    provinces = { 1897 2094 7377 }
+    history = {
+        owner = SIE
+        add_core_of = SIE
+        victory_points = { 1897 3 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

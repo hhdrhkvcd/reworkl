@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 7
+    name = "RW26_STATE_7"
+    manpower = 281205
+    state_category = rw26_slots_2
+    resources = { aluminium = 26 }
+    provinces = { 4861 12674 12689 13254 13255 16048 16049 16050 }
+    history = {
+        owner = ICE
+        add_core_of = ICE
+        victory_points = { 13255 1 }
+        buildings = {
+            infrastructure = 2
+            air_base = 6
+            13255 = { naval_base = 1 }
+        }
+    }
+}

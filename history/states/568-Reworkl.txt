@@ -1,0 +1,23 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 568
+    name = "RW26_STATE_568"
+    manpower = 9419
+    state_category = rw26_slots_3
+    provinces = { 13054 13055 13056 13057 }
+    history = {
+        owner = TUL
+        add_core_of = TUL
+        victory_points = { 13054 1 }
+        victory_points = { 13055 1 }
+        victory_points = { 13056 3 }
+        victory_points = { 13057 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 1
+            industrial_complex = 1
+            13056 = { naval_base = 1 }
+            13054 = { naval_base = 1 }
+        }
+    }
+}

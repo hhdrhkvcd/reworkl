@@ -1,0 +1,27 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 217
+    name = "RW26_STATE_217"
+    manpower = 18410768
+    state_category = rw26_slots_6
+    resources = { aluminium = 4 }
+    provinces = { 1028 1151 1206 3871 6217 6220 7030 7073 7144 7188 9891 10009 10031 10844 11974 11999 12044 12071 12771 14157 }
+    history = {
+        owner = EGY
+        add_core_of = EGY
+        victory_points = { 12071 4 }
+        victory_points = { 11974 3 }
+        victory_points = { 6217 2 }
+        victory_points = { 7144 1 }
+        victory_points = { 1151 1 }
+        victory_points = { 12044 1 }
+        victory_points = { 10031 1 }
+        victory_points = { 1028 1 }
+        victory_points = { 6220 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 4
+            air_base = 4
+        }
+    }
+}

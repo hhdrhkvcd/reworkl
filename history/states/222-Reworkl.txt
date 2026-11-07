@@ -1,0 +1,16 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 222
+    name = "RW26_STATE_222"
+    manpower = 1247168
+    state_category = rw26_slots_2
+    provinces = { 4918 11042 11058 }
+    history = {
+        owner = SUD
+        add_core_of = SUD
+        victory_points = { 11058 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

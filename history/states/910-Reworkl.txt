@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 910
+    name = "RW26_STATE_910"
+    manpower = 1539587
+    state_category = rw26_slots_4
+    resources = { aluminium = 3 steel = 4 }
+    provinces = { 662 693 696 3649 6682 9606 11592 14296 }
+    history = {
+        owner = ROM
+        add_core_of = ROM
+        victory_points = { 9606 2 }
+        victory_points = { 6682 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 2
+            air_base = 2
+        }
+    }
+}

@@ -1,0 +1,27 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 508
+    name = "RW26_STATE_508"
+    manpower = 25057844
+    state_category = rw26_slots_12
+    resources = { steel = 10 rubber = 42 oil = 7 }
+    provinces = { 1244 1427 4319 4348 4433 7225 7292 7367 7408 7587 10193 10221 10250 10293 12224 151 }
+    history = {
+        owner = SIA
+        add_core_of = SIA
+        victory_points = { 7408 15 }
+        victory_points = { 4433 5 }
+        victory_points = { 10250 1 }
+        victory_points = { 7367 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 8
+            dockyard = 1
+            arms_factory = 1
+            air_base = 8
+            synthetic_refinery = 1
+            4433 = { naval_base = 8 }
+            7408 = { naval_base = 2 }
+        }
+    }
+}

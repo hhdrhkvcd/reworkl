@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 516
+    name = "RW26_STATE_516"
+    manpower = 1835343
+    state_category = rw26_slots_3
+    provinces = { 1464 1507 7356 10330 10356 10456 10496 12332 180 181 }
+    history = {
+        owner = LAO
+        add_core_of = LAO
+        victory_points = { 1464 10 }
+        victory_points = { 10496 1 }
+        victory_points = { 1507 1 }
+        victory_points = { 10330 1 }
+        victory_points = { 12332 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 1
+            air_base = 2
+        }
+    }
+}

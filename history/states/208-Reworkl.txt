@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 208
+    name = "RW26_STATE_208"
+    manpower = 1980000
+    state_category = rw26_slots_3
+    resources = { aluminium = 4 }
+    provinces = { 7107 11620 13206 }
+    history = {
+        owner = PAL
+        add_core_of = PAL
+        victory_points = { 11620 2 }
+        victory_points = { 7107 1 }
+        victory_points = { 13206 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 1
+        }
+    }
+}

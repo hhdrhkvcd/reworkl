@@ -1,0 +1,25 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 32
+    name = "RW26_STATE_32"
+    manpower = 2536970
+    state_category = rw26_slots_8
+    resources = { chromium = 14 }
+    provinces = { 10 14 27 133 144 179 3021 3049 3105 3136 3171 6072 6080 6115 6151 6160 6184 9036 9103 9135 9157 9174 9196 9204 9296 11028 11029 11037 11078 11113 11151 11176 11206 11367 14452 14626 }
+    history = {
+        owner = NOR
+        add_core_of = NOR
+        victory_points = { 6115 8 }
+        victory_points = { 14 1 }
+        victory_points = { 3171 1 }
+        buildings = {
+            infrastructure = 2
+            arms_factory = 1
+            industrial_complex = 1
+            dockyard = 4
+            air_base = 4
+            synthetic_refinery = 1
+            6115 = { naval_base = 4 }
+        }
+    }
+}

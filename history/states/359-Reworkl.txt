@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 359
+    name = "RW26_STATE_359"
+    manpower = 3154023
+    state_category = rw26_slots_2
+    resources = { aluminium = 22 chromium = 16 }
+    provinces = { 4957 5039 8008 6952 6957 6990 7237 7318 }
+    history = {
+        owner = GNA
+        add_core_of = GNA
+        victory_points = { 4957 5 }
+        victory_points = { 5039 1 }
+        victory_points = { 6990 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

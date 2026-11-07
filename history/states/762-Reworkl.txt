@@ -1,0 +1,29 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 762
+    name = "RW26_STATE_762"
+    manpower = 4356921
+    state_category = rw26_slots_5
+    resources = { aluminium = 69 steel = 26 chromium = 8 }
+    provinces = { 1284 1356 1657 4305 4422 4666 4769 7291 7433 7683 7807 7810 7893 10174 10230 10320 10534 10715 12149 12223 12291 12600 13160 13164 16411 16412 16413 16414 16415 16416 }
+    history = {
+        owner = CAN
+        add_core_of = CAN
+        victory_points = { 12149 15 }
+        victory_points = { 10230 3 }
+        victory_points = { 12223 3 }
+        victory_points = { 12291 1 }
+        victory_points = { 10715 1 }
+        victory_points = { 7807 1 }
+        victory_points = { 10320 1 }
+        victory_points = { 10174 1 }
+        buildings = {
+            infrastructure = 3
+            arms_factory = 1
+            dockyard = 1
+            industrial_complex = 1
+            air_base = 4
+            12149 = { naval_base = 6 }
+        }
+    }
+}

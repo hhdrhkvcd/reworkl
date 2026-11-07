@@ -1,0 +1,807 @@
+focus_tree = {
+	id = y89_yugoslavia_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = YUG
+			has_start_date > 1988.12.31
+			has_start_date < 2000.1.1
+		}
+	}
+	default = no
+
+	focus = {
+		id = Y89_crisis
+		icon = GFX_goal_generic_political_pressure
+		x = 10
+		y = 0
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = Y89_debt_talks
+		icon = GFX_goal_generic_trade
+		x = 2
+		y = 1
+		cost = 7
+		prerequisite = { focus = Y89_crisis }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			remove_ideas = Y89_foreign_debt add_stability = -0.03
+		}
+	}
+
+	focus = {
+		id = Y89_stabilization
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 2
+		cost = 7
+		prerequisite = { focus = Y89_debt_talks }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			remove_ideas = Y89_hyperinflation add_ideas = Y89_stabilization_program
+		}
+	}
+
+	focus = {
+		id = Y89_federal_funds
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 3
+		cost = 7
+		prerequisite = { focus = Y89_stabilization }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 50 add_stability = -0.02
+		}
+	}
+
+	focus = {
+		id = Y89_north_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 1
+		y = 4
+		cost = 10
+		prerequisite = { focus = Y89_federal_funds }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			random_owned_controlled_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = Y89_south_aid
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 3
+		y = 4
+		cost = 10
+		prerequisite = { focus = Y89_federal_funds }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			random_owned_controlled_state = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = Y89_gastarbeiter
+		icon = GFX_goal_generic_trade
+		x = 2
+		y = 5
+		cost = 7
+		prerequisite = { focus = Y89_north_industry }
+		prerequisite = { focus = Y89_south_aid }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = Y89_corridors
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 6
+		cost = 10
+		prerequisite = { focus = Y89_gastarbeiter }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			random_owned_controlled_state = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } random_owned_controlled_state = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = Y89_jna
+		icon = GFX_goal_generic_army_doctrines
+		x = 6
+		y = 1
+		cost = 7
+		prerequisite = { focus = Y89_crisis }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			army_experience = 15 add_tech_bonus = { name = Y89_jna_bonus bonus = 0.5 uses = 1 category = infantry_weapons }
+		}
+	}
+
+	focus = {
+		id = Y89_territorial_defense
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 5
+		y = 2
+		cost = 7
+		prerequisite = { focus = Y89_jna }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_manpower = 20000
+		}
+	}
+
+	focus = {
+		id = Y89_arsenals
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 7
+		y = 2
+		cost = 7
+		prerequisite = { focus = Y89_jna }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			random_owned_controlled_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = Y89_officers
+		icon = GFX_goal_generic_defence
+		x = 6
+		y = 3
+		cost = 7
+		prerequisite = { focus = Y89_territorial_defense }
+		prerequisite = { focus = Y89_arsenals }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = Y89_kosovo_question
+		icon = GFX_goal_generic_political_pressure
+		x = 14
+		y = 1
+		cost = 7
+		prerequisite = { focus = Y89_crisis }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = Y89_revoke_autonomy
+		icon = GFX_goal_generic_demand_territory
+		x = 10
+		y = 2
+		cost = 7
+		prerequisite = { focus = Y89_kosovo_question }
+		mutually_exclusive = { focus = Y89_commission }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 90 }
+		completion_reward = {
+			add_political_power = 100 add_stability = -0.10 add_ideas = Y89_federal_deadlock
+		}
+	}
+
+	focus = {
+		id = Y89_commission
+		icon = GFX_goal_generic_neutrality_focus
+		x = 18
+		y = 2
+		cost = 7
+		prerequisite = { focus = Y89_kosovo_question }
+		mutually_exclusive = { focus = Y89_revoke_autonomy }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 10 }
+		completion_reward = {
+			add_stability = 0.05 add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = Y89_kosovo_strikes
+		icon = GFX_goal_generic_political_pressure
+		x = 10
+		y = 3
+		cost = 7
+		prerequisite = { focus = Y89_revoke_autonomy }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_stability = -0.05 add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = Y89_14th_congress
+		icon = GFX_goal_generic_political_pressure
+		x = 10
+		y = 4
+		cost = 7
+		prerequisite = { focus = Y89_kosovo_strikes }
+		available = { date > 1990.1.20 }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			remove_ideas = Y89_collective_presidency add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = Y89_multiparty_elections
+		icon = GFX_goal_support_democracy
+		x = 9
+		y = 5
+		cost = 7
+		prerequisite = { focus = Y89_14th_congress }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_popularity = { ideology = democratic popularity = 0.15 } add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = Y89_army_dispute
+		icon = GFX_goal_generic_army_doctrines
+		x = 11
+		y = 5
+		cost = 7
+		prerequisite = { focus = Y89_14th_congress }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			army_experience = 10 add_stability = -0.03
+		}
+	}
+
+	focus = {
+		id = Y89_slovenia_independence
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 9
+		y = 6
+		cost = 7
+		prerequisite = { focus = Y89_multiparty_elections }
+		available = { date > 1991.6.25
+            is_ai = no
+
+			always = no
+		}	# Y89_AUTOMATIC_EVENTS_ONLY
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		ai_will_do = { factor = 0 }
+		completion_reward = {
+			if = { limit = { NOT = { country_exists = SLV } } release = SLV } add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = Y89_brioni
+		icon = GFX_goal_generic_neutrality_focus
+		x = 9
+		y = 7
+		cost = 5
+		prerequisite = { focus = Y89_slovenia_independence }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = Y89_croatia_independence
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 11
+		y = 6
+		cost = 7
+		prerequisite = { focus = Y89_multiparty_elections }
+		prerequisite = { focus = Y89_army_dispute }
+		available = { date > 1991.6.25
+            is_ai = no
+
+			always = no
+		}	# Y89_AUTOMATIC_EVENTS_ONLY
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		ai_will_do = { factor = 0 }
+		completion_reward = {
+			if = { limit = { NOT = { country_exists = CRO } } release = CRO } add_stability = -0.05 add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = Y89_embargo
+		icon = GFX_goal_generic_defence
+		x = 11
+		y = 7
+		cost = 5
+		prerequisite = { focus = Y89_croatia_independence }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = Y89_arms_embargo add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = Y89_macedonia_independence
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 10
+		y = 8
+		cost = 7
+		prerequisite = { focus = Y89_brioni }
+		prerequisite = { focus = Y89_embargo }
+		available = { date > 1991.9.8
+            is_ai = no
+
+			always = no
+		}	# Y89_AUTOMATIC_EVENTS_ONLY
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		ai_will_do = { factor = 0 }
+		completion_reward = {
+			if = { limit = { NOT = { country_exists = MAC } } release = MAC }
+		}
+	}
+
+	focus = {
+		id = Y89_bosnia_independence
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 10
+		y = 9
+		cost = 7
+		prerequisite = { focus = Y89_macedonia_independence }
+		available = { date > 1992.3.1
+            is_ai = no
+
+			always = no
+		}	# Y89_AUTOMATIC_EVENTS_ONLY
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		ai_will_do = { factor = 0 }
+		completion_reward = {
+			if = { limit = { NOT = { country_exists = BOS } } release = BOS } add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = Y89_fry
+		icon = GFX_goal_generic_national_unity
+		x = 10
+		y = 10
+		cost = 7
+		prerequisite = { focus = Y89_bosnia_independence }
+		available = { date > 1992.4.27 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			set_cosmetic_tag = YUG_FRY remove_ideas = Y89_federal_deadlock add_ideas = Y89_un_sanctions promote_character = Y89_YUG_milosevic
+		}
+	}
+
+	focus = {
+		id = Y89_dayton
+		icon = GFX_goal_generic_neutrality_focus
+		x = 10
+		y = 11
+		cost = 10
+		prerequisite = { focus = Y89_fry }
+		available = { date > 1995.11.21 }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			remove_ideas = Y89_un_sanctions
+            every_other_country = { break_embargo = ROOT }
+            add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = Y89_milosevic_president
+		icon = GFX_goal_generic_political_pressure
+		x = 10
+		y = 12
+		cost = 7
+		prerequisite = { focus = Y89_dayton }
+		available = { date > 1997.7.23 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			promote_character = Y89_YUG_milosevic add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = Y89_kosovo_war
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 10
+		y = 13
+		cost = 10
+		prerequisite = { focus = Y89_milosevic_president }
+		available = { date > 1999.3.24 }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = Y89_unmik add_stability = -0.10 add_political_power = -50
+		}
+	}
+
+	focus = {
+		id = Y89_october_2000
+		icon = GFX_goal_support_democracy
+		x = 10
+		y = 14
+		cost = 7
+		prerequisite = { focus = Y89_kosovo_war }
+		available = { date > 2000.10.5 }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			set_politics = { ruling_party = democratic elections_allowed = yes } promote_character = Y89_YUG_dos add_popularity = { ideology = democratic popularity = 0.20 } add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = Y89_state_union
+		icon = GFX_goal_generic_national_unity
+		x = 10
+		y = 15
+		cost = 7
+		prerequisite = { focus = Y89_october_2000 }
+		available = { date > 2003.2.4 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			set_cosmetic_tag = YUG_SCG add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = Y89_montenegro_independence
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 10
+		y = 16
+		cost = 7
+		prerequisite = { focus = Y89_state_union }
+		available = { date > 2006.6.3
+            is_ai = no
+
+			always = no
+		}	# Y89_AUTOMATIC_EVENTS_ONLY
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		ai_will_do = { factor = 0 }
+		completion_reward = {
+			if = { limit = { NOT = { country_exists = MNT } } release = MNT } set_cosmetic_tag = YUG_SRB
+		}
+	}
+
+	focus = {
+		id = Y89_kosovo_declaration
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 10
+		y = 17
+		cost = 7
+		prerequisite = { focus = Y89_montenegro_independence }
+		available = { date > 2008.2.17
+            is_ai = no
+
+			always = no
+		}	# Y89_AUTOMATIC_EVENTS_ONLY
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		ai_will_do = { factor = 0 }
+		completion_reward = {
+			if = { limit = { NOT = { country_exists = KOS } } release = KOS } remove_ideas = Y89_unmik
+		}
+	}
+
+	focus = {
+		id = Y89_federal_conference
+		icon = GFX_goal_generic_political_pressure
+		x = 18
+		y = 3
+		cost = 7
+		prerequisite = { focus = Y89_commission }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_stability = 0.05 add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = Y89_free_elections
+		icon = GFX_goal_support_democracy
+		x = 17
+		y = 4
+		cost = 7
+		prerequisite = { focus = Y89_federal_conference }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_popularity = { ideology = democratic popularity = 0.20 } set_politics = { ruling_party = democratic elections_allowed = yes }
+		}
+	}
+
+	focus = {
+		id = Y89_exit_procedure
+		icon = GFX_goal_generic_neutrality_focus
+		x = 19
+		y = 4
+		cost = 7
+		prerequisite = { focus = Y89_federal_conference }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = Y89_ljubljana_treaty
+		icon = GFX_goal_generic_national_unity
+		x = 18
+		y = 5
+		cost = 10
+		prerequisite = { focus = Y89_free_elections }
+		prerequisite = { focus = Y89_exit_procedure }
+		available = { date > 1991.6.25 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			set_cosmetic_tag = YUG_CONF remove_ideas = Y89_collective_presidency add_ideas = Y89_confederal_institutions promote_character = Y89_YUG_council_republics
+		}
+	}
+
+	focus = {
+		id = Y89_confederal_army
+		icon = GFX_goal_generic_army_doctrines
+		x = 17
+		y = 6
+		cost = 7
+		prerequisite = { focus = Y89_ljubljana_treaty }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = Y89_civilian_control_army army_experience = 10
+		}
+	}
+
+	focus = {
+		id = Y89_serb_municipalities
+		icon = GFX_goal_generic_neutrality_focus
+		x = 19
+		y = 6
+		cost = 7
+		prerequisite = { focus = Y89_ljubljana_treaty }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = Y89_bosnia_treaty
+		icon = GFX_goal_generic_national_unity
+		x = 18
+		y = 7
+		cost = 10
+		prerequisite = { focus = Y89_confederal_army }
+		prerequisite = { focus = Y89_serb_municipalities }
+		available = { date > 1992.1.1 }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_stability = 0.10 add_war_support = -0.05
+		}
+	}
+
+	focus = {
+		id = Y89_reconstruction_fund
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 17
+		y = 8
+		cost = 10
+		prerequisite = { focus = Y89_bosnia_treaty }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			remove_ideas = Y89_hyperinflation random_owned_controlled_state = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } random_owned_controlled_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = Y89_single_market
+		icon = GFX_goal_generic_trade
+		x = 19
+		y = 8
+		cost = 10
+		prerequisite = { focus = Y89_bosnia_treaty }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = Y89_single_market remove_ideas = Y89_foreign_debt
+		}
+	}
+
+	focus = {
+		id = Y89_security_pact
+		icon = GFX_goal_generic_neutrality_focus
+		x = 18
+		y = 9
+		cost = 7
+		prerequisite = { focus = Y89_reconstruction_fund }
+		prerequisite = { focus = Y89_single_market }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_stability = 0.05 add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = Y89_kosovo_autonomy
+		icon = GFX_goal_generic_political_pressure
+		x = 17
+		y = 10
+		cost = 7
+		prerequisite = { focus = Y89_security_pact }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = Y89_geneva_conference
+		icon = GFX_goal_generic_neutrality_focus
+		x = 17
+		y = 11
+		cost = 7
+		prerequisite = { focus = Y89_kosovo_autonomy }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 50 add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = Y89_power_transfer
+		icon = GFX_goal_support_democracy
+		x = 19
+		y = 10
+		cost = 7
+		prerequisite = { focus = Y89_security_pact }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_popularity = { ideology = democratic popularity = 0.10 } add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = Y89_union_republics
+		icon = GFX_goal_generic_national_unity
+		x = 18
+		y = 12
+		cost = 10
+		prerequisite = { focus = Y89_geneva_conference }
+		prerequisite = { focus = Y89_power_transfer }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			set_cosmetic_tag = YUG_UNION add_stability = 0.05 add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = Y89_eu_application
+		icon = GFX_goal_generic_scientific_exchange
+		x = 18
+		y = 13
+		cost = 10
+		prerequisite = { focus = Y89_union_republics }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_tech_bonus = { name = Y89_eu_bonus bonus = 0.5 uses = 2 category = industry }
+		}
+	}
+
+	focus = {
+		id = Y89_stabilization_fund
+		icon = GFX_goal_generic_production
+		x = 17
+		y = 14
+		cost = 7
+		prerequisite = { focus = Y89_eu_application }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			random_owned_controlled_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = Y89_eu_negotiations
+		icon = GFX_goal_generic_scientific_exchange
+		x = 19
+		y = 14
+		cost = 10
+		prerequisite = { focus = Y89_eu_application }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = Y89_eu_negotiations
+		}
+	}
+
+	focus = {
+		id = Y89_civil_protection
+		icon = GFX_goal_generic_defence
+		x = 17
+		y = 15
+		cost = 7
+		prerequisite = { focus = Y89_stabilization_fund }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = Y89_greece_agreement
+		icon = GFX_goal_generic_neutrality_focus
+		x = 19
+		y = 15
+		cost = 7
+		prerequisite = { focus = Y89_eu_negotiations }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = Y89_union_2026
+		icon = GFX_goal_generic_national_unity
+		x = 18
+		y = 16
+		cost = 10
+		prerequisite = { focus = Y89_civil_protection }
+		prerequisite = { focus = Y89_greece_agreement }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_research_slot = 1 add_stability = 0.05
+		}
+	}
+
+}

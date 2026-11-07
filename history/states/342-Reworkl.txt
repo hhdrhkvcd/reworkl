@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 342
+    name = "RW26_STATE_342"
+    manpower = 3067712
+    state_category = rw26_slots_3
+    provinces = { 1951 9687 }
+    history = {
+        owner = TOG
+        add_core_of = TOG
+        victory_points = { 1951 10 }
+        buildings = {
+            infrastructure = 1
+            air_base = 1
+            industrial_complex = 1
+            1951 = { naval_base = 1 }
+        }
+    }
+}

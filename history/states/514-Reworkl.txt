@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 514
+    name = "RW26_STATE_514"
+    manpower = 6417888
+    state_category = rw26_slots_3
+    resources = { rubber = 6 }
+    provinces = { 4639 7319 7376 12260 10261 164 }
+    history = {
+        owner = CAM
+        add_core_of = CAM
+        victory_points = { 7376 10 }
+        victory_points = { 12260 3 }
+        victory_points = { 4639 1 }
+        victory_points = { 7319 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 1
+            air_base = 3
+        }
+    }
+}

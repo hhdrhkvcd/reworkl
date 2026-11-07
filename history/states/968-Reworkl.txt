@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 968
+    name = "RW26_STATE_968"
+    manpower = 889129
+    state_category = rw26_slots_4
+    resources = { steel = 24 tungsten = 15 }
+    provinces = { 809 985 3930 6866 6902 9839 9877 9917 11820 11851 }
+    history = {
+        owner = SPR
+        add_core_of = SPR
+        victory_points = { 3930 3 }
+        victory_points = { 6866 3 }
+        victory_points = { 11851 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 2
+            air_base = 6
+            nuclear_reactor = 1
+        }
+    }
+}

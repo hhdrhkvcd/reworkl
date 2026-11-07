@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 286
+    name = "RW26_STATE_286"
+    manpower = 1407645
+    state_category = rw26_slots_3
+    resources = { tungsten = 10 steel = 6 chromium = 16 }
+    provinces = { 671 673 688 3675 6680 9636 11634 11618 }
+    history = {
+        owner = AUS
+        add_core_of = AUS
+        victory_points = { 688 1 }
+        victory_points = { 11618 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 1
+            air_base = 2
+        }
+    }
+}

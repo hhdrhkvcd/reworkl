@@ -1,0 +1,17 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 1218
+    name = "RW26_STATE_1218"
+    manpower = 1133
+    state_category = rw26_slots_2
+    provinces = { 16294 }
+    history = {
+        owner = NZL
+        add_core_of = NZL
+        victory_points = { 16294 1 }
+        buildings = {
+            infrastructure = 1
+            16294 = { naval_base = 1 }
+        }
+    }
+}

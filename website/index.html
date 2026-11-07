@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181e19">
+  <meta name="description" content="Reworkl для Hearts of Iron IV: Мир 2026 с новой политической картой, Сербия 1936 и 23 композиции турбо-фолка в одной сборке. Прямое скачивание и инструкция по установке.">
+  <title>Reworkl — Мир 2026</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/manrope.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Reworkl — главная">
+        <span class="brand-mark" aria-hidden="true">R<span></span></span>
+        <span>REWORKL<span class="brand-dot">•</span></span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация" id="navigation">
+        <a href="#files">Файлы</a><a href="#collection">Что внутри</a>
+        <a href="#installation">Установка</a>
+        <a href="#questions">Вопросы</a>
+      </nav>
+      <a class="header-download" href="{{DOWNLOAD_URL}}" target="_blank" rel="noopener" data-download>Скачать <span>v{{VERSION}}</span><svg class="icon"><use href="/assets/icons.svg#external"></use></svg></a>
+      <button class="menu-toggle" aria-label="Открыть меню" aria-controls="navigation" aria-expanded="false"><svg class="icon"><use href="/assets/icons.svg#menu"></use></svg></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="tiny-line"></span> МОДИФИКАЦИЯ ДЛЯ HEARTS OF IRON IV</p>
+          <h1 id="hero-title">Мир.<br>Новая дата.<br><span>2026.</span></h1>
+          <p class="hero-description">Новый старт — 1 января 2026.<br>Современные государства по всему миру.<br>Сербия 1936 и турбо-фолк — сохранены.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="{{DOWNLOAD_URL}}" target="_blank" rel="noopener" data-download><svg class="icon"><use href="/assets/icons.svg#download"></use></svg>Скачать сборку<svg class="icon action-arrow"><use href="/assets/icons.svg#arrow"></use></svg></a>
+            <a class="text-link" href="#installation">Как установить<svg class="icon"><use href="/assets/icons.svg#external"></use></svg></a>
+          </div>
+          <div class="download-meta"><span class="status-dot"></span> v{{VERSION}} <span class="meta-divider">/</span> {{SIZE}} МБ <span class="meta-divider">/</span> ZIP · BAT · Без DLC</div>
+          <p><a class="text-link" href="#world">Что изменилось в 2026? <span>↓</span></a></p>
+          <p class="download-status" aria-live="polite" id="download-status"></p>
+        </div>
+
+        <div class="hero-art" aria-label="Схематичная карта Балкан с отметкой Белграда" role="img">
+          <div class="map-topline"><span><span class="crosshair">+</span> ЮГО-ВОСТОЧНАЯ ЕВРОПА</span><span>44°48′ N / 20°27′ E</span></div>
+          <img class="balkans-map" src="/assets/balkans.svg" alt="" width="720" height="660" fetchpriority="high">
+          <div class="map-label"><span class="map-label-line"></span> ТВОЯ ТОЧКА ОТСЧЁТА</div>
+          <div class="release-card">
+            <div class="release-icon"><svg class="icon"><use href="/assets/icons.svg#folder"></use></svg></div>
+            <div><span class="micro-label">ОДИН АРХИВ. ДВЕ КАМПАНИИ.</span><p>Новая карта. Alpha-сборка.</p></div>
+            <span class="release-version">v{{VERSION}}</span>
+          </div>
+          <div class="map-bottomline"><span>1936 / 2026</span><span class="map-scale"><i></i> 200 км</span></div>
+        </div>
+      </div>
+      <div class="container hero-bottom">
+        <div class="compatibility"><svg class="icon"><use href="/assets/icons.svg#shield"></use></svg><span>Для HOI4 <strong>1.19.x · ALPHA</strong></span></div>
+        <p>Один мод. Отдельная папка данных. Запуск через BAT.</p>
+        <a href="#collection" class="scroll-link">ИССЛЕДОВАТЬ СБОРКУ <span>↓</span></a>
+      </div>
+    </section>
+
+    <section class="recovery-band files-panel section-light" id="files" aria-labelledby="recovery-title">
+      <div class="container files-inner">
+        <div class="bat-feature" id="world">
+          <div><p class="eyebrow dark-eyebrow"><span class="tiny-line"></span> НОВАЯ ОСНОВНАЯ КАМПАНИЯ · 2026</p><h2>Не просто дата.<br>Новая политическая карта.</h2><p>1 255 регионов и 198 стран/отдельно показанных территорий. Полный согласованный набор провинций, независимые Балканы, современные национальные флаги. Это политическая карта, <strong>не карта текущих линий фронта</strong>.</p><ol><li>2026 заменяет 1989. Сербия 1936 остаётся альтернативной кампанией на общей новой сетке.</li><li>Армии, правительства, техника и восемь общих фокусов пока условные. Полная современная военная модель не заявляется.</li><li>Распакуй полный ZIP в новую папку → <code>1_INSTALL.bat</code> → <code>2_LAUNCH.bat</code> → новая игра.</li></ol></div>
+          <aside><span class="file-version">ПОЛНАЯ СБОРКА · {{VERSION}}</span><a class="button button-primary" href="{{DOWNLOAD_URL}}" target="_blank" rel="noopener" data-download><svg class="icon"><use href="/assets/icons.svg#download"></use></svg>Скачать Мир 2026<svg class="icon"><use href="/assets/icons.svg#arrow"></use></svg></a><span class="file-size">{{SIZE}} МБ · карта, музыка, графика и BAT</span><p>Начни новую игру. Старые сохранения 1989 несовместимы с новой картой и не удаляются установщиком.</p><p><strong>Alpha:</strong> проверены файлы и упаковка. Загрузка в настоящей HOI4 и отображение кириллицы на игровом ПК ещё требуют проверки.</p><a class="text-link dark-link" href="/world-2026.txt" target="_blank" rel="noopener">Спорные границы и ограничения <span>↗</span></a></aside>
+        </div>
+        <div class="bat-feature" id="russian">
+          <div><p class="eyebrow dark-eyebrow"><span class="tiny-line"></span> АРХИВ 1.x · НЕ СОДЕРЖИТ КАРТУ 2026</p><h2>Для старой версии.<br>Только русский текст.</h2><p>Архивный RU2 для прежней сборки: добавляет русские тексты в слой English, но сам по себе не решает отсутствие глифов. В новой полной сборке 2026 русский текст и подключение кириллических шрифтов уже включены. Этот пакет не обновляет год, границы или карту; для 2026 скачивай полный ZIP выше. Само базовое меню HOI4 переключается через язык игры.</p><ol><li>Закрой игру и лаунчер. Распакуй весь новый ZIP в отдельную папку.</li><li>Запусти <code>APPLY_RUSSIAN.bat</code>: он обновит восемь файлов локализации в установленной копии Reworkl, с резервной копией и проверкой SHA-256.</li><li>Запускай привычным <code>2_LAUNCH.bat</code>. Проверяй именно фокусы и события мода, а не язык главного меню. При ошибке пришли <code>REWORKL_RUSSIAN_REPORT.txt</code> рядом с установщиком.</li></ol></div>
+          <aside><span class="file-version">RU2 · ДВА ЯЗЫКОВЫХ СЛОЯ · ОДНА КНОПКА</span><a class="button button-primary" href="/download/reworkl-russian-fix-2.zip" target="_blank" rel="noopener" data-russian-fix><svg class="icon"><use href="/assets/icons.svg#download"></use></svg>Архивный RU2<svg class="icon"><use href="/assets/icons.svg#arrow"></use></svg></a><span class="file-size">{{RU_FIX_SIZE}} КБ · Перевод + отдельный установщик</span><p>Существующие BAT запуска, настройки, механики, сохранения и музыка не меняются. Переустановка мода не нужна. Исходные английские файлы не удаляются.</p><p>Проверены данные и упаковка. Запуск HOI4 и Windows-установщика в этой среде недоступен; это не обещание успешного теста на твоём ПК.</p><a class="text-link dark-link" href="/download/reworkl-russian-localisation.zip" target="_blank" rel="noopener" data-russian-patch>Старый ручной пакет · {{RU_PATCH_SIZE}} КБ <span>↗</span></a></aside>
+        </div>
+        <div class="bat-feature" id="bat">
+          <div><p class="eyebrow dark-eyebrow"><span class="tiny-line"></span> ИСПРАВЛЕНИЕ ЗАПУСКА · BAT {{VERSION}}</p><h2>Установка BAT.<br>Без DLC и лаунчера.</h2><p>Отдельные инструменты для уже установленного мода. Сохраняют рабочий способ запуска и резервные копии. <strong>Не добавляют карту 2026:</strong> при переходе с 1989 нужен полный ZIP и повторная установка из новой распаковки. Маркер инструментов: <code>[TOOLS_VERSION] {{VERSION}}</code>.</p><ol><li><code>1_INSTALL.bat</code> — копирование в папку на латинице и отдельные данные игры.</li><li><code>2_LAUNCH.bat</code> — только Reworkl, отключённые DLC, запуск напрямую.</li><li><code>3_CHECK.bat</code> — проверка свежих логов и отчёт <code>REWORKL_CHECK.txt</code>.</li></ol></div>
+          <aside><span class="file-version">МАЛЕНЬКИЙ КОМПЛЕКТ · НЕ ПОЛНЫЙ МОД</span><a class="button button-primary" href="/download/reworkl-bat-nodlc.zip" target="_blank" rel="noopener" data-bat-tools><svg class="icon"><use href="/assets/icons.svg#download"></use></svg>Скачать BAT без DLC<svg class="icon"><use href="/assets/icons.svg#arrow"></use></svg></a><span class="file-size">{{BAT_TOOLS_SIZE}} КБ · Windows PowerShell 5.1+ · Без Python</span><p>Закрой игру и Paradox Launcher, оставь Steam включённым. Старые сохранения и Документы не меняются; DLC не удаляются. План Б и его отмена — отдельные BAT, по необходимости.</p><p>Успех подтверждается только свежими логами: Reworkl загружен, активных DLC — 0. Запуск настоящим движком здесь не проверялся.</p></aside>
+        </div>
+        <div class="files-heading"><div><p class="eyebrow dark-eyebrow"><span class="tiny-line"></span> АЛЬТЕРНАТИВА BAT · РУЧНОЙ СПОСОБ</p><h2 id="recovery-title">Нужный файл.<br>Без ручных правок.</h2></div><p>Ручной вариант для <code>C:\HOI4Mods\reworkl</code>, не часть BAT-установки.<br>Выбери <strong>один</strong> файл по версии <strong>мода</strong>, не игры HOI4. Это не полная сборка — она скачивается кнопкой выше.</p></div>
+        <div class="files-grid">
+          <article class="file-card"><p class="file-version"><span class="status-dot"></span> ДЛЯ УЖЕ УСТАНОВЛЕННОЙ 1.2.0</p><h3>reworkl.mod</h3><p>Если в твоём <code>descriptor.mod</code> написано <code>version="1.2.0"</code>, нужен этот файл.</p><a class="button file-download-button" href="/download/reworkl.mod" target="_blank" rel="noopener" download="reworkl.mod" data-windows-descriptor="legacy"><svg class="icon"><use href="/assets/icons.svg#download"></use></svg>Скачать reworkl.mod<span>↗</span></a><span class="file-size">{{LEGACY_DESCRIPTOR_SIZE}} Б · ASCII / UTF-8</span></article>
+          <article class="file-card"><p class="file-version">ДЛЯ СБОРКИ С САЙТА {{CURRENT_DESCRIPTOR_VERSION}}</p><h3>reworkl.mod</h3><p>Для полной сборки {{CURRENT_DESCRIPTOR_VERSION}}. Сохраняет также подключение трёх загрузочных иллюстраций.</p><a class="button file-download-button" href="/download/reworkl-current.mod" target="_blank" rel="noopener" download="reworkl.mod" data-windows-descriptor="current"><svg class="icon"><use href="/assets/icons.svg#download"></use></svg>Скачать для {{CURRENT_DESCRIPTOR_VERSION}}<span>↗</span></a><span class="file-size">{{CURRENT_DESCRIPTOR_SIZE}} Б · ASCII / UTF-8</span></article>
+          <article class="file-card file-bundle"><p class="file-version">ОБА ВАРИАНТА И ИНСТРУКЦИЯ</p><h3>В одном ZIP</h3><p>Два файла разложены по папкам версий. Внутри — подробная инструкция. Музыку повторно качать не нужно.</p><a class="button file-download-button" href="/download/reworkl-windows-ascii-files.zip" target="_blank" rel="noopener" data-windows-bundle><svg class="icon"><use href="/assets/icons.svg#download"></use></svg>Скачать файлы ZIP<span>↗</span></a><span class="file-size">{{WINDOWS_PACKAGE_SIZE}} КБ · Без исполняемых скриптов</span></article>
+        </div>
+        <div class="files-instructions"><div><h3>Сначала папка — потом файл.</h3><ol><li>Закрой игру и лаунчер. Скопируй папку <code>reworkl</code> в <code>C:\HOI4Mods</code>. Проверь наличие <code>C:\HOI4Mods\reworkl\common\bookmarks\Y89_bookmarks.txt</code>.</li><li>Скачанный <code>reworkl.mod</code> положи в <code>Документы\Paradox Interactive\Hearts of Iron IV\mod</code>, рядом с другими внешними .mod. Внутренний <code>descriptor.mod</code> не заменяй.</li><li>Имя должно быть ровно <code>reworkl.mod</code>, не <code>reworkl (1).mod</code> и не <code>reworkl.mod.txt</code>. Если в <code>dlc_load.json</code> уже выбран <code>mod/reworkl.mod</code>, запись не меняй.</li></ol><a class="text-link dark-link" href="/windows-path.txt" target="_blank" rel="noopener" download>Скачать пошаговую инструкцию <span>↗</span></a></div><aside><span>ВАЖНО</span><p>Профиль Windows и системные папки не переименовывай. Это проверка подключения данных через путь на латинице, а не подтверждённое исправление причины сбоя.</p><p>Обычный установщик ставит мод в Документы. Не запускай его поверх этого ручного варианта.</p><a class="repair-button files-alternative" href="/repair" target="_blank" rel="noopener">Другой способ: установщик в Документы (.zip) <span>↗</span></a></aside></div>
+      </div>
+    </section>
+
+    <section class="collection section-light" id="collection" aria-labelledby="collection-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow dark-eyebrow"><span class="tiny-line"></span> ТРИ КОМПОНЕНТА. ОДНА СБОРКА.</p><h2 id="collection-title">Разные пути.<br>Общая история.</h2></div>
+          <p class="section-intro">Выбирай свою кампанию.<br>Саундтрек уже на месте.</p>
+        </div>
+        <div class="scenario-grid">
+          <article class="scenario-card yugoslavia-card">
+            <div class="card-top"><span class="card-number">01 / КАМПАНИЯ</span><svg class="icon"><use href="/assets/icons.svg#flag"></use></svg></div>
+            <div class="scenario-visual yugoslavia-visual" aria-hidden="true"><span class="year">2026</span><div class="world-card-symbol">198<span>СТРАН / ТЕРРИТОРИЙ</span></div></div>
+            <div class="card-copy"><p class="card-kicker">СОВРЕМЕННЫЕ ГОСУДАРСТВА</p><h3>Мир — 2026</h3><p>Собственная мировая карта, отдельные страны и современные флаги. Не военные фронты, а политический игровой старт.</p><span class="card-tag">1 января 2026 <span>↗</span></span></div>
+          </article>
+          <article class="scenario-card serbia-card">
+            <div class="card-top"><span class="card-number">02 / КАМПАНИЯ</span><svg class="icon"><use href="/assets/icons.svg#focus"></use></svg></div>
+            <div class="scenario-visual serbia-visual" aria-hidden="true"><span class="year">1936</span><div class="focus-tree"><i></i><i></i><i></i><i></i><i></i><span></span></div></div>
+            <div class="card-copy"><p class="card-kicker">СВОЙ СОБСТВЕННЫЙ ПУТЬ</p><h3>Сербия</h3><p>131 авторский фокус и своя армия. Альтернативная кампания на новой общей сетке: не исторические мировые границы 1936.</p><span class="card-tag">Оригинальное дерево фокусов <span>↗</span></span></div>
+          </article>
+          <article class="scenario-card radio-card">
+            <div class="card-top"><span class="card-number">03 / САУНДТРЕК</span><svg class="icon"><use href="/assets/icons.svg#radio"></use></svg></div>
+            <div class="scenario-visual radio-visual" aria-hidden="true"><span class="radio-frequency">23<span>ТРЕКА</span></span><div class="waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="card-copy"><p class="card-kicker">У КАЖДОЙ ИСТОРИИ СВОЙ ЗВУК</p><h3>Турбо-фолк</h3><p>74 минуты музыки на отдельной радиостанции. Доступна в обеих кампаниях за любую страну.</p><span class="card-tag">Включается в плеере игры <span>↗</span></span></div>
+          </article>
+        </div>
+        <div class="improvements"><span class="improvements-label">ЧТО ИСПРАВЛЕНО</span><span><svg class="icon"><use href="/assets/icons.svg#check"></use></svg>Армии и фокусы</span><span><svg class="icon"><use href="/assets/icons.svg#check"></use></svg>Границы и события</span><span><svg class="icon"><use href="/assets/icons.svg#check"></use></svg>Музыкальный плейлист</span><span><svg class="icon"><use href="/assets/icons.svg#check"></use></svg>Повторный запуск событий</span></div>
+      </div>
+    </section>
+
+    <section class="world-preview section-light" aria-labelledby="world-map-title">
+      <div class="container"><p class="eyebrow dark-eyebrow"><span class="tiny-line"></span> КАРТА ИЗ ДАННЫХ СБОРКИ</p><h2 id="world-map-title">Весь мир.<br>Одна точка отсчёта.</h2>
+      <figure><img src="/assets/world-2026-preview.webp" alt="Схема владельцев территорий новой мировой карты Reworkl 2026" width="1408" height="512" loading="lazy"><figcaption>Технический предпросмотр действительных территорий сборки, <strong>не скриншот из HOI4</strong>. Географическая основа: Millennium Dawn, CC-BY-SA 4.0. <a href="/assets/world-map-NOTICE.txt">Атрибуция и изменения</a> · <a href="/world-2026.txt">Политика спорных территорий</a>.</figcaption></figure></div>
+    </section>
+
+    <section class="loading-artwork section-light" id="loading-artwork" aria-labelledby="artwork-title">
+      <div class="container">
+        <div class="artwork-heading"><div><p class="eyebrow dark-eyebrow"><span class="tiny-line"></span> ЗАГРУЗОЧНЫЕ ЭКРАНЫ · {{VERSION}}</p><h2 id="artwork-title">Атмосфера.<br>С первого кадра.</h2></div><p>Три новые иллюстрации уже в архиве.<br>Нажми на картинку, чтобы открыть целиком.</p></div>
+        <div class="artwork-grid">
+          <figure><a href="/assets/loading-belgrade.jpg" target="_blank" rel="noopener" aria-label="Открыть иллюстрацию: Белград на рассвете"><img src="/assets/loading-belgrade.jpg" alt="Иллюстрация Белграда на рассвете: туман над рекой и каменные стены крепости" width="1920" height="1080" loading="lazy" decoding="async"></a><figcaption><span>01 / БЕЛГРАД</span><h3>Город перед новым днём</h3></figcaption></figure>
+          <figure><a href="/assets/loading-mountains.jpg" target="_blank" rel="noopener" aria-label="Открыть иллюстрацию: Динарские горы"><img src="/assets/loading-mountains.jpg" alt="Иллюстрация балканской долины: горы, зелёная река, каменный мост и деревня" width="1920" height="1080" loading="lazy" decoding="async"></a><figcaption><span>02 / ДИНАРСКИЕ ГОРЫ</span><h3>По дорогам Балкан</h3></figcaption></figure>
+          <figure><a href="/assets/loading-headquarters.jpg" target="_blank" rel="noopener" aria-label="Открыть иллюстрацию: штаб в 1989 году"><img src="/assets/loading-headquarters.jpg" alt="Иллюстрация штаба: двое офицеров над картой, аналоговое радио и настольная лампа" width="1920" height="1080" loading="lazy" decoding="async"></a><figcaption><span>03 / ШТАБ, 1989</span><h3>Время принимать решения</h3></figcaption></figure>
+        </div>
+        <p class="artwork-note">Созданные с помощью ИИ загрузочные иллюстрации. Это не скриншоты игрового процесса и не подтверждение запуска мода.</p>
+      </div>
+    </section>
+
+    <section class="installation section-light" id="installation" aria-labelledby="installation-title">
+      <div class="container install-grid">
+        <div class="install-intro"><p class="eyebrow dark-eyebrow"><span class="tiny-line"></span> МЕНЬШЕ НАСТРОЕК. БОЛЬШЕ ИГРЫ.</p><h2 id="installation-title">Три шага<br>до старта.</h2><p>Для Windows рекомендуем BAT-режим: отдельные данные на латинице, только Reworkl и отключённые DLC. Полная сборка содержит все скрипты, музыку и графику.</p><a class="text-link dark-link" href="/installation.txt" download>Сохранить инструкцию<svg class="icon"><use href="/assets/icons.svg#download"></use></svg></a></div>
+        <div class="steps">
+          <article class="step"><span class="step-number">01</span><div><h3>Скачай и распакуй</h3><p>Закрой игру и лаунчер. Распакуй весь архив, включая папку <code>reworkl</code>, файл <code>reworkl.mod</code> и установщик. Не запускай BAT прямо из ZIP. Старую версию мода сначала перенеси в резервную папку.</p></div></article>
+          <article class="step"><span class="step-number">02</span><div><h3>Запусти 0_START_2026.bat</h3><p>Steam оставь включённым, игру и лаунчер закрой. На Windows запусти <code>0_START_2026.bat</code>: он сначала обновит весь мод, затем запустит установленный Мир 2026. Если попросят — перетащи <code>hoi4.exe</code> в окно. Мод и данные появятся в <code>%PUBLIC%\HOI4MODS</code>, без изменения прежних Документов. Адрес ниже нужен только для альтернативной ручной установки, не для BAT.</p><div class="path-panel"><div class="os-tabs" role="tablist" aria-label="Операционная система"><button role="tab" aria-selected="true" aria-controls="install-path-panel" data-os="windows" id="tab-windows">Windows</button><button role="tab" aria-selected="false" aria-controls="install-path-panel" data-os="linux" id="tab-linux" tabindex="-1">Linux</button><button role="tab" aria-selected="false" aria-controls="install-path-panel" data-os="mac" id="tab-mac" tabindex="-1">macOS</button></div><div class="path-content" id="install-path-panel" role="tabpanel" aria-labelledby="tab-windows"><code id="install-path">Документы/Paradox Interactive/Hearts of Iron IV/mod</code><button class="copy-button" data-copy="path" aria-label="Скопировать путь"><svg class="icon"><use href="/assets/icons.svg#copy"></use></svg></button></div></div><p class="path-note" id="path-note">Если Документы находятся в OneDrive, используй папку Документы внутри OneDrive.</p></div></article>
+          <article class="step"><span class="step-number">03</span><div><h3>Выбери Мир 2026</h3><p>Начни новую игру: Мир 2026 или альтернативная Сербия 1936, не Blitzkrieg 1939. После меню или вылета вернись в окно BAT и нажми Enter: он проверит запуск и сохранит рядом отчёт и ZIP с выбранными логами. Отдельные <code>1_INSTALL.bat</code>, <code>2_LAUNCH.bat</code> и <code>3_CHECK.bat</code> тоже сохранены. В радио выбери «Турбо-фолк — Reworkl».</p><span class="step-note"><svg class="icon"><use href="/assets/icons.svg#info"></use></svg>Старые сохранения не поддерживаются</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="questions section-light" id="questions" aria-labelledby="questions-title">
+      <div class="container faq-grid"><div><p class="eyebrow dark-eyebrow"><span class="tiny-line"></span> ПЕРЕД ТЕМ КАК НАЧАТЬ</p><h2 id="questions-title">Есть вопросы?</h2><p class="faq-intro">Самое важное о сборке<br>и первом запуске.</p></div><div class="faq-list">
+        <details><summary>Скачивание не началось. Что делать?<svg class="icon"><use href="/assets/icons.svg#plus"></use></svg></summary><div class="faq-answer"><p>Браузер может ограничивать загрузку внутри предпросмотра. <a href="{{DOWNLOAD_URL}}" target="_blank" rel="noopener" data-download>Открой прямую ссылку в новой вкладке</a>. Если файл уже загружается, проверь список загрузок браузера. Архив находится прямо на этом сервере — регистрация не нужна.</p></div></details>
+        <details><summary>Всё ещё стандартные сценарии 1936/1939. Что делать?<svg class="icon"><use href="/assets/icons.svg#plus"></use></svg></summary><div class="faq-answer"><p>Если в system.log Reworkl уже указан активным, переключение набора само по себе не решает проблему. Проверь фактическую папку с <code>common/bookmarks/Y89_bookmarks.txt</code> и путь во внешнем <code>reworkl.mod</code>. Используй <code>0_START_2026.bat</code> из нового полного ZIP, а не старую Combined или один маленький комплект; он обходит лаунчер и проверяет свежий запуск. Ручные .mod ниже — другой способ, не часть BAT-режима. Выбирай файл по версии мода. Пришли внешний .mod и файл закладок после запуска, если стандартные сценарии остались. Не объединяй описания разных модов в один файл.</p></div></details>
+        <details><summary>Почему не нужно включать все три исходных мода?<svg class="icon"><use href="/assets/icons.svg#plus"></use></svg></summary><div class="faq-answer"><p>Они изменяют одни и те же файлы. В Reworkl компоненты уже объединены: два сценария и радио подключаются одним модом. Одновременное включение исходников снова создаст конфликты.</p></div></details>
+        <details><summary>Что стало со сценарием 1989 года?<svg class="icon"><use href="/assets/icons.svg#plus"></use></svg></summary><div class="faq-answer"><p>В версии 2.x его заменил Мир 2026. Сербия сразу независима; авторское дерево 1936 доступно в отдельной альтернативной кампании. Старые сохранения не совместимы с новой сеткой. Все спорные границы и условности описаны <a href="/world-2026.txt" target="_blank" rel="noopener">в пояснении к карте</a>.</p></div></details>
+        <details><summary>С какой версией игры совместима сборка?<svg class="icon"><use href="/assets/icons.svg#plus"></use></svg></summary><div class="faq-answer"><p>Сборка ориентирована на HOI4 1.19.x. Файлы, сценарная логика и все аудиозаписи прошли автоматические проверки. Запуск настоящим движком и сочетания DLC ещё требуют проверки в игре: стопроцентная совместимость не заявляется.</p></div></details>
+        <details><summary>Нужно покупать DLC?<svg class="icon"><use href="/assets/icons.svg#plus"></use></svg></summary><div class="faq-answer"><p>Для BAT-режима нужна базовая HOI4 1.19.x. Скрипт отключает обнаруженные DLC в отдельном dlc_load.json, не удаляя их и не меняя лицензии. Пустой disabled_dlcs не отключает все дополнения. Фактический запуск без DLC подтверждает только свежая строка Active DLC Count: 0; до неё проверка не заявляет успех.</p></div></details>
+        <details><summary>Мод не появился в лаунчере. Что проверить?<svg class="icon"><use href="/assets/icons.svg#plus"></use></svg></summary><div class="faq-answer"><p>В папке <code>mod</code> должны лежать и папка <code>reworkl</code>, и отдельный файл <code>reworkl.mod</code>. Не должно быть двойной вложенности. Перезапусти лаунчер. При нестандартном расположении файлов укажи абсолютный путь в <code>reworkl.mod</code> — пример есть в <a href="/installation.txt" download>инструкции</a>.</p></div></details>
+      </div></div>
+    </section>
+
+    <section class="final-download" aria-labelledby="download-title"><div class="container final-download-inner"><div><p class="eyebrow"><span class="status-dot"></span> СБОРКА {{VERSION}} ДОСТУПНА</p><h2 id="download-title">История ждёт<br>твоего хода.</h2><p>Две кампании. Один саундтрек. Всё в одном архиве.</p></div><div class="final-download-action"><a class="button button-primary" href="{{DOWNLOAD_URL}}" target="_blank" rel="noopener" data-download><svg class="icon"><use href="/assets/icons.svg#download"></use></svg>Скачать Reworkl<svg class="icon action-arrow"><use href="/assets/icons.svg#arrow"></use></svg></a><span>Бесплатно · {{SIZE}} МБ · Без регистрации</span><a class="direct-link" href="{{DOWNLOAD_URL}}" target="_blank" rel="noopener">Прямая ссылка на ZIP <span>↗</span></a></div></div></section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-top"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true">R<span></span></span><span>REWORKL</span></a><p>Сделано для тех, кто выбирает свой путь.</p><a class="source-link" href="https://github.com/hhdrhkvcd/reworkl" target="_blank" rel="noopener"><svg class="icon"><use href="/assets/icons.svg#github"></use></svg>Исходный код<svg class="icon"><use href="/assets/icons.svg#external"></use></svg></a></div><div class="footer-bottom"><p>Независимый проект. Не связан с Paradox Interactive.<br>Для игры необходима Hearts of Iron IV.</p><details class="checksum"><summary>Проверить целостность файла <span>+</span></summary><div><span>SHA-256</span><code id="checksum-value">{{SHA256}}</code><button class="checksum-copy" data-copy="checksum">Скопировать хеш<svg class="icon"><use href="/assets/icons.svg#copy"></use></svg></button></div></details></div></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

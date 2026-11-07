@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 136
+    name = "RW26_STATE_136"
+    manpower = 1320726
+    state_category = rw26_slots_4
+    resources = { tungsten = 2 chromium = 12 }
+    provinces = { 907 3833 6886 11832 11857 }
+    history = {
+        owner = MAC
+        add_core_of = MAC
+        victory_points = { 11857 4 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 2
+            air_base = 2
+        }
+    }
+}

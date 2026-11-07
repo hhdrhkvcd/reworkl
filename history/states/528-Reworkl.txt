@@ -1,0 +1,26 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 528
+    name = "RW26_STATE_528"
+    manpower = 10987924
+    state_category = rw26_slots_8
+    resources = { tungsten = 6 steel = 4 rubber = 32 }
+    provinces = { 1291 1364 1376 4310 7342 10297 12144 12215 3382 6015 6028 }
+    history = {
+        owner = MAL
+        add_core_of = MAL
+        victory_points = { 6015 10 }
+        victory_points = { 1364 5 }
+        victory_points = { 12144 1 }
+        victory_points = { 7342 1 }
+        victory_points = { 12215 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 3
+            arms_factory = 3
+            air_base = 6
+            7342 = { naval_base = 4 }
+            3382 = { naval_base = 6 }
+        }
+    }
+}

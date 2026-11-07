@@ -1,0 +1,16 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 577
+    name = "RW26_STATE_577"
+    manpower = 678
+    state_category = rw26_slots_2
+    impassable = yes
+    provinces = { 1093 4098 12733 }
+    history = {
+        owner = EGY
+        add_core_of = EGY
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

@@ -1,0 +1,21 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 547
+    name = "RW26_STATE_547"
+    manpower = 21180237
+    state_category = rw26_slots_21
+    resources = { steel = 60 }
+    provinces = { 4140 9843 11761 3160 15667 15668 15669 }
+    history = {
+        owner = PRC
+        add_core_of = PRC
+        victory_points = { 11761 20 }
+        buildings = {
+            infrastructure = 3
+            industrial_complex = 14
+            arms_factory = 5
+            air_base = 10
+            synthetic_refinery = 1
+        }
+    }
+}

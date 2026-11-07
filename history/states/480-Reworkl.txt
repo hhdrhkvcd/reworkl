@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 480
+    name = "RW26_STATE_480"
+    manpower = 273236
+    state_category = rw26_slots_3
+    provinces = { 4967 }
+    history = {
+        owner = MLD
+        add_core_of = MLD
+        victory_points = { 4967 3 }
+        buildings = {
+            infrastructure = 2
+            air_base = 3
+            industrial_complex = 1
+            4967 = { naval_base = 2 }
+        }
+    }
+}

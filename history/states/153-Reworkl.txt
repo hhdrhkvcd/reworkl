@@ -1,0 +1,23 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 153
+    name = "RW26_STATE_153"
+    manpower = 4918067
+    state_category = rw26_slots_5
+    resources = { tungsten = 5 steel = 3 oil = 5 }
+    provinces = { 793 893 935 949 3796 3819 3937 3971 6857 6923 6982 9771 9818 11754 11813 }
+    history = {
+        owner = BUL
+        add_core_of = BUL
+        victory_points = { 949 9 }
+        victory_points = { 11813 2 }
+        victory_points = { 3796 1 }
+        buildings = {
+            infrastructure = 2
+            industrial_complex = 2
+            arms_factory = 1
+            air_base = 4
+            nuclear_reactor = 2
+        }
+    }
+}

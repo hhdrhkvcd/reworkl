@@ -1,0 +1,16 @@
+# Local inspection, build output and test caches
+.work/
+dist/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Ready-to-install release ZIPs
+releases/
+
+# Website browser checks and downloaded test copies
+.cache/
+
+# Expanded world-map assets; reproducible from assets/world_2026/map-data.tar.xz
+/map/*.bmp
+/map/unitstacks.txt

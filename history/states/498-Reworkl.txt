@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 498
+    name = "RW26_STATE_498"
+    manpower = 323442
+    state_category = rw26_slots_3
+    resources = { tungsten = 2 }
+    provinces = { 1607 7603 130 7647 }
+    history = {
+        owner = BRM
+        add_core_of = BRM
+        victory_points = { 130 5 }
+        victory_points = { 7603 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 1
+            industrial_complex = 1
+        }
+    }
+}

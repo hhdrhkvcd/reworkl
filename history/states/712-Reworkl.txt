@@ -1,0 +1,18 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 712
+    name = "RW26_STATE_712"
+    manpower = 1960583
+    state_category = rw26_slots_2
+    resources = { aluminium = 1 }
+    provinces = { 1539 4605 9734 11674 11704 11877 13919 12309 14343 }
+    history = {
+        owner = AZR
+        add_core_of = AZR
+        victory_points = { 11674 2 }
+        buildings = {
+            infrastructure = 1
+            air_base = 2
+        }
+    }
+}

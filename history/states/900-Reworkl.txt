@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 900
+    name = "RW26_STATE_900"
+    manpower = 1920708
+    state_category = rw26_slots_2
+    resources = { tungsten = 2 }
+    provinces = { 5162 10942 10970 9528 9589 9639 9733 9895 9926 10143 14079 14080 14081 14082 14083 14085 14086 }
+    history = {
+        owner = PRU
+        add_core_of = PRU
+        victory_points = { 9926 5 }
+        victory_points = { 5162 3 }
+        victory_points = { 9589 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 1
+        }
+    }
+}

@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 990
+    name = "RW26_STATE_990"
+    manpower = 11308718
+    state_category = rw26_slots_3
+    resources = { oil = 17 }
+    provinces = { 1228 4237 7297 10001 10255 }
+    history = {
+        owner = RAJ
+        add_core_of = RAJ
+        victory_points = { 10255 5 }
+        victory_points = { 1228 5 }
+        victory_points = { 4237 1 }
+        victory_points = { 10001 1 }
+        buildings = {
+            infrastructure = 1
+            dockyard = 1
+            10255 = { naval_base = 10 }
+        }
+    }
+}

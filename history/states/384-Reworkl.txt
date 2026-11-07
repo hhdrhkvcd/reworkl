@@ -1,0 +1,24 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 384
+    name = "RW26_STATE_384"
+    manpower = 4069329
+    state_category = rw26_slots_3
+    resources = { oil = 3 aluminium = 3 rubber = 5 }
+    provinces = { 1160 1058 11953 7081 12051 }
+    history = {
+        owner = ALG
+        add_core_of = ALG
+        victory_points = { 1160 5 }
+        victory_points = { 11953 5 }
+        victory_points = { 12051 1 }
+        victory_points = { 1058 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 2
+            industrial_complex = 1
+            synthetic_refinery = 1
+            1160 = { naval_base = 4 }
+        }
+    }
+}

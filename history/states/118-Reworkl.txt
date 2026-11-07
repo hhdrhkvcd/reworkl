@@ -1,0 +1,23 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 118
+    name = "RW26_STATE_118"
+    manpower = 3283858
+    state_category = rw26_slots_5
+    resources = { steel = 10 }
+    provinces = { 445 583 3553 3569 6576 6590 11511 11556 }
+    history = {
+        owner = CZE
+        add_core_of = CZE
+        victory_points = { 3569 3 }
+        victory_points = { 3553 1 }
+        buildings = {
+            infrastructure = 2
+            air_base = 5
+            industrial_complex = 2
+            fuel_silo = 1
+            arms_factory = 1
+            nuclear_reactor = 1
+        }
+    }
+}

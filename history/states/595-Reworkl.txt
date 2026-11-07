@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 595
+    name = "RW26_STATE_595"
+    manpower = 7332669
+    state_category = rw26_slots_6
+    provinces = { 10062 }
+    history = {
+        owner = PRC
+        add_core_of = PRC
+        victory_points = { 10062 10 }
+        buildings = {
+            infrastructure = 3
+            industrial_complex = 2
+            dockyard = 2
+            air_base = 2
+            10062 = { naval_base = 4 }
+        }
+    }
+}

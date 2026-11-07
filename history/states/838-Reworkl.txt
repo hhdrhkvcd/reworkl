@@ -1,0 +1,26 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 838
+    name = "RW26_STATE_838"
+    manpower = 6824751
+    state_category = rw26_slots_7
+    resources = { oil = 26 }
+    provinces = { 8079 10732 12810 10889 2021 }
+    history = {
+        owner = MEX
+        add_core_of = MEX
+        victory_points = { 12810 5 }
+        victory_points = { 10889 3 }
+        victory_points = { 2021 3 }
+        victory_points = { 10732 3 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 2
+            arms_factory = 3
+            fuel_silo = 1
+            nuclear_reactor = 1
+            synthetic_refinery = 1
+            12810 = { naval_base = 4 }
+        }
+    }
+}

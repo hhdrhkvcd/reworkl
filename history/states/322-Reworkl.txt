@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 322
+    name = "RW26_STATE_322"
+    manpower = 4559372
+    state_category = rw26_slots_2
+    resources = { oil = 8 aluminium = 5 rubber = 4 }
+    provinces = { 7978 10831 11341 }
+    history = {
+        owner = CMR
+        add_core_of = CMR
+        victory_points = { 10831 2 }
+        victory_points = { 7978 5 }
+        buildings = {
+            infrastructure = 1
+            air_base = 2
+            10831 = { naval_base = 1 }
+        }
+    }
+}

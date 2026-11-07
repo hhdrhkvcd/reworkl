@@ -1,0 +1,16 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 187
+    name = "RW26_STATE_187"
+    manpower = 13979
+    state_category = rw26_slots_2
+    impassable = yes
+    provinces = { 9322 }
+    history = {
+        owner = MLI
+        add_core_of = MLI
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

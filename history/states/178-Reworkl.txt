@@ -1,0 +1,20 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 178
+    name = "RW26_STATE_178"
+    manpower = 2296730
+    state_category = rw26_slots_2
+    provinces = { 3339 3350 5006 8073 10786 }
+    history = {
+        owner = SAU
+        add_core_of = SAU
+        victory_points = { 8073 4 }
+        victory_points = { 3339 1 }
+        victory_points = { 10786 1 }
+        buildings = {
+            infrastructure = 1
+            air_base = 6
+            3339 = { naval_base = 1 }
+        }
+    }
+}

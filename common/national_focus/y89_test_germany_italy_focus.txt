@@ -1,0 +1,119 @@
+# ТЕСТОВЫЙ РЕЖИМ 1989 ГОДА
+# В сценарии 1989 года заменяет деревья Германии и Италии на мирные.
+# В других датах оригинальные деревья стран остаются без изменений.
+
+focus_tree = {
+    id = Y89_GER_TEST_PEACEFUL_TREE
+    country = {
+        factor = 0
+        modifier = {
+            add = 9999
+            tag = GER
+            has_start_date > 1988.12.31
+            has_start_date < 1990.1.1
+        }
+    }
+    default = no
+
+    focus = {
+        id = Y89_GER_TEST_economic_recovery
+        icon = GFX_goal_generic_production
+        x = 5
+        y = 0
+        cost = 5
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+        ai_will_do = { factor = 100 }
+        completion_reward = {
+            add_political_power = 50
+            add_stability = 0.02
+        }
+    }
+
+    focus = {
+        id = Y89_GER_TEST_infrastructure
+        icon = GFX_goal_generic_construct_infrastructure
+        x = 5
+        y = 1
+        cost = 5
+        prerequisite = { focus = Y89_GER_TEST_economic_recovery }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+        ai_will_do = { factor = 100 }
+        completion_reward = {
+            add_political_power = 35
+            add_stability = 0.02
+        }
+    }
+
+    focus = {
+        id = Y89_GER_TEST_science
+        icon = GFX_goal_generic_scientific_exchange
+        x = 5
+        y = 2
+        cost = 5
+        prerequisite = { focus = Y89_GER_TEST_infrastructure }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+        ai_will_do = { factor = 100 }
+        completion_reward = {
+            add_political_power = 75
+            add_stability = 0.01
+        }
+    }
+}
+
+focus_tree = {
+    id = Y89_ITA_TEST_PEACEFUL_TREE
+    country = {
+        factor = 0
+        modifier = {
+            add = 9999
+            tag = ITA
+            has_start_date > 1988.12.31
+            has_start_date < 1990.1.1
+        }
+    }
+    default = no
+
+    focus = {
+        id = Y89_ITA_TEST_economic_recovery
+        icon = GFX_goal_generic_production
+        x = 5
+        y = 0
+        cost = 5
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+        ai_will_do = { factor = 100 }
+        completion_reward = {
+            add_political_power = 50
+            add_stability = 0.02
+        }
+    }
+
+    focus = {
+        id = Y89_ITA_TEST_infrastructure
+        icon = GFX_goal_generic_construct_infrastructure
+        x = 5
+        y = 1
+        cost = 5
+        prerequisite = { focus = Y89_ITA_TEST_economic_recovery }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+        ai_will_do = { factor = 100 }
+        completion_reward = {
+            add_political_power = 35
+            add_stability = 0.02
+        }
+    }
+
+    focus = {
+        id = Y89_ITA_TEST_science
+        icon = GFX_goal_generic_scientific_exchange
+        x = 5
+        y = 2
+        cost = 5
+        prerequisite = { focus = Y89_ITA_TEST_infrastructure }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+        ai_will_do = { factor = 100 }
+        completion_reward = {
+            add_political_power = 75
+            add_stability = 0.01
+        }
+    }
+}

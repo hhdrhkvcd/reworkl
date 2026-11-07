@@ -1,0 +1,19 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 373
+    name = "RW26_STATE_373"
+    manpower = 291615
+    state_category = rw26_slots_2
+    resources = { tungsten = 7 }
+    provinces = { 4920 5012 8038 8111 10875 6406 15502 15503 15504 15505 15506 15509 }
+    history = {
+        owner = WES
+        add_core_of = WES
+        add_claim_by = MOR
+        victory_points = { 5012 1 }
+        buildings = {
+            infrastructure = 1
+            5012 = { naval_base = 2 }
+        }
+    }
+}

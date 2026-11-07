@@ -1,0 +1,18 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 594
+    name = "RW26_STATE_594"
+    manpower = 650638
+    state_category = rw26_slots_2
+    resources = { oil = 1 }
+    provinces = { 13266 13267 }
+    history = {
+        owner = PAK
+        add_core_of = PAK
+        victory_points = { 13266 1 }
+        victory_points = { 13267 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

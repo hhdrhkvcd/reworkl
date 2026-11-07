@@ -1,0 +1,83 @@
+add_namespace = Y89_sanctions
+
+# 25 September 1991 — UN Security Council Resolution 713.
+# HOI4 has no playable UN country tag in the vanilla 1989 setup, so this event
+# represents the Security Council decision with a Yugoslav national spirit.
+country_event = {
+    id = Y89_sanctions.1
+    title = Y89_sanctions.1.t
+    desc = Y89_sanctions.1.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    trigger = {
+        Y89_historical_breakup_allowed = yes
+        date > 1991.9.24
+        NOT = { has_country_flag = Y89_UN_ARMS_EMBARGO }
+    }
+
+    immediate = {
+        # The console can bypass event triggers; guard the effects as well.
+        if = {
+            limit = {
+                Y89_historical_breakup_allowed = yes
+                date > 1991.9.24
+                NOT = { has_country_flag = Y89_UN_ARMS_EMBARGO }
+            }
+            add_ideas = Y89_arms_embargo
+            set_country_flag = Y89_UN_ARMS_EMBARGO
+        }
+    }
+
+    option = { name = Y89_sanctions.1.a }
+}
+
+# 30 May 1992 — UN Security Council Resolution 757.
+# There is no NATO/UN country tag: major UN member states apply the trade embargo
+# using the real send_embargo effect, while the event and spirit represent the resolution.
+country_event = {
+    id = Y89_sanctions.2
+    title = Y89_sanctions.2.t
+    desc = Y89_sanctions.2.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    trigger = {
+        Y89_historical_breakup_allowed = yes
+        date > 1992.5.29
+        NOT = { has_country_flag = Y89_UN_COMPREHENSIVE_SANCTIONS }
+    }
+
+    immediate = {
+        # The console can bypass event triggers; guard the effects as well.
+        if = {
+            limit = {
+                Y89_historical_breakup_allowed = yes
+                date > 1992.5.29
+                NOT = { has_country_flag = Y89_UN_COMPREHENSIVE_SANCTIONS }
+            }
+            add_ideas = Y89_un_sanctions
+            set_country_flag = Y89_UN_COMPREHENSIVE_SANCTIONS
+
+            USA = { send_embargo = YUG }
+            ENG = { send_embargo = YUG }
+            FRA = { send_embargo = YUG }
+            GER = { send_embargo = YUG }
+            ITA = { send_embargo = YUG }
+            CAN = { send_embargo = YUG }
+            JAP = { send_embargo = YUG }
+            HOL = { send_embargo = YUG }
+            BEL = { send_embargo = YUG }
+            DEN = { send_embargo = YUG }
+            NOR = { send_embargo = YUG }
+            SWE = { send_embargo = YUG }
+            AST = { send_embargo = YUG }
+            SPR = { send_embargo = YUG }
+            NZL = { send_embargo = YUG }
+        }
+    }
+
+    option = { name = Y89_sanctions.2.a }
+}

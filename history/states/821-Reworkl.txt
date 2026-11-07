@@ -1,0 +1,36 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 821
+    name = "RW26_STATE_821"
+    manpower = 91932
+    state_category = rw26_slots_3
+    provinces = { 2489 13027 13028 13029 13030 13031 13032 13033 13034 13035 13036 }
+    history = {
+        owner = FSM
+        add_core_of = FSM
+        victory_points = { 13036 5 }
+        victory_points = { 13035 3 }
+        victory_points = { 13028 3 }
+        victory_points = { 13027 1 }
+        victory_points = { 13029 1 }
+        victory_points = { 2489 3 }
+        victory_points = { 13034 1 }
+        victory_points = { 13032 1 }
+        victory_points = { 13033 1 }
+        victory_points = { 13031 1 }
+        victory_points = { 13030 1 }
+        buildings = {
+            infrastructure = 2
+            air_base = 3
+            industrial_complex = 1
+            2489 = { naval_base = 2 }
+            13028 = { naval_base = 1 }
+            13030 = { naval_base = 1 }
+            13031 = { naval_base = 1 }
+            13032 = { naval_base = 1 }
+            13034 = { naval_base = 1 }
+            13035 = { naval_base = 1 }
+            13036 = { naval_base = 1 }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+name="Reworkl — Мир 2026, Сербия и Turbo-folk"
+version="2.0.0-alpha2"
+tags={ "Alternative History" "National Focuses" "Music" }
+replace_path="common/bookmarks"
+replace_path="gfx/loadingscreens"
+replace_path="history/states"
+replace_path="history/countries"
+replace_path="history/general"
+replace_path="map/strategicregions"
+replace_path="map/supplyareas"
+picture="thumbnail.png"
+supported_version="1.19.*"

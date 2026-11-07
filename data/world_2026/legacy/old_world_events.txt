@@ -1,0 +1,20 @@
+add_namespace = conquermont
+
+country_event = {
+    id = conquermont.1
+    title = conquermont.1.t
+    desc = conquermont.1.d
+    picture = GFX_report_event_yugoslavian_split
+    is_triggered_only = yes
+    trigger = { tag = MNT owns_state = 105 country_exists = SER }
+    option = {
+        name = conquermont.1.a
+        ai_chance = { factor = 1 }
+        SER = { transfer_state = 105 add_state_core = 105 }
+    }
+    option = {
+        name = conquermont.1.b
+        ai_chance = { factor = 1 }
+        SER = { create_wargoal = { type = annex_everything target = MNT expire = 12 } }
+    }
+}

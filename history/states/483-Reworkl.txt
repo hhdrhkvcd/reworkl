@@ -1,0 +1,21 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 483
+    name = "RW26_STATE_483"
+    manpower = 9607008
+    state_category = rw26_slots_6
+    resources = { rubber = 24 }
+    provinces = { 4219 7260 6927 }
+    history = {
+        owner = SRL
+        add_core_of = SRL
+        victory_points = { 6927 5 }
+        buildings = {
+            infrastructure = 2
+            arms_factory = 2
+            industrial_complex = 2
+            air_base = 4
+            7260 = { naval_base = 6 }
+        }
+    }
+}

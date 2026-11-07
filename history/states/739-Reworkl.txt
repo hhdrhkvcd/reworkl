@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 739
+    name = "RW26_STATE_739"
+    manpower = 3676163
+    state_category = rw26_slots_2
+    resources = { tungsten = 30 rubber = 32 }
+    provinces = { 1407 4241 6035 7284 10328 16335 16339 16391 }
+    history = {
+        owner = PHI
+        add_core_of = PHI
+        victory_points = { 4241 20 }
+        victory_points = { 16391 3 }
+        victory_points = { 1407 5 }
+        victory_points = { 7284 1 }
+        buildings = {
+            air_base = 2
+            infrastructure = 1
+            4241 = { naval_base = 2 }
+        }
+    }
+}

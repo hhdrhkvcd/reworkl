@@ -1,0 +1,9 @@
+# Small, fictional vanilla-equipment starter force, NOT a real 2026 OOB.
+division_template = {
+    name = "Территориальная бригада"
+    regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } }
+    priority = 1
+}
+units = {
+    division = { name = "1-я территориальная бригада" location = 13056 division_template = "Территориальная бригада" start_equipment_factor = 1.0 start_experience_factor = 0.1 }
+}

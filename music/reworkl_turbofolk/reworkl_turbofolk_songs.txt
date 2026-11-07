@@ -1,0 +1,116 @@
+music_station = "reworkl_turbofolk"
+
+music = {
+    song = "reworkl_Remove_Kebab"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_Serbia_strong"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_armia"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_balada"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_bridalthemepiano"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_cossack_march"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_cradleofthegalaxypiano"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_creationandbeyondpiano"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_cri"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_darkskies"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_distantnebulapiano"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_eternalcitypiano"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_fasterthanlightpiano"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_garda"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_hil"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_miro"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_plavi"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_ponos"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_sevensacramentspiano"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_snowiscomingpiano"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_tuga"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_xristos"
+    chance = { factor = 1 }
+}
+
+music = {
+    song = "reworkl_zelene"
+    chance = { factor = 1 }
+}

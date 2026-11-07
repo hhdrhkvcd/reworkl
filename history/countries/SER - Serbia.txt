@@ -1,0 +1,73 @@
+# Reworkl world: government and army profiles are gameplay placeholders.
+capital = 131
+oob = "SER_1936"
+set_research_slots = 3
+set_convoys = 0
+set_stability = 0.5
+set_war_support = 0.45
+set_politics = {
+    ruling_party = neutrality
+    last_election = "1936.1.1"
+    election_frequency = 36
+    elections_allowed = yes
+}
+set_popularities = { democratic = 20 fascism = 25 communism = 20 neutrality = 35 }
+recruit_character = Milangrol
+recruit_character = milovan
+recruit_character = draza
+recruit_character = RegentPaul
+recruit_character = Pagangod
+recruit_character = KingPeter
+recruit_character = MilanNedic
+recruit_character = Dimitrije
+recruit_character = kostageneral
+recruit_character = petar_nedeljkovic
+recruit_character = Kocapopovic
+recruit_character = tito
+promote_character = Milangrol
+promote_character = milovan
+promote_character = MilanNedic
+promote_character = RegentPaul
+add_ideas = { Serbian_Economy Serbian_arms noorg }
+set_technology = {
+    gw_artillery = 1
+    infantry_weapons = 1
+    infantry_weapons1 = 1
+    tech_support = 1
+    tech_engineers = 1
+    tech_mountaineers = 1
+    tech_recon = 1
+    tech_trucks = 1
+    basic_train = 1
+}
+if = {
+    limit = { has_dlc = "No Step Back" }
+    set_technology = { gwtank_chassis = 1 basic_light_tank_chassis = 1 }
+    else = { set_technology = { gwtank = 1 basic_light_tank = 1 } }
+}
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1534 }
+
+2026.1.1 = {
+    capital = 131
+    oob = "SER_2026"
+    set_cosmetic_tag = RW26_SER
+    retire_character = Milangrol
+    retire_character = milovan
+    retire_character = draza
+    retire_character = RegentPaul
+    retire_character = Pagangod
+    retire_character = KingPeter
+    retire_character = MilanNedic
+    retire_character = Dimitrije
+    retire_character = kostageneral
+    retire_character = petar_nedeljkovic
+    retire_character = Kocapopovic
+    retire_character = tito
+    remove_ideas = { Serbian_Economy Serbian_arms noorg }
+    recruit_character = RW26_SER_government
+    promote_character = RW26_SER_government
+    set_politics = { ruling_party = democratic elections_allowed = no }
+    set_popularities = { democratic = 100 }
+    set_stability = 0.6
+    set_war_support = 0.2
+}

@@ -1,0 +1,34 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 799
+    name = "RW26_STATE_799"
+    manpower = 3450654
+    state_category = rw26_slots_6
+    resources = { oil = 18 }
+    provinces = { 1618 1806 2043 4919 5103 6803 7762 7904 7945 8025 9822 10702 10798 11743 11802 12624 15338 15339 15340 15341 15342 15343 15344 15345 15346 15347 15348 15349 15350 15351 15352 15353 15354 15643 15644 }
+    history = {
+        owner = USA
+        add_core_of = USA
+        victory_points = { 5103 10 }
+        victory_points = { 15344 5 }
+        victory_points = { 15347 2 }
+        victory_points = { 15349 1 }
+        victory_points = { 6803 3 }
+        victory_points = { 11743 1 }
+        victory_points = { 8025 1 }
+        victory_points = { 15348 1 }
+        victory_points = { 15351 1 }
+        victory_points = { 15350 1 }
+        victory_points = { 12624 1 }
+        victory_points = { 11802 1 }
+        victory_points = { 15353 2 }
+        victory_points = { 15354 1 }
+        victory_points = { 7945 1 }
+        buildings = {
+            infrastructure = 3
+            arms_factory = 3
+            air_base = 4
+            industrial_complex = 1
+        }
+    }
+}

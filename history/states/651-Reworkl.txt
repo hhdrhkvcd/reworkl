@@ -1,0 +1,22 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 651
+    name = "RW26_STATE_651"
+    manpower = 1201092
+    state_category = rw26_slots_4
+    provinces = { 121 231 252 3116 6101 6143 6167 6356 11039 11099 11166 13128 16188 16189 16190 }
+    history = {
+        owner = SOV
+        add_core_of = SOV
+        victory_points = { 6356 1 }
+        victory_points = { 121 5 }
+        victory_points = { 16189 5 }
+        victory_points = { 231 1 }
+        victory_points = { 6101 1 }
+        buildings = {
+            infrastructure = 2
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+}

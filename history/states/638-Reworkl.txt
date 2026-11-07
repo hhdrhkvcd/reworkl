@@ -1,0 +1,27 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 638
+    name = "RW26_STATE_638"
+    manpower = 4431535
+    state_category = rw26_slots_6
+    resources = { tungsten = 2 rubber = 24 chromium = 15 }
+    provinces = { 1546 1602 1617 1629 4468 4509 4524 4552 4593 6075 7269 7512 7542 7570 7627 8235 8250 10369 10396 10436 10505 10990 12315 12371 12386 12457 14190 14191 14192 }
+    history = {
+        owner = INS
+        add_core_of = INS
+        victory_points = { 12371 5 }
+        victory_points = { 4468 1 }
+        victory_points = { 7542 1 }
+        victory_points = { 7570 1 }
+        victory_points = { 10505 1 }
+        victory_points = { 12315 1 }
+        victory_points = { 7269 1 }
+        buildings = {
+            infrastructure = 1
+            industrial_complex = 4
+            air_base = 2
+            12371 = { naval_base = 2 }
+            4468 = { naval_base = 3 }
+        }
+    }
+}

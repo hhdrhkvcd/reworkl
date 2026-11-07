@@ -1,0 +1,13 @@
+add_namespace = Y89_startup
+
+# Informational only. Territory, leaders, ideas and OOB are set before launch.
+country_event = {
+    id = Y89_startup.1
+    title = Y89_startup.1.t
+    desc = Y89_startup.1.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = YUG Y89_is_1989_campaign = yes }
+    option = { name = Y89_startup.1.a }
+}

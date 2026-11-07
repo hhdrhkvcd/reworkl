@@ -1,0 +1,140 @@
+ideas = {
+    country = {
+        # 1989 test mode: Germany and Italy must not generate new wars.
+        Y89_TEST_NON_INTERVENTION = {
+            picture = generic_political_support
+            allowed = { always = no }
+            removal_cost = -1
+            modifier = {
+                justify_war_goal_time = 10.0
+            }
+            rule = { can_not_declare_war = yes }
+        }
+
+		### 1989 год: СФРЮ ###
+		Y89_foreign_debt = {
+			picture = generic_economic_crisis
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.10
+				production_speed_buildings_factor = -0.10
+			}
+		}
+		Y89_hyperinflation = {
+			picture = generic_economic_crisis
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+				political_power_gain = -0.15
+			}
+		}
+		Y89_collective_presidency = {
+			picture = generic_political_support
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.20
+			}
+		}
+		Y89_stabilization_program = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		Y89_federal_deadlock = {
+			picture = generic_economic_crisis
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+				political_power_gain = -0.10
+			}
+		}
+		Y89_arms_embargo = {
+			picture = generic_infantry_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = -0.05
+				production_factory_max_efficiency_factor = -0.05
+			}
+		}
+		Y89_un_sanctions = {
+			picture = generic_economic_crisis
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_speed_buildings_factor = -0.20
+				political_power_gain = -0.10
+			}
+		}
+		Y89_unmik = {
+			picture = generic_political_support
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = -0.05
+			}
+		}
+		Y89_confederal_institutions = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.10
+			}
+		}
+		Y89_single_market = {
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				consumer_goods_factor = -0.05
+			}
+		}
+		Y89_civilian_control_army = {
+			picture = generic_morale_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = -0.05
+			}
+		}
+		Y89_eu_negotiations = {
+			picture = generic_research_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+		### 2026 год ###
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

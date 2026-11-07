@@ -1,0 +1,33 @@
+bookmarks = {
+    bookmark = {
+        name = RW26_BOOKMARK_2026
+        desc = RW26_BOOKMARK_2026_DESC
+        date = 2026.1.1.12
+        picture = GFX_select_date_1936
+        default_country = SER
+        default = yes
+        SER = { history = RW26_BOOKMARK_COUNTRY_HISTORY ideology = democratic focuses = { RW26_administration RW26_economy RW26_defence } }
+        SOV = { history = RW26_BOOKMARK_COUNTRY_HISTORY ideology = neutrality focuses = { RW26_administration RW26_economy RW26_defence } }
+        USA = { history = RW26_BOOKMARK_COUNTRY_HISTORY ideology = democratic focuses = { RW26_administration RW26_economy RW26_defence } }
+        PRC = { history = RW26_BOOKMARK_COUNTRY_HISTORY ideology = communism focuses = { RW26_administration RW26_economy RW26_defence } }
+        GER = { history = RW26_BOOKMARK_COUNTRY_HISTORY ideology = democratic focuses = { RW26_administration RW26_economy RW26_defence } }
+        RAJ = { history = RW26_BOOKMARK_COUNTRY_HISTORY ideology = neutrality focuses = { RW26_administration RW26_economy RW26_defence } }
+        BRA = { history = RW26_BOOKMARK_COUNTRY_HISTORY ideology = neutrality focuses = { RW26_administration RW26_economy RW26_defence } }
+        SAF = { history = RW26_BOOKMARK_COUNTRY_HISTORY ideology = neutrality focuses = { RW26_administration RW26_economy RW26_defence } }
+        "---" = { history = RW26_BOOKMARK_OTHER }
+    }
+    bookmark = {
+        name = REWORKL_BOOKMARK_SERBIA
+        desc = REWORKL_BOOKMARK_SERBIA_DESC
+        date = 1936.1.1.12
+        picture = GFX_select_date_1936
+        default_country = SER
+        SER = {
+            history = REWORKL_BOOKMARK_SERBIA_HISTORY
+            ideology = neutrality
+            focuses = { old_world_serbia_tree1_focus_86_3 old_world_serbia_fixkosovo old_world_serbia_tree1_focus_8 }
+            ideas = { Serbian_Economy Serbian_arms noorg }
+        }
+        "---" = { history = REWORKL_BOOKMARK_SERBIA_OTHER }
+    }
+}

@@ -1,0 +1,9 @@
+# Reproducible, matched CC-BY-SA map assets. Do not mix with vanilla rasters.
+map_asset = { path = "map/cities.bmp" size = 11535478 sha256 = "a6b5871c59b88c300658a1117cb8e263d1257fe38bcd9e7584060ac7db66d523" }
+map_asset = { path = "map/heightmap.bmp" size = 11535410 sha256 = "17cac582f63b254c694d672030d31df29ff110bf6cbf3ab24b243fcfb682164b" }
+map_asset = { path = "map/provinces.bmp" size = 34603062 sha256 = "05e7de79f389035eac9bd610f573525a9dd3343506dd55458416e1442eb8da34" }
+map_asset = { path = "map/rivers.bmp" size = 11535416 sha256 = "d90d9bea98b8a91147aa69de952841bc1389bfa21d60bc3a16006cbcc2e8b796" }
+map_asset = { path = "map/terrain.bmp" size = 11535494 sha256 = "243f7b795995ae4cbbfa15aa566419faeb2731b495acc477c3ba32b5c3e7305a" }
+map_asset = { path = "map/trees.bmp" size = 2884662 sha256 = "5c31df8b8ba9af8cf0407819ed19af782e29ebc45b08f3e8f621a32b4a979daf" }
+map_asset = { path = "map/world_normal.bmp" size = 8650806 sha256 = "366537c7360a6fcea74a7646d44fb2bbb15fab816cfe8941ac325bf4aabf420e" }
+map_asset = { path = "map/unitstacks.txt" size = 12396200 sha256 = "6b761a9f8d28cae4396bea204c9910995b024c37dea01c083964e4f3c5502808" }

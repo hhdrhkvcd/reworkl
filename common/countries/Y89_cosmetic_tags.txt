@@ -1,0 +1,28 @@
+YUG_SFRY = {
+    color = { 177 28 43 }
+    color_ui = { 177 28 43 }
+}
+YUG_FRY = {
+    color = { 185 35 48 }
+    color_ui = { 185 35 48 }
+}
+YUG_SCG = {
+    color = { 48 88 145 }
+    color_ui = { 48 88 145 }
+}
+YUG_SRB = {
+    color = { 190 32 45 }
+    color_ui = { 190 32 45 }
+}
+YUG_CONF = {
+    color = { 55 105 150 }
+    color_ui = { 55 105 150 }
+}
+YUG_UNION = {
+    color = { 45 95 145 }
+    color_ui = { 45 95 145 }
+}
+MAC_NORTH = {
+    color = { 220 55 55 }
+    color_ui = { 220 55 55 }
+}

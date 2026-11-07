@@ -1,0 +1,17 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 240
+    name = "RW26_STATE_240"
+    manpower = 502071
+    state_category = rw26_slots_2
+    resources = { oil = 4 steel = 3 }
+    provinces = { 750 2020 5065 11081 12991 13331 13868 13869 13870 13871 14714 14715 14716 14717 14718 14719 14720 16305 16306 16307 16308 16311 16312 16313 }
+    history = {
+        owner = SOM
+        add_core_of = SOM
+        victory_points = { 2020 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

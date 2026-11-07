@@ -1,0 +1,70 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_goal_old_world_old_world_serbia_fixkosovo
+        texturefile = "gfx/interface/goals/old_world/old_world_old_world_serbia_fixkosovo.dds"
+    }
+    spriteType = {
+        name = GFX_goal_old_world_old_world_serbia_fixkosovo_shine
+        texturefile = "gfx/interface/goals/old_world/old_world_old_world_serbia_fixkosovo.dds"
+        effectFile = "gfx/FX/buttonstate.lua"
+        animation = {
+            animationmaskfile = "gfx/interface/goals/old_world/old_world_old_world_serbia_fixkosovo.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = -90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        animation = {
+            animationmaskfile = "gfx/interface/goals/old_world/old_world_old_world_serbia_fixkosovo.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = 90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        legacy_lazy_load = no
+    }
+    spriteType = {
+        name = GFX_goal_old_world_old_world_serbia_killkosovo
+        texturefile = "gfx/interface/goals/old_world/old_world_old_world_serbia_killkosovo.dds"
+    }
+    spriteType = {
+        name = GFX_goal_old_world_old_world_serbia_killkosovo_shine
+        texturefile = "gfx/interface/goals/old_world/old_world_old_world_serbia_killkosovo.dds"
+        effectFile = "gfx/FX/buttonstate.lua"
+        animation = {
+            animationmaskfile = "gfx/interface/goals/old_world/old_world_old_world_serbia_killkosovo.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = -90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        animation = {
+            animationmaskfile = "gfx/interface/goals/old_world/old_world_old_world_serbia_killkosovo.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = 90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        legacy_lazy_load = no
+    }
+}

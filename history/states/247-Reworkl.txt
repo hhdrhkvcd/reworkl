@@ -1,0 +1,16 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 247
+    name = "RW26_STATE_247"
+    manpower = 5708298
+    state_category = rw26_slots_2
+    provinces = { 12929 6586 13725 13726 13727 }
+    history = {
+        owner = UGA
+        add_core_of = UGA
+        victory_points = { 12929 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

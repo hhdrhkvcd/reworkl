@@ -1,0 +1,18 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 234
+    name = "RW26_STATE_234"
+    manpower = 11938061
+    state_category = rw26_slots_2
+    provinces = { 8036 10775 12714 163 212 297 345 13830 13831 13832 13833 13834 13835 13836 }
+    history = {
+        owner = ETH
+        add_core_of = ETH
+        victory_points = { 12714 1 }
+        victory_points = { 10775 1 }
+        victory_points = { 345 4 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

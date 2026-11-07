@@ -1,0 +1,16 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 1048
+    name = "RW26_STATE_1048"
+    manpower = 725689
+    state_category = rw26_slots_2
+    provinces = { 8182 13685 13686 }
+    history = {
+        owner = TZN
+        add_core_of = TZN
+        victory_points = { 13686 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

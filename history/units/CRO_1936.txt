@@ -1,0 +1,85 @@
+division_template = {
+    name = "Pesadijska Divizija"
+
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 1 y = 1 }
+        infantry = { x = 1 y = 2 }
+        infantry = { x = 2 y = 0 }
+        infantry = { x = 2 y = 1 }
+        infantry = { x = 2 y = 2 }
+    }
+    support = {
+        engineer = { x = 0 y = 0 }
+    }
+    priority = 1
+}
+
+division_template = {
+    name = "Alpine Odred"
+
+    regiments = {
+        mountaineers = { x = 0 y = 0 }
+        mountaineers = { x = 0 y = 1 }
+        mountaineers = { x = 0 y = 2 }
+    }
+    priority = 1
+}
+
+division_template = {
+    name = "Konjièka Divizija"
+
+    regiments = {
+        cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 0 y = 2 }
+        cavalry = { x = 1 y = 0 }
+        cavalry = { x = 1 y = 1 }
+        cavalry = { x = 1 y = 2 }
+    }
+    priority = 1
+}
+
+division_template = {
+    name = "Bataljon Bornih Kola"
+
+    regiments = {
+        light_armor = { x = 0 y = 0 }
+    }
+    priority = 1
+}
+
+units = {
+    division = {
+        name = "1st Infantry Division"
+        location = 11581
+        division_template = "Pesadijska Divizija"
+    }
+    division = {
+        name = "2nd Infantry Division"
+        location = 11581
+        division_template = "Pesadijska Divizija"
+        start_experience_factor = 0.05
+    }
+    division = {
+        name = "3rd Infantry Division"
+        location = 11581
+        division_template = "Pesadijska Divizija"
+    }
+    division = {
+        name = "4th Infantry Division"
+        location = 11581
+        division_template = "Pesadijska Divizija"
+        start_equipment_factor = 0.95
+    }
+    division = {
+        name = "5th Infantry Division"
+        location = 11581
+        division_template = "Pesadijska Divizija"
+        start_equipment_factor = 0.85
+        start_experience_factor = 0.1
+    }
+}

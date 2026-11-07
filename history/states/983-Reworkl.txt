@@ -1,0 +1,16 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 983
+    name = "RW26_STATE_983"
+    manpower = 252565
+    state_category = rw26_slots_2
+    provinces = { 7359 11756 12860 }
+    history = {
+        owner = BHU
+        add_core_of = BHU
+        victory_points = { 7359 1 }
+        buildings = {
+            infrastructure = 1
+        }
+    }
+}

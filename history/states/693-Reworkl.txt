@@ -1,0 +1,23 @@
+# Generated geography derivative, CC-BY-SA-4.0; see licenses/.
+state = {
+    id = 693
+    name = "RW26_STATE_693"
+    manpower = 2701319
+    state_category = rw26_slots_3
+    resources = { oil = 9 steel = 6 }
+    provinces = { 3421 6493 6474 16535 16461 16468 16475 }
+    history = {
+        owner = UKR
+        add_core_of = UKR
+        victory_points = { 6474 8 }
+        victory_points = { 16475 3 }
+        victory_points = { 16468 2 }
+        victory_points = { 16461 1 }
+        buildings = {
+            infrastructure = 5
+            anti_air_building = 1
+            industrial_complex = 1
+            air_base = 1
+        }
+    }
+}
