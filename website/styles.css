@@ -113,3 +113,8 @@
 .world-card-symbol { position: absolute; right: 24px; top: 34px; display: grid; font-size: 60px; line-height: 1; color: #d8cb92; text-align: right; }
 .world-card-symbol span { font-size: 8px; letter-spacing: 1.4px; margin-top: 12px; }
 @media (max-width: 480px) { .world-preview { padding: 48px 0; } .world-card-symbol { right: 18px; font-size: 48px; } }
+
+/* Long installer labels must wrap inside the small-screen download card. */
+.bat-feature > div, .bat-feature > aside { min-width: 0; }
+.bat-feature code { overflow-wrap: anywhere; }
+.bat-feature aside .button { white-space: normal; text-align: center; }
