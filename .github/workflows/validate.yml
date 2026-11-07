@@ -11,6 +11,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         python: ['3.10', '3.12']
     steps:
@@ -19,7 +20,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: python scripts/validate_mod.py
-      - run: python -m unittest discover -s tests -v
+      - run: python scripts/run_ci_tests.py -v
 
   windows-release-installer:
     runs-on: windows-latest
@@ -33,11 +34,12 @@ jobs:
         run: python -c "import shutil; assert shutil.which('pwsh') or shutil.which('powershell')"
       - name: Exercise standalone ZIP installer on Windows
         shell: pwsh
-        run: python -m unittest discover -s tests -p test_release_installer.py -v
+        run: python scripts/run_ci_tests.py -p test_release_installer.py -v
 
   windows-bat-workflow:
     runs-on: windows-latest
     strategy:
+      fail-fast: false
       matrix:
         powershell: ['powershell.exe', 'pwsh.exe']
     env:
@@ -52,7 +54,7 @@ jobs:
         run: python -c "import os,shutil; assert shutil.which(os.environ['REWORKL_TEST_POWERSHELL'])"
       - name: Test isolated BAT installation, launch preparation and rollback
         shell: pwsh
-        run: python -m unittest discover -s tests -p test_bat_workflow.py -v
+        run: python scripts/run_ci_tests.py -p test_bat_workflow.py -v
       - name: Test RU2 localisation-only update and rollback
         shell: pwsh
-        run: python -m unittest discover -s tests -p test_russian_fix.py -v
+        run: python scripts/run_ci_tests.py -p test_russian_fix.py -v
