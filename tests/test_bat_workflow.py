@@ -520,5 +520,39 @@ Invoke-Reworkl -Action Install -Source $source -GameDir $game -BaseDir $base -No
         self.assertFalse(self.target.exists())
 
 
+    def test_real_full_world_payload_installs_with_its_actual_recovery_archive(self):
+        from materialize_world_map import ensure_map_assets
+        ensure_map_assets(ROOT)
+        result = self.run_ps(f'Invoke-Reworkl -Action Install -Source {ps_quote(ROOT)} -GameDir $game -BaseDir $base -NonInteractive')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(len(list((self.target / 'history/states').glob('*.txt'))), 1255)
+        self.assertEqual((self.target / 'history/states/1-Reworkl.txt').read_bytes(), (ROOT / 'history/states/1-Reworkl.txt').read_bytes())
+        self.assertEqual((self.target / 'map/reworkl_state_manifest.json').read_bytes(), (ROOT / 'map/reworkl_state_manifest.json').read_bytes())
+        self.assertEqual((self.target / 'map/provinces.bmp').read_bytes(), (ROOT / 'map/provinces.bmp').read_bytes())
+        self.assertFalse((self.target / 'assets').exists())
+
+
+    def test_recovery_rejects_unsafe_zip_entries_even_with_matching_outer_checksum(self):
+        self.make_world_source()
+        from world_installer_fixture import add_recovery_bundle, BUNDLE_DOWNLOAD, CHECKSUM_DOWNLOAD
+        from io import BytesIO
+        import hashlib
+        add_recovery_bundle(self.source)
+        bundle = self.source.parent / BUNDLE_DOWNLOAD
+        with zipfile.ZipFile(BytesIO(bundle.read_bytes())) as original:
+            with zipfile.ZipFile(bundle, 'w') as altered:
+                for entry in original.infolist():
+                    data = original.read(entry.filename)
+                    if entry.filename == 'history/states/1-Reworkl.txt':
+                        entry.filename = '../outside.txt'
+                    altered.writestr(entry, data)
+        (self.source.parent / CHECKSUM_DOWNLOAD).write_text(hashlib.sha256(bundle.read_bytes()).hexdigest() + '  ' + BUNDLE_DOWNLOAD, encoding='ascii')
+        result = self.run_ps('Invoke-Reworkl -Action Install -Source $source -GameDir $game -BaseDir $base -NonInteractive')
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('WORLD_STATE_ARCHIVE_', result.stdout + result.stderr)
+        self.assertFalse(self.target.exists())
+        self.assertFalse((self.root / 'outside.txt').exists())
+
+
 if __name__ == '__main__':
     unittest.main()

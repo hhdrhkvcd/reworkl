@@ -12,6 +12,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+Write-Host '[TOOLS_VERSION] 2.0.0-alpha3'
 Set-StrictMode -Version 2.0
 $Utf8 = [System.Text.UTF8Encoding]::new($false)
 $PayloadDirs = @('common', 'events', 'gfx', 'history', 'interface', 'localisation', 'map', 'music')

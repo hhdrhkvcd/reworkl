@@ -15,6 +15,8 @@ from build_state_payload import BUNDLE_PATH, CHECKSUM_PATH, BUNDLE_DOWNLOAD, CHE
 ASSET_SUFFIXES = {".txt", ".lua", ".mod", ".gfx", ".gui", ".yml", ".asset", ".dds", ".tga", ".png", ".ogg", ".bmp", ".csv", ".map"}
 RELEASE_HELPERS = ("INSTALL_REWORKL.cmd", "CHECK_REWORKL.cmd", "Install-Reworkl.ps1")
 SHARED_HELPERS = ("Reworkl-World.ps1",)
+FIX_GUIDE = "INSTALLER_FIX_RU.txt"
+FIX_FILENAME = "reworkl-2026-installer-fix-1.zip"
 BAT_HELPERS = ("0_START_2026.bat", "1_INSTALL.bat", "2_LAUNCH.bat", "3_CHECK.bat", "4_PLAN_B_USERDIR.bat", "5_RESTORE_PLAN_B.bat", "Reworkl-Bat.ps1", "BAT_NO_DLC_RU.txt", *SHARED_HELPERS, BUNDLE_DOWNLOAD, CHECKSUM_DOWNLOAD)
 
 
@@ -23,7 +25,7 @@ def helper_path(name: str, root: Path = ROOT) -> Path:
         return root / BUNDLE_PATH
     if name == CHECKSUM_DOWNLOAD:
         return root / CHECKSUM_PATH
-    return root / ("installer/bat" if name in BAT_HELPERS else "installer") / name
+    return root / ("installer/bat" if name in (*BAT_HELPERS, FIX_GUIDE) else "installer") / name
 
 
 def source_files(root: Path = ROOT) -> list[Path]:
@@ -127,6 +129,24 @@ def build_bat_toolkit(output: Path, root: Path = ROOT) -> None:
         staged.replace(output)
 
 
+def build_installer_fix(output: Path, root: Path = ROOT) -> None:
+    """Repair BOTH Alpha2 installers without redownloading map rasters/music."""
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix=".reworkl-fix-", dir=output.parent) as temp:
+        staged = Path(temp) / "installer-fix.zip"
+        with zipfile.ZipFile(staged, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
+            for name in (*BAT_HELPERS, *RELEASE_HELPERS, FIX_GUIDE):
+                info = zipfile.ZipInfo(name, date_time=(2026, 11, 8, 0, 0, 0))
+                info.compress_type = zipfile.ZIP_DEFLATED
+                info.create_system = 3
+                info.external_attr = 0o100644 << 16
+                archive.writestr(info, helper_path(name, root).read_bytes())
+        with zipfile.ZipFile(staged) as archive:
+            if archive.testzip():
+                raise ValueError("Installer repair CRC check failed")
+        staged.replace(output)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     version = load(ROOT / "descriptor.mod").scalar("version")
@@ -135,6 +155,8 @@ def main() -> int:
     parser.add_argument("--tools-only", action="store_true", help="Build only the small Windows activation toolkit")
     args = parser.parse_args()
     try:
+        fix = ROOT / "releases" / FIX_FILENAME
+        build_installer_fix(fix)
         bat_tools = ROOT / "releases/reworkl-bat-nodlc.zip"
         build_bat_toolkit(bat_tools)
         if args.bat_only:

@@ -181,5 +181,25 @@ class ReleaseInstallerIntegrationTests(unittest.TestCase):
         self.assertFalse((self.user / 'mod/reworkl').exists())
 
 
+    def test_real_full_world_payload_installs_and_inplace_refresh_removes_extras(self):
+        import sys
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        from materialize_world_map import ensure_map_assets
+        ensure_map_assets(ROOT)
+        result = self.run_installer('-Source', str(ROOT), source=False)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        target = self.user / 'mod/reworkl'
+        self.assertEqual(len(list((target / 'history/states').glob('*.txt'))), 1255)
+        self.assertEqual((target / 'map/reworkl_state_manifest.json').read_bytes(), (ROOT / 'map/reworkl_state_manifest.json').read_bytes())
+        self.assertEqual((target / 'map/provinces.bmp').read_bytes(), (ROOT / 'map/provinces.bmp').read_bytes())
+        (target / 'history/states/old-extra.txt').write_text('old state')
+        result = self.run_installer('-Source', str(target), source=False)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertFalse((target / 'history/states/old-extra.txt').exists())
+        self.assertEqual(len(list((target / 'history/states').glob('*.txt'))), 1255)
+        backups = list((self.user / 'reworkl-backups').glob('*/reworkl/history/states/old-extra.txt'))
+        self.assertEqual(len(backups), 1)
+
+
 if __name__ == '__main__':
     unittest.main()

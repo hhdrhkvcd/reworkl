@@ -462,7 +462,7 @@ function Export-StartupDiagnostics($Layout, [string]$Report, [switch]$ReportOnly
     $manifest.Add('Reworkl startup diagnostics. Times below are UTC. Log tails are at most 1 MiB each.')
     try {
         if (Test-Path -LiteralPath $Report -PathType Leaf) { [IO.File]::Copy($Report, (Join-Path $stage 'START_RESULT.txt')) }
-        if ($ReportOnly) { $manifest.Add('PRELAUNCH ERROR: report only. Unrelated old game logs are intentionally excluded.') }
+        if ($ReportOnly) { $manifest.Add('START ERROR: report only. No game-log freshness is assumed; unrelated old game logs are intentionally excluded.') }
         $kinds = @('system','setup','error')
         if ($ReportOnly) { $kinds = @() }
         foreach ($kind in $kinds) {
