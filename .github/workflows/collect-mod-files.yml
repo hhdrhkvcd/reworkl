@@ -1,0 +1,37 @@
+name: Collect HOI4 mod files
+on:
+  push:
+    branches:
+      - chatgpt-archive-inspect
+permissions:
+  contents: read
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Extract multipart archive
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y p7zip-full
+          7z t 3832310762.zip
+          mkdir -p extracted
+          7z x 3832310762.zip -oextracted -y
+          echo "## Extracted files" > archive-report.md
+          find extracted -type f -printf '%p (%s bytes)\n' | sort >> archive-report.md
+          du -sh extracted >> archive-report.md
+      - name: Upload extracted files
+        uses: actions/upload-artifact@v4
+        with:
+          name: extracted-mod-source
+          path: extracted/
+          if-no-files-found: error
+          include-hidden-files: true
+      - name: Upload extraction report
+        uses: actions/upload-artifact@v4
+        with:
+          name: extraction-report
+          path: archive-report.md
+          if-no-files-found: error
