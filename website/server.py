@@ -170,6 +170,7 @@ class DownloadHandler(BaseHTTPRequestHandler):
         bat_tools = self.server.files.get('/download/reworkl-bat-nodlc.zip')
         russian_patch = self.server.files.get('/download/reworkl-russian-localisation.zip')
         russian_fix = self.server.files.get('/download/reworkl-russian-fix-2.zip')
+        installer_fix = self.server.files.get('/download/reworkl-2026-installer-fix-1.zip')
         if path in ('/', '/index.html'):
             html = (self.server.site / 'index.html').read_text(encoding='utf-8')
             values = {
@@ -182,6 +183,7 @@ class DownloadHandler(BaseHTTPRequestHandler):
                 'CURRENT_DESCRIPTOR_VERSION': current.release.version if current else release.version,
                 'BAT_TOOLS_SIZE': f'{bat_tools.release.size / 1000:.1f}'.replace('.', ',') if bat_tools else '—',
                 'RU_PATCH_SIZE': f'{russian_patch.release.size / 1000:.1f}'.replace('.', ',') if russian_patch else '—',
+                'INSTALLER_FIX_SIZE': f'{installer_fix.release.size / 1000:.1f}'.replace('.', ',') if installer_fix else '—',
                 'RU_FIX_SIZE': f'{russian_fix.release.size / 1000:.1f}'.replace('.', ',') if russian_fix else '—',
                 'WINDOWS_PACKAGE_SIZE': f'{windows_zip.release.size / 1000:.1f}'.replace('.', ',') if windows_zip else '—',
             }
@@ -282,6 +284,7 @@ class DownloadHandler(BaseHTTPRequestHandler):
 
 def main() -> None:
     sys.path.insert(0, str(ROOT / 'scripts'))
+    from build_mod import build_toolkit, build_bat_toolkit, build_installer_fix, FIX_FILENAME as INSTALLER_FIX_FILENAME
     from build_russian_patch import PATCH_FILENAME, PATCH_REVISION, build_patch
     from build_russian_fix import FIX_FILENAME, FIX_REVISION, build_fix
 
@@ -299,10 +302,11 @@ def main() -> None:
         print('Preparing the downloadable mod archive…', flush=True)
         subprocess.run([sys.executable, str(ROOT / 'scripts/build_mod.py'), '--output', str(archive)], check=True, cwd=ROOT)
     toolkit_path = ROOT / 'releases/reworkl-activation-tools.zip'
-    if not toolkit_path.is_file():
-        subprocess.run([sys.executable, str(ROOT / 'scripts/build_mod.py'), '--tools-only'], check=True, cwd=ROOT)
+    build_toolkit(toolkit_path)
     bat_path = ROOT / 'releases/reworkl-bat-nodlc.zip'
-    subprocess.run([sys.executable, str(ROOT / 'scripts/build_mod.py'), '--bat-only'], check=True, cwd=ROOT)
+    build_bat_toolkit(bat_path)
+    installer_fix_path = ROOT / 'releases' / INSTALLER_FIX_FILENAME
+    build_installer_fix(installer_fix_path)
     russian_path = ROOT / 'releases' / PATCH_FILENAME
     if not russian_path.is_file():
         build_patch(russian_path)
@@ -314,6 +318,7 @@ def main() -> None:
     windows = prepare_windows_files(ROOT)
     text_type = 'text/plain; charset=utf-8'
     files = {
+        '/download/' + INSTALLER_FIX_FILENAME: DownloadFile(Release.read(installer_fix_path, version), INSTALLER_FIX_FILENAME, 'application/zip'),
         '/download/reworkl-russian-fix-2.zip': DownloadFile(Release.read(fix_path, FIX_REVISION), FIX_FILENAME, 'application/zip'),
         '/download/reworkl-russian-localisation.zip': DownloadFile(Release.read(russian_path, f'RU-{PATCH_REVISION}'), PATCH_FILENAME, 'application/zip'),
         '/download/reworkl-bat-nodlc.zip': DownloadFile(Release.read(bat_path, version), f'reworkl-bat-nodlc-{version}.zip', 'application/zip'),

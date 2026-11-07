@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from website.server import DownloadFile, DownloadHandler, DownloadServer, Release, byte_range
 from website.download_assets import prepare_windows_files
-from build_mod import build_bat_toolkit
+from build_mod import build_bat_toolkit, build_installer_fix, FIX_FILENAME as INSTALLER_FIX_FILENAME
 from build_russian_patch import PATCH_FILENAME, PATCH_REVISION, build_patch, russian_files
 from build_russian_fix import FIX_FILENAME, FIX_REVISION, build_fix, ENGLISH_COMPAT
 
@@ -58,7 +58,10 @@ class WebsiteTests(unittest.TestCase):
         build_patch(cls.russian_path)
         cls.fix_path = Path(cls.temporary.name) / FIX_FILENAME
         build_fix(cls.fix_path)
+        cls.installer_fix_path = Path(cls.temporary.name) / INSTALLER_FIX_FILENAME
+        build_installer_fix(cls.installer_fix_path)
         cls.extra_files = {
+            '/download/' + INSTALLER_FIX_FILENAME: DownloadFile(Release.read(cls.installer_fix_path, cls.windows.current_version), INSTALLER_FIX_FILENAME, 'application/zip'),
             '/download/reworkl-russian-fix-2.zip': DownloadFile(Release.read(cls.fix_path, FIX_REVISION), FIX_FILENAME, 'application/zip'),
             '/download/reworkl-russian-localisation.zip': DownloadFile(Release.read(cls.russian_path, f'RU-{PATCH_REVISION}'), PATCH_FILENAME, 'application/zip'),
             '/download/reworkl-bat-nodlc.zip': DownloadFile(Release.read(cls.bat_path, cls.windows.current_version), f'reworkl-bat-nodlc-{cls.windows.current_version}.zip', 'application/zip'),
@@ -250,7 +253,23 @@ class WebsiteTests(unittest.TestCase):
         self.assertEqual(headers['Cache-Control'], 'no-cache')
         self.assertIn(f'filename="reworkl-bat-nodlc-{self.windows.current_version}.zip"', headers['Content-Disposition'])
         self.assertEqual(body, self.bat_path.read_bytes())
-        self.assertLess(len(body), 64 * 1024)
+        self.assertLess(len(body), 1024 * 1024)
+
+    def test_installer_state_fix_is_small_and_linked_separately_from_the_full_mod(self):
+        status, headers, body = self.request('/download/' + INSTALLER_FIX_FILENAME)
+        self.assertEqual(status, 200)
+        self.assertEqual(body, self.installer_fix_path.read_bytes())
+        self.assertIn('filename="' + INSTALLER_FIX_FILENAME + '"', headers['Content-Disposition'])
+        self.assertLess(len(body), 1024 * 1024)
+        with zipfile.ZipFile(io.BytesIO(body)) as archive:
+            self.assertIn('Reworkl-World.ps1', archive.namelist())
+            self.assertIn('Reworkl-World-States.zip', archive.namelist())
+            self.assertIn('Install-Reworkl.ps1', archive.namelist())
+            self.assertNotIn('reworkl/descriptor.mod', archive.namelist())
+        status, _, body = self.request('/')
+        self.assertEqual(status, 200)
+        self.assertIn('data-installer-fix', body.decode())
+        self.assertNotIn('{{INSTALLER_FIX_SIZE}}', body.decode())
 
     def test_ru2_updater_download_includes_english_compat_without_replacing_the_full_mod(self):
         status, headers, body = self.request('/download/reworkl-russian-fix-2.zip')
