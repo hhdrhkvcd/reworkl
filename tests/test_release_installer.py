@@ -61,7 +61,7 @@ class ReleaseInstallerIntegrationTests(unittest.TestCase):
         self.temp.cleanup()
 
     def run_installer(self, *arguments, source=True):
-        command = [POWERSHELL, '-NoLogo', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', str(SCRIPT), '-UserDir', str(self.user)]
+        command = [POWERSHELL, '-NoLogo', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', str(getattr(self, 'script', SCRIPT)), '-UserDir', str(self.user)]
         if source:
             command.extend(['-Source', str(self.source)])
         result = subprocess.run(command + list(arguments), text=True, encoding='utf-8', errors='replace', capture_output=True, env=powershell_env(), timeout=75)
@@ -199,6 +199,22 @@ class ReleaseInstallerIntegrationTests(unittest.TestCase):
         self.assertEqual(len(list((target / 'history/states').glob('*.txt'))), 1255)
         backups = list((self.user / 'reworkl-backups').glob('*/reworkl/history/states/old-extra.txt'))
         self.assertEqual(len(backups), 1)
+
+
+    def test_shipped_native_repair_handles_the_alpha2_layout_without_source_json(self):
+        import sys
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        from world_installer_fixture import prepare_alpha2_repair_source
+        kit, missing = prepare_alpha2_repair_source(self.source, self.base / 'delivered fix')
+        self.script = kit / 'Install-Reworkl.ps1'
+        result = self.run_installer()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn('[TOOLS_VERSION] 2.0.0-alpha3', result.stdout)
+        target = self.user / 'mod/reworkl'
+        self.assertEqual((target / missing).read_bytes(), (ROOT / missing).read_bytes())
+        self.assertFalse((self.source / missing).exists())
+        self.assertFalse((self.source / 'map/reworkl_state_manifest.json').exists())
+        self.assertIn('version="2.0.0-alpha2"', (target / 'descriptor.mod').read_text(encoding='utf-8-sig'))
 
 
 if __name__ == '__main__':

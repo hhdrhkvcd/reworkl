@@ -127,11 +127,11 @@ class BatWorkflowIntegrationTests(unittest.TestCase):
     def tearDown(self):
         self.temporary.cleanup()
 
-    def run_ps(self, body):
+    def run_ps(self, body, script=SCRIPT):
         driver = self.root / 'driver.ps1'
         driver.write_text(
             "$ErrorActionPreference = 'Stop'\n"
-            f'. {ps_quote(SCRIPT)} -LibraryOnly\n'
+            f'. {ps_quote(script)} -LibraryOnly\n'
             'function Assert-Closed {}\n'
             f'$source = {ps_quote(self.source)}\n$game = {ps_quote(self.game)}\n$base = {ps_quote(self.base)}\n'
             + body, encoding='utf-8-sig')
@@ -552,6 +552,18 @@ Invoke-Reworkl -Action Install -Source $source -GameDir $game -BaseDir $base -No
         self.assertIn('WORLD_STATE_ARCHIVE_', result.stdout + result.stderr)
         self.assertFalse(self.target.exists())
         self.assertFalse((self.root / 'outside.txt').exists())
+
+
+    def test_shipped_repair_installs_alpha2_without_source_json_or_a_required_state(self):
+        from world_installer_fixture import prepare_alpha2_repair_source
+        kit, missing = prepare_alpha2_repair_source(self.source, self.root / 'delivered fix')
+        result = self.run_ps('Invoke-Reworkl -Action Install -Source $source -GameDir $game -BaseDir $base -NonInteractive', script=kit / 'Reworkl-Bat.ps1')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn('[TOOLS_VERSION] 2.0.0-alpha3', result.stdout)
+        self.assertEqual((self.target / missing).read_bytes(), (ROOT / missing).read_bytes())
+        self.assertFalse((self.source / missing).exists())
+        self.assertFalse((self.source / 'map/reworkl_state_manifest.json').exists())
+        self.assertIn('version="2.0.0-alpha2"', (self.target / 'descriptor.mod').read_text(encoding='utf-8-sig'))
 
 
 if __name__ == '__main__':

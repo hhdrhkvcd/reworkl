@@ -35,3 +35,29 @@ def add_recovery_bundle(source):
     bundle, checksum = build_state_payload(source)
     shutil.copy2(bundle, source.parent / BUNDLE_DOWNLOAD)
     shutil.copy2(checksum, source.parent / CHECKSUM_DOWNLOAD)
+
+
+def prepare_alpha2_repair_source(source, output):
+    """Real game payload + shipped repair, no source JSON (the Alpha2 layout).
+
+    Gameplay bytes are unchanged from Alpha2; only the descriptor version and
+    new standalone state JSON differ. This never writes to the repository.
+    """
+    import json
+    import re
+    import zipfile
+    from build_mod import copy_payload, build_installer_fix
+    copy_payload(source)
+    descriptor = source / 'descriptor.mod'
+    descriptor.write_text(re.sub(r'version="[^"]+"', 'version="2.0.0-alpha2"', descriptor.read_text(encoding='utf-8-sig')), encoding='utf-8')
+    metadata = json.loads((source / MANIFEST_PATH).read_bytes())
+    missing = metadata['files'][-1]['path']
+    (source / MANIFEST_PATH).unlink()
+    (source / missing).unlink()
+    output.mkdir()
+    archive = output / 'repair.zip'
+    build_installer_fix(archive)
+    kit = output / 'kit'
+    with zipfile.ZipFile(archive) as z:
+        z.extractall(kit)
+    return kit, missing
