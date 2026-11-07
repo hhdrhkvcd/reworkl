@@ -1,5 +1,5 @@
 name="Reworkl — Мир 2026, Сербия и Turbo-folk"
-version="2.0.0-alpha2"
+version="2.0.0-alpha3"
 tags={ "Alternative History" "National Focuses" "Music" }
 replace_path="common/bookmarks"
 replace_path="gfx/loadingscreens"

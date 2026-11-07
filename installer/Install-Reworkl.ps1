@@ -17,6 +17,16 @@ $Utf8 = [System.Text.UTF8Encoding]::new($false)
 $PayloadDirs = @('common', 'events', 'gfx', 'history', 'interface', 'localisation', 'map', 'music')
 $PayloadExtensions = @('.txt', '.lua', '.mod', '.gfx', '.gui', '.yml', '.asset', '.dds', '.tga', '.png', '.ogg', '.bmp', '.csv', '.map')
 
+$worldLibrary = Join-Path $PSScriptRoot 'Reworkl-World.ps1'
+if (-not (Test-Path -LiteralPath $worldLibrary -PathType Leaf)) { $worldLibrary = Join-Path $PSScriptRoot 'bat/Reworkl-World.ps1' }
+if (Test-Path -LiteralPath $worldLibrary -PathType Leaf) { . $worldLibrary }
+function File-Hash([string]$Path) {
+    $algorithm = [Security.Cryptography.SHA256]::Create()
+    $stream = [IO.File]::OpenRead($Path)
+    try { return [BitConverter]::ToString($algorithm.ComputeHash($stream)).Replace('-', '') }
+    finally { $stream.Dispose(); $algorithm.Dispose() }
+}
+
 function Full-Path([string]$Path) {
     return [System.IO.Path]::GetFullPath($Path).TrimEnd([char[]]@('/', '\'))
 }
@@ -139,10 +149,11 @@ try {
         $bookmarkText -notmatch '1936\.1\.1' -or ($bookmarkText -notmatch '1989\.1\.1' -and $bookmarkText -notmatch '2026\.1\.1')) {
         throw 'Это не готовая объединённая сборка Reworkl. Не используй старый многотомный исходный архив.'
     }
+    $worldPlan = $null
     if ($description -match '(?m)^\s*version\s*=\s*"2\.') {
         if ($bookmarkText -notmatch '2026\.1\.1') { throw 'Reworkl 2.x: отсутствует основной старт 2026.' }
-        $states = @(Get-ChildItem -LiteralPath (Join-Path $Source 'history/states') -File -Filter '*.txt')
-        if ($states.Count -ne 1255) { throw 'Нужны ровно 1255 регионов. Распакуй полный ZIP 2026 в новую папку, без старых файлов 1989.' }
+        if (-not (Get-Command Get-ReworklWorldStatePlan -ErrorAction SilentlyContinue)) { throw 'Нет Reworkl-World.ps1. Распакуй полный ZIP исправления рядом с установщиком.' }
+        $worldPlan = Get-ReworklWorldStatePlan $Source $PSScriptRoot
         foreach ($relative in @('common/bookmarks/the_gathering_storm.txt','common/bookmarks/blitzkrieg.txt','map/provinces.bmp','map/definition.csv','map/default.map','map/unitstacks.txt','licenses/Millennium-Dawn-CC-BY-SA-4.0.txt','licenses/flag-icons-MIT.txt','THIRD_PARTY.txt','WORLD_2026_RU.txt')) {
             if (-not (Test-Path -LiteralPath (Join-Path $Source $relative) -PathType Leaf)) { throw "Неполная карта 2026: $relative" }
         }
@@ -159,6 +170,7 @@ try {
     $target = Full-Path (Join-Path $modDir 'reworkl')
     $external = Join-Path $modDir 'reworkl.mod'
     $sameSource = ($Source -ieq $target)
+    $copyPayload = (-not $sameSource -or $null -ne $worldPlan)
     if (-not $sameSource -and ($target.StartsWith($Source + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase) -or
         $Source.StartsWith($target + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase))) {
         throw 'Папки исходной и установленной сборки не должны быть вложены друг в друга.'
@@ -192,7 +204,7 @@ try {
     $installedExternal = $false
     try {
         [void][IO.Directory]::CreateDirectory($stage)
-        if (-not $sameSource) {
+        if ($copyPayload) {
             [void][IO.Directory]::CreateDirectory($stagedTarget)
             $files = @((Get-Item -LiteralPath $internal), (Get-Item -LiteralPath (Join-Path $Source 'thumbnail.png')))
             foreach ($directory in $PayloadDirs) {
@@ -203,25 +215,30 @@ try {
                 if (Test-Path -LiteralPath (Join-Path $Source $name) -PathType Leaf) { $files += Get-Item -LiteralPath (Join-Path $Source $name) }
             }
             if (Test-Path -LiteralPath (Join-Path $Source 'licenses') -PathType Container) { $files += @(Get-ChildItem -LiteralPath (Join-Path $Source 'licenses') -File -Recurse -Filter '*.txt') }
+            if ($worldPlan) {
+                $statePrefix = (Full-Path (Join-Path $Source 'history/states')) + [IO.Path]::DirectorySeparatorChar
+                $files = @($files | Where-Object { -not $_.FullName.StartsWith($statePrefix, [StringComparison]::OrdinalIgnoreCase) -and $worldPlan.AllowedPayload.Contains($_.FullName.Substring($Source.Length + 1).Replace('\','/')) })
+            }
             foreach ($file in $files) {
                 $relative = $file.FullName.Substring($Source.Length + 1)
                 $destination = Join-Path $stagedTarget $relative
                 [void][IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($destination))
                 [IO.File]::Copy($file.FullName, $destination)
-                if ((Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash -ne
-                    (Get-FileHash -LiteralPath $destination -Algorithm SHA256).Hash) {
+                if ((File-Hash $file.FullName) -ne
+                    (File-Hash $destination)) {
                     throw "Не совпала контрольная сумма: $relative. Старая установка не изменена."
                 }
             }
         }
+        if ($worldPlan) { Write-ReworklWorldStates $worldPlan $stagedTarget }
         $escaped = $target.Replace('\', '/').Replace('"', '\"')
         $launcher = $description.TrimEnd() + "`npath=`"$escaped`"`n"
         [IO.File]::WriteAllText($stagedExternal, $launcher, $Utf8)
 
-        if ((Test-Path -LiteralPath $external) -or (-not $sameSource -and (Test-Path -LiteralPath $target))) {
+        if ((Test-Path -LiteralPath $external) -or ($copyPayload -and (Test-Path -LiteralPath $target))) {
             $backup = Join-Path (Join-Path $UserDir 'reworkl-backups') ((Get-Date -Format 'yyyyMMddTHHmmss') + '-' + [guid]::NewGuid().ToString('N'))
             [void][IO.Directory]::CreateDirectory($backup)
-            if (-not $sameSource -and (Test-Path -LiteralPath $target)) {
+            if ($copyPayload -and (Test-Path -LiteralPath $target)) {
                 [IO.Directory]::Move($target, (Join-Path $backup 'reworkl'))
                 $movedTarget = $true
             }
@@ -230,7 +247,7 @@ try {
                 $movedExternal = $true
             }
         }
-        if (-not $sameSource) {
+        if ($copyPayload) {
             [IO.Directory]::Move($stagedTarget, $target)
             $installedTarget = $true
         }

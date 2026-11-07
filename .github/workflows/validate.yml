@@ -7,6 +7,9 @@ on:
 permissions:
   contents: read
 
+env:
+  PYTHONUTF8: '1'
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -24,6 +27,12 @@ jobs:
 
   windows-release-installer:
     runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        powershell: ['powershell.exe', 'pwsh.exe']
+    env:
+      REWORKL_TEST_POWERSHELL: ${{ matrix.powershell }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

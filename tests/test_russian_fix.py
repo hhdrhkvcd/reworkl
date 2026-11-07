@@ -25,6 +25,14 @@ from validate_mod import LOC
 POWERSHELL = os.environ.get("REWORKL_TEST_POWERSHELL") or shutil.which("pwsh") or shutil.which("powershell")
 
 
+def powershell_env():
+    import os
+    env = os.environ.copy()
+    if Path(POWERSHELL).name.lower() in ('powershell', 'powershell.exe'):
+        env.pop('PSModulePath', None)
+    return env
+
+
 def quote(value):
     return "'" + str(value).replace("'", "''") + "'"
 
@@ -120,7 +128,7 @@ class RussianFixPackagingTests(unittest.TestCase):
 class RussianFixRuntimeTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
-        self.root = Path(self.temporary.name)
+        self.root = Path(self.temporary.name).resolve()
         self.package = self.root / "RU папка O'Neil !"
         archive = self.root / "ru2.zip"
         build_fix(archive)
@@ -169,7 +177,7 @@ class RussianFixRuntimeTests(unittest.TestCase):
             + f"exit (Invoke-RussianUpdate {quote(self.package)} {quote(target or '')} {quote(self.base)} ${str(read_only).lower()})\n",
             encoding="utf-8-sig",
         )
-        return subprocess.run([str(POWERSHELL), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File", str(driver)], capture_output=True, text=True, timeout=45)
+        return subprocess.run([str(POWERSHELL), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File", str(driver)], capture_output=True, text=True, encoding="utf-8", errors="replace", env=powershell_env(), timeout=45)
 
     def assert_protected(self):
         for path, raw in self.protected.items():

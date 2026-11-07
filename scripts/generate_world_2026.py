@@ -340,6 +340,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.parse_args()
     generate()
+    from build_state_payload import build_state_payload
+    build_state_payload()
     return 0
 
 

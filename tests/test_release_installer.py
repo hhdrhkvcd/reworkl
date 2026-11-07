@@ -4,6 +4,7 @@ No fake interpreter: these integration cases are explicitly skipped when the
 host has no PowerShell. They never launch HOI4 or change the real user folder.
 """
 from pathlib import Path
+import os
 import json
 import shutil
 import subprocess
@@ -12,7 +13,15 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / 'installer/Install-Reworkl.ps1'
-POWERSHELL = shutil.which('pwsh') or shutil.which('powershell')
+POWERSHELL = os.environ.get('REWORKL_TEST_POWERSHELL') or shutil.which('pwsh') or shutil.which('powershell')
+
+
+def powershell_env():
+    import os
+    env = os.environ.copy()
+    if Path(POWERSHELL).name.lower() in ('powershell', 'powershell.exe'):
+        env.pop('PSModulePath', None)
+    return env
 
 
 class ReleaseHelperPackagingTests(unittest.TestCase):
@@ -30,7 +39,7 @@ class ReleaseHelperPackagingTests(unittest.TestCase):
 class ReleaseInstallerIntegrationTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
-        self.base = Path(self.temp.name)
+        self.base = Path(self.temp.name).resolve()
         self.source = self.base / "Extracted Reworkl O'Neil"
         self.source.mkdir()
         self.user = self.base / 'Документы игрока' / 'Hearts of Iron IV'
@@ -55,7 +64,7 @@ class ReleaseInstallerIntegrationTests(unittest.TestCase):
         command = [POWERSHELL, '-NoLogo', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', str(SCRIPT), '-UserDir', str(self.user)]
         if source:
             command.extend(['-Source', str(self.source)])
-        result = subprocess.run(command + list(arguments), text=True, encoding='utf-8', errors='replace', capture_output=True, timeout=45)
+        result = subprocess.run(command + list(arguments), text=True, encoding='utf-8', errors='replace', capture_output=True, env=powershell_env(), timeout=75)
         return result
 
     def test_installs_payload_and_absolute_launcher_path(self):
@@ -69,7 +78,7 @@ class ReleaseInstallerIntegrationTests(unittest.TestCase):
         self.assertIn(f'path="{target.as_posix()}"', descriptor)
         self.assertIn('replace_path="common/bookmarks"', descriptor)
         self.assertIn('replace_path="gfx/loadingscreens"', descriptor)
-        self.assertNotIn('path=', (target / 'descriptor.mod').read_text())
+        self.assertNotRegex((target / 'descriptor.mod').read_text(encoding='utf-8-sig'), r'(?m)^\s*path\s*=')
         self.assertIn('[NO_LAUNCH_STATE]', result.stdout)
         self.assertFalse((self.user / 'dlc_load.json').exists())
 
@@ -143,6 +152,33 @@ class ReleaseInstallerIntegrationTests(unittest.TestCase):
         self.assertEqual((old / 'keep.txt').read_text(), 'keep')
         self.assertEqual((self.user / 'mod/reworkl.mod').read_text(), 'old descriptor')
         self.assertFalse((self.user / 'reworkl-backups').exists())
+
+
+    def test_world_recovery_selects_exact_states_and_ignores_old_extras(self):
+        from world_installer_fixture import make_world_source, add_recovery_bundle
+        make_world_source(self.source)
+        add_recovery_bundle(self.source)
+        (self.source / 'history/states/1255-Reworkl.txt').unlink()
+        (self.source / 'history/states/old-extra.txt').write_text('old wrong map')
+        (self.source / 'history/country-extra.txt').write_text('unreviewed old history')
+        result = self.run_installer()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        target = self.user / 'mod/reworkl'
+        self.assertEqual(len(list((target / 'history/states').glob('*.txt'))), 1255)
+        self.assertEqual((target / 'history/states/1255-Reworkl.txt').read_text(), 'state={ id=1255 }')
+        self.assertFalse((target / 'history/states/old-extra.txt').exists())
+        self.assertFalse((target / 'history/country-extra.txt').exists())
+
+    def test_world_missing_state_names_and_actual_source_are_reported(self):
+        from world_installer_fixture import make_world_source
+        make_world_source(self.source)
+        (self.source / 'history/states/1255-Reworkl.txt').unlink()
+        result = self.run_installer()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('WORLD_STATES_INCOMPLETE', result.stdout + result.stderr)
+        self.assertIn('missing=1', result.stdout + result.stderr)
+        self.assertIn('1255-Reworkl.txt', result.stdout + result.stderr)
+        self.assertFalse((self.user / 'mod/reworkl').exists())
 
 
 if __name__ == '__main__':

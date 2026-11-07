@@ -20,3 +20,7 @@
 # Portable Windows ZIP helpers
 *.cmd text eol=crlf
 *.ps1 text eol=lf
+
+# Integrity manifests must retain identical bytes on Windows checkouts.
+*.json text eol=lf
+*.sha256 text eol=lf

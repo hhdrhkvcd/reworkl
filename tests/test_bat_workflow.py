@@ -15,10 +15,18 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_mod import BAT_HELPERS, build_bat_toolkit
+from build_mod import BAT_HELPERS, build_bat_toolkit, helper_path
 
 SCRIPT = ROOT / 'installer/bat/Reworkl-Bat.ps1'
 POWERSHELL = os.environ.get('REWORKL_TEST_POWERSHELL') or shutil.which('pwsh') or shutil.which('powershell')
+
+
+def powershell_env():
+    import os
+    env = os.environ.copy()
+    if Path(POWERSHELL).name.lower() in ('powershell', 'powershell.exe'):
+        env.pop('PSModulePath', None)
+    return env
 
 
 def ps_quote(value):
@@ -28,7 +36,7 @@ def ps_quote(value):
 class BatPackagingTests(unittest.TestCase):
     def test_bat_helpers_are_crlf_ascii_and_preserve_exit_codes(self):
         for name in BAT_HELPERS:
-            data = (ROOT / 'installer/bat' / name).read_bytes()
+            data = helper_path(name).read_bytes()
             if name.endswith('.bat'):
                 self.assertTrue(data.isascii())
                 self.assertIn(b'\r\n', data)
@@ -70,12 +78,12 @@ class BatPackagingTests(unittest.TestCase):
             first = path.read_bytes()
             build_bat_toolkit(path)
             self.assertEqual(first, path.read_bytes())
-            self.assertLess(len(first), 64 * 1024)
+            self.assertLess(len(first), 1024 * 1024)
             with zipfile.ZipFile(path) as archive:
                 self.assertIsNone(archive.testzip())
                 self.assertEqual(set(archive.namelist()), set(BAT_HELPERS))
                 for name in archive.namelist():
-                    content = archive.read(name).decode('utf-8-sig')
+                    content = archive.read(name).decode('utf-8-sig') if not name.endswith('.zip') else ''
                     self.assertNotIn('Umalilend', content)
                     self.assertNotIn('C:/Users/мо', content)
                     self.assertNotIn('C:\\Users\\мо', content)
@@ -85,7 +93,7 @@ class BatPackagingTests(unittest.TestCase):
 class BatWorkflowIntegrationTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
-        self.root = Path(self.temporary.name)
+        self.root = Path(self.temporary.name).resolve()
         self.source = self.root / "Reworkl папка O'Neil"
         self.game = self.root / "Game O'Neil with spaces"
         self.base = self.root / 'ASCII base !'
@@ -127,7 +135,7 @@ class BatWorkflowIntegrationTests(unittest.TestCase):
             'function Assert-Closed {}\n'
             f'$source = {ps_quote(self.source)}\n$game = {ps_quote(self.game)}\n$base = {ps_quote(self.base)}\n'
             + body, encoding='utf-8-sig')
-        return subprocess.run([POWERSHELL, '-NoLogo', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', str(driver)], capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=60)
+        return subprocess.run([POWERSHELL, '-NoLogo', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', str(driver)], env=powershell_env(), capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=60)
 
     def install(self):
         result = self.run_ps('Invoke-Reworkl -Action Install -Source $source -GameDir $game -BaseDir $base -NonInteractive\n')
@@ -181,7 +189,7 @@ Invoke-Reworkl -Action Launch -GameDir $game -BaseDir $base -NonInteractive
         self.assertIn(f'path="{self.target.as_posix()}"'.encode(), external)
         self.assertIn(b'version="1.2.0"', external)
         self.assertIn(b'replace_path="gfx/loadingscreens"', external)
-        self.assertNotIn('path=', (self.target / 'descriptor.mod').read_text(encoding='utf-8-sig'))
+        self.assertNotRegex((self.target / 'descriptor.mod').read_text(encoding='utf-8-sig'), r'(?m)^\s*path\s*=')
         state = json.loads((self.user / 'dlc_load.json').read_text())
         self.assertEqual(state['enabled_mods'], ['mod/reworkl.mod'])
         self.assertEqual(set(state['disabled_dlcs']), {'dlc/dlc001_pack/dlc001.dlc', 'dlc_metadata/portrait.dlc'})
@@ -352,25 +360,8 @@ Invoke-Reworkl -Action Install -Source $source -GameDir $game -BaseDir $base -No
 
 
     def make_world_source(self):
-        # Minimal INSTALLER fixture, not valid playable geography or a game test.
-        path = self.source / 'descriptor.mod'
-        path.write_text(path.read_text().replace('1.2.0', '2.0.0-alpha2') + 'replace_path="history/countries"\n')
-        (self.source / 'common/bookmarks/Y89_bookmarks.txt').write_text(
-            'bookmarks={ bookmark={name=RW26_BOOKMARK_2026 date=2026.1.1.12} bookmark={date=1936.1.1.12} }')
-        for filename in ['the_gathering_storm.txt', 'blitzkrieg.txt']:
-            (self.source / 'common/bookmarks' / filename).write_text('# Intentionally no vanilla bookmark.\n')
-        states = self.source / 'history/states'
-        states.mkdir(exist_ok=True)
-        for sid in range(1, 1256):
-            (states / f'{sid}-fixture.txt').write_text(f'state={{ id={sid} }}')
-        for name in ['map/provinces.bmp', 'map/definition.csv', 'map/default.map', 'map/terrain.bmp',
-                     'map/rivers.bmp', 'map/heightmap.bmp', 'map/trees.bmp', 'map/cities.bmp',
-                     'map/world_normal.bmp', 'map/unitstacks.txt', 'map/reworkl_world_manifest.txt',
-                     'map/reworkl_asset_manifest.txt', 'licenses/Millennium-Dawn-CC-BY-SA-4.0.txt',
-                     'licenses/flag-icons-MIT.txt', 'THIRD_PARTY.txt', 'WORLD_2026_RU.txt']:
-            path = self.source / name
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_bytes(('installer fixture: ' + name).encode())
+        from world_installer_fixture import make_world_source
+        make_world_source(self.source)
 
     def test_explicit_new_bundle_cannot_silently_launch_an_old_install(self):
         self.install()
@@ -448,6 +439,85 @@ Invoke-Reworkl -Action Install -Source $source -GameDir $game -BaseDir $base -No
         result = self.check()
         self.assertEqual(result.returncode, 2)
         self.assertIn('[WRONG_BUILD_OR_PROFILE]', result.stdout)
+
+
+    def test_extra_legacy_states_and_other_mod_files_are_excluded_not_counted(self):
+        self.make_world_source()
+        (self.source / 'history/states/107-OldSerbia.txt').write_text('old same ID')
+        (self.source / 'common/bookmarks/extra_1939.txt').write_text('old extra campaign')
+        self.install()
+        self.assertEqual(len(list((self.target / 'history/states').glob('*.txt'))), 1255)
+        self.assertFalse((self.target / 'history/states/107-OldSerbia.txt').exists())
+        self.assertFalse((self.target / 'common/bookmarks/extra_1939.txt').exists())
+        self.assertTrue((self.source / 'history/states/107-OldSerbia.txt').exists())
+
+    def test_equal_file_count_cannot_hide_missing_required_states(self):
+        self.make_world_source()
+        (self.source / 'history/states/1255-Reworkl.txt').unlink()
+        (self.source / 'history/states/old-extra.txt').write_text('not the missing state')
+        result = self.run_ps('Invoke-Reworkl -Action Install -Source $source -GameDir $game -BaseDir $base -NonInteractive')
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('WORLD_STATES_INCOMPLETE', result.stdout + result.stderr)
+        self.assertIn('missing=1', result.stdout + result.stderr)
+        self.assertIn('1255-Reworkl.txt', result.stdout + result.stderr)
+        self.assertFalse(self.target.exists())
+
+    def test_recovery_restores_missing_or_changed_states_without_touching_source(self):
+        self.make_world_source()
+        from world_installer_fixture import add_recovery_bundle
+        add_recovery_bundle(self.source)
+        (self.source / 'history/states/1255-Reworkl.txt').unlink()
+        path = self.source / 'history/states/1-Reworkl.txt'
+        path.write_text('corrupted loose file')
+        result = self.install()
+        self.assertIn('missing_loose=1; changed_loose=1', result.stdout)
+        self.assertEqual((self.target / 'history/states/1255-Reworkl.txt').read_text(), 'state={ id=1255 }')
+        self.assertEqual((self.target / 'history/states/1-Reworkl.txt').read_text(), 'state={ id=1 }')
+        self.assertFalse((self.source / 'history/states/1255-Reworkl.txt').exists())
+        self.assertEqual(path.read_text(), 'corrupted loose file')
+
+    def test_recovery_can_install_when_the_loose_state_folder_is_absent(self):
+        self.make_world_source()
+        from world_installer_fixture import add_recovery_bundle
+        add_recovery_bundle(self.source)
+        shutil.rmtree(self.source / 'history/states')
+        self.install()
+        self.assertEqual(len(list((self.target / 'history/states').glob('*.txt'))), 1255)
+        self.assertFalse((self.source / 'history/states').exists())
+
+    def test_bad_recovery_archive_does_not_replace_the_installed_mod(self):
+        self.install()
+        before = (self.base / 'reworkl-bat-state.json').read_bytes()
+        self.make_world_source()
+        from world_installer_fixture import add_recovery_bundle, BUNDLE_DOWNLOAD
+        add_recovery_bundle(self.source)
+        (self.source.parent / BUNDLE_DOWNLOAD).write_bytes(b'corrupted archive')
+        result = self.run_ps('Invoke-Reworkl -Action Install -Source $source -GameDir $game -BaseDir $base -NonInteractive')
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('WORLD_STATE_ARCHIVE_CORRUPT', result.stdout + result.stderr)
+        self.assertEqual((self.base / 'reworkl-bat-state.json').read_bytes(), before)
+        self.assertEqual((self.target / 'history/fixture.txt').read_text(), 'old payload')
+
+
+    def test_start_preflight_failure_saves_report_and_report_only_zip(self):
+        self.make_world_source()
+        (self.source / 'history/states/1255-Reworkl.txt').unlink()
+        logs = self.base / 'reworkl-userdata/logs'
+        logs.mkdir(parents=True)
+        (logs / 'system.log').write_text('unrelated old game run')
+        report = self.root / 'reports/start.txt'
+        result = subprocess.run([POWERSHELL, '-NoLogo', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass',
+            '-File', str(SCRIPT), '-Action', 'Start2026', '-Source', str(self.source), '-GameDir', str(self.game),
+            '-BaseDir', str(self.base), '-ReportPath', str(report), '-NonInteractive'],
+            env=powershell_env(), capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=60)
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn('WORLD_STATES_INCOMPLETE', report.read_text(encoding='utf-8-sig'))
+        self.assertIn('1255-Reworkl.txt', report.read_text(encoding='utf-8-sig'))
+        bundles = list(report.parent.glob('REWORKL_DIAGNOSTICS_*.zip'))
+        self.assertEqual(len(bundles), 1, result.stdout + result.stderr)
+        with zipfile.ZipFile(bundles[0]) as archive:
+            self.assertEqual(set(archive.namelist()), {'START_RESULT.txt', 'SOURCES.txt'})
+        self.assertFalse(self.target.exists())
 
 
 if __name__ == '__main__':

@@ -6,7 +6,7 @@ from unittest.mock import patch
 import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from build_mod import BAT_HELPERS, RELEASE_HELPERS, build, build_toolkit, launcher_descriptor, source_files
+from build_mod import BAT_HELPERS, RELEASE_HELPERS, SHARED_HELPERS, helper_path, build, build_toolkit, launcher_descriptor, source_files
 from clausewitz import load
 from install import install
 from validate_mod import ROOT, validate
@@ -72,7 +72,7 @@ class DistributionTests(unittest.TestCase):
             self.assertLess(output.stat().st_size, 64 * 1024)
             with zipfile.ZipFile(output) as archive:
                 self.assertIsNone(archive.testzip())
-                self.assertEqual(set(archive.namelist()), set(RELEASE_HELPERS) | {'ACTIVATION_RU.txt'})
+                self.assertEqual(set(archive.namelist()), set(RELEASE_HELPERS) | set(SHARED_HELPERS) | {'ACTIVATION_RU.txt'})
 
     def test_ready_zip_is_complete_and_valid_after_extraction(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -88,7 +88,7 @@ class DistributionTests(unittest.TestCase):
                     self.assertFalse(any(n.startswith("reworkl/") and n.endswith(helper) for n in archive.namelist()))
                 for helper in BAT_HELPERS:
                     self.assertIn(helper, archive.namelist())
-                    self.assertEqual(archive.read(helper), (ROOT / "installer/bat" / helper).read_bytes())
+                    self.assertEqual(archive.read(helper), helper_path(helper).read_bytes())
                 self.assertTrue(archive.read("Reworkl-Bat.ps1").startswith(b"\xef\xbb\xbf"))
                 self.assertTrue(archive.read("Install-Reworkl.ps1").startswith(b"\xef\xbb\xbf"))
                 for name in ("belgrade", "mountains", "headquarters"):

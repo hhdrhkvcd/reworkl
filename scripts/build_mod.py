@@ -10,17 +10,27 @@ import zipfile
 
 from clausewitz import load
 from validate_mod import ROOT, SOURCE_DIRS, validate
+from build_state_payload import BUNDLE_PATH, CHECKSUM_PATH, BUNDLE_DOWNLOAD, CHECKSUM_DOWNLOAD, MANIFEST_PATH
 
 ASSET_SUFFIXES = {".txt", ".lua", ".mod", ".gfx", ".gui", ".yml", ".asset", ".dds", ".tga", ".png", ".ogg", ".bmp", ".csv", ".map"}
 RELEASE_HELPERS = ("INSTALL_REWORKL.cmd", "CHECK_REWORKL.cmd", "Install-Reworkl.ps1")
-BAT_HELPERS = ("0_START_2026.bat", "1_INSTALL.bat", "2_LAUNCH.bat", "3_CHECK.bat", "4_PLAN_B_USERDIR.bat", "5_RESTORE_PLAN_B.bat", "Reworkl-Bat.ps1", "BAT_NO_DLC_RU.txt")
+SHARED_HELPERS = ("Reworkl-World.ps1",)
+BAT_HELPERS = ("0_START_2026.bat", "1_INSTALL.bat", "2_LAUNCH.bat", "3_CHECK.bat", "4_PLAN_B_USERDIR.bat", "5_RESTORE_PLAN_B.bat", "Reworkl-Bat.ps1", "BAT_NO_DLC_RU.txt", *SHARED_HELPERS, BUNDLE_DOWNLOAD, CHECKSUM_DOWNLOAD)
+
+
+def helper_path(name: str, root: Path = ROOT) -> Path:
+    if name == BUNDLE_DOWNLOAD:
+        return root / BUNDLE_PATH
+    if name == CHECKSUM_DOWNLOAD:
+        return root / CHECKSUM_PATH
+    return root / ("installer/bat" if name in BAT_HELPERS else "installer") / name
 
 
 def source_files(root: Path = ROOT) -> list[Path]:
     """Explicit payload allowlist keeps Git, archives and build output out."""
     from materialize_world_map import ensure_map_assets
     ensure_map_assets(root)
-    files = [root / "descriptor.mod", root / "thumbnail.png"]
+    files = [root / "descriptor.mod", root / "thumbnail.png", root / MANIFEST_PATH]
     for name in ("THIRD_PARTY.txt", "WORLD_2026_RU.txt"):
         if (root / name).is_file():
             files.append(root / name)
@@ -71,7 +81,7 @@ def build(output: Path, root: Path = ROOT) -> int:
             for helper in RELEASE_HELPERS:
                 add(helper, (root / "installer" / helper).read_bytes())
             for helper in BAT_HELPERS:
-                add(helper, (root / "installer/bat" / helper).read_bytes())
+                add(helper, helper_path(helper, root).read_bytes())
         with zipfile.ZipFile(staged) as archive:
             bad = archive.testzip()
             if bad:
@@ -87,12 +97,12 @@ def build_toolkit(output: Path, root: Path = ROOT) -> None:
     with tempfile.TemporaryDirectory(prefix=".reworkl-tools-", dir=output.parent) as temp:
         staged = Path(temp) / "tools.zip"
         with zipfile.ZipFile(staged, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
-            for name in (*RELEASE_HELPERS, "ACTIVATION_RU.txt"):
+            for name in (*RELEASE_HELPERS, *SHARED_HELPERS, "ACTIVATION_RU.txt"):
                 info = zipfile.ZipInfo(name, date_time=(2026, 11, 7, 0, 0, 0))
                 info.compress_type = zipfile.ZIP_DEFLATED
                 info.create_system = 3
                 info.external_attr = 0o100644 << 16
-                archive.writestr(info, (root / "installer" / name).read_bytes())
+                archive.writestr(info, helper_path(name, root).read_bytes())
         with zipfile.ZipFile(staged) as archive:
             if archive.testzip():
                 raise ValueError("Activation toolkit CRC check failed")
@@ -110,7 +120,7 @@ def build_bat_toolkit(output: Path, root: Path = ROOT) -> None:
                 info.compress_type = zipfile.ZIP_DEFLATED
                 info.create_system = 3
                 info.external_attr = 0o100644 << 16
-                archive.writestr(info, (root / "installer/bat" / name).read_bytes())
+                archive.writestr(info, helper_path(name, root).read_bytes())
         with zipfile.ZipFile(staged) as archive:
             if archive.testzip():
                 raise ValueError("BAT toolkit CRC check failed")

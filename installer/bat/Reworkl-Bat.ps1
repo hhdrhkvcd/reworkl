@@ -19,10 +19,13 @@ param(
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version 2.0
 $script:ToolRoot = $PSScriptRoot
-$script:ToolVersion = '2.0.0-alpha2'
+$script:ToolVersion = '2.0.0-alpha3'
 $script:Utf8NoBom = [Text.UTF8Encoding]::new($false)
 $script:PayloadDirs = @('common','events','gfx','history','interface','localisation','map','music')
 $script:PayloadExtensions = @('.txt','.lua','.mod','.gfx','.gui','.yml','.asset','.dds','.tga','.png','.ogg','.bmp','.csv','.map')
+
+$worldLibrary = Join-Path $PSScriptRoot 'Reworkl-World.ps1'
+if (Test-Path -LiteralPath $worldLibrary -PathType Leaf) { . $worldLibrary }
 
 function Full-Path([string]$Path) {
     return [IO.Path]::GetFullPath($Path).TrimEnd([char[]]@('/','\'))
@@ -83,7 +86,10 @@ function Read-Json([string]$Path) {
 }
 function File-Hash([string]$Path) {
     if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) { return $null }
-    return (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash
+    $algorithm = [Security.Cryptography.SHA256]::Create()
+    $stream = [IO.File]::OpenRead($Path)
+    try { return [BitConverter]::ToString($algorithm.ComputeHash($stream)).Replace('-', '') }
+    finally { $stream.Dispose(); $algorithm.Dispose() }
 }
 function Write-Atomic([string]$Path, [string]$Text) {
     $parent = [IO.Path]::GetDirectoryName($Path)
@@ -215,9 +221,10 @@ function Read-Descriptor([string]$Folder) {
     $legacy = $book -match '1989\.1\.1' -and $book -match 'Y89_BOOKMARK_1989'
     if ($book -notmatch '1936\.1\.1' -or ($world -eq $legacy)) { throw 'The Reworkl bookmarks are missing or incomplete.' }
     if ($versions[0].Groups[1].Value -like '2.*' -and -not $world) { throw 'Reworkl 2.x requires the 2026 world bookmark.' }
+    $worldPlan = $null
     if ($world) {
-        $states = @(Get-ChildItem -LiteralPath (Join-Path $Folder 'history/states') -File -Filter '*.txt')
-        if ($states.Count -ne 1255) { throw 'Expected exactly 1255 world state files. Extract the FULL ZIP into a NEW folder; do not overlay the 1989 unpacked source.' }
+        if (-not (Get-Command Get-ReworklWorldStatePlan -ErrorAction SilentlyContinue)) { throw 'Missing Reworkl-World.ps1. Extract the complete installer repair ZIP beside this BAT.' }
+        $worldPlan = Get-ReworklWorldStatePlan $Folder $script:ToolRoot
         foreach ($relative in @('common/bookmarks/the_gathering_storm.txt','common/bookmarks/blitzkrieg.txt','map/provinces.bmp','map/definition.csv','map/default.map','map/terrain.bmp','map/rivers.bmp','map/heightmap.bmp','map/trees.bmp','map/cities.bmp','map/world_normal.bmp','map/unitstacks.txt','map/reworkl_world_manifest.txt','map/reworkl_asset_manifest.txt','licenses/Millennium-Dawn-CC-BY-SA-4.0.txt','licenses/flag-icons-MIT.txt','THIRD_PARTY.txt','WORLD_2026_RU.txt')) {
             if (-not (Test-Path -LiteralPath (Join-Path $Folder $relative) -PathType Leaf)) { throw "Incomplete world map: $relative. Extract the full 2026 ZIP, not the old toolkit." }
         }
@@ -226,9 +233,9 @@ function Read-Descriptor([string]$Folder) {
         if (-not (Test-Path -LiteralPath (Join-Path $Folder $name) -PathType Container)) { throw "Incomplete mod: missing $name" }
     }
     if (-not (Test-Path -LiteralPath (Join-Path $Folder 'thumbnail.png') -PathType Leaf)) { throw 'Incomplete mod: thumbnail.png is missing.' }
-    return [pscustomobject]@{ Text = $text; Version = $versions[0].Groups[1].Value }
+    return [pscustomobject]@{ Text = $text; Version = $versions[0].Groups[1].Value; WorldStates = $worldPlan }
 }
-function Get-PayloadFiles([string]$Folder) {
+function Get-PayloadFiles([string]$Folder, $WorldPlan) {
     Assert-PlainPath $Folder
     foreach ($name in @('descriptor.mod','thumbnail.png','THIRD_PARTY.txt','WORLD_2026_RU.txt')) {
         if ($name -in @('THIRD_PARTY.txt','WORLD_2026_RU.txt') -and -not (Test-Path -LiteralPath (Join-Path $Folder $name) -PathType Leaf)) { continue }
@@ -242,10 +249,14 @@ function Get-PayloadFiles([string]$Folder) {
     while ($queue.Count -gt 0) {
         $current = $queue.Dequeue()
         Assert-PlainPath $current
+        if ($WorldPlan -and (Full-Path $current) -ieq (Full-Path (Join-Path $Folder 'history/states'))) { continue }
         foreach ($item in @(Get-ChildItem -LiteralPath $current -Force)) {
             if (($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) { throw "Link in source: $($item.FullName)" }
             if ($item.PSIsContainer) { $queue.Enqueue($item.FullName) }
-            elseif ($item.Extension -in $script:PayloadExtensions) { $item }
+            elseif ($item.Extension -in $script:PayloadExtensions) {
+                $relative = $item.FullName.Substring($Folder.Length + 1).Replace('\','/')
+                if (-not $WorldPlan -or $WorldPlan.AllowedPayload.Contains($relative)) { $item }
+            }
         }
     }
 }
@@ -292,7 +303,7 @@ function Invoke-Install($Layout, [string]$RequestedSource, [string]$Game, [bool]
     if ((Is-Within $sourceFolder $Layout.Target) -or (Is-Within $Layout.Target $sourceFolder)) {
         if ($sourceFolder -ne $Layout.Target) { throw 'Source and target cannot be nested.' }
     }
-    $files = @(Get-PayloadFiles $sourceFolder)
+    $files = @(Get-PayloadFiles $sourceFolder $description.WorldStates)
     $loadPath = Join-Path $Layout.User 'dlc_load.json'
     [void](Prepare-LoadState $loadPath @(Get-DlcFiles $Game))
     if ($Preview) { Write-Host "[DRY_RUN] Install $($files.Count) files from $sourceFolder to $($Layout.Target); userdata $($Layout.User)"; return }
@@ -305,7 +316,7 @@ function Invoke-Install($Layout, [string]$RequestedSource, [string]$Game, [bool]
     $movedOld = $false
     $placedNew = $false
     try {
-        if ($sourceFolder -ne $Layout.Target) {
+        if ($sourceFolder -ne $Layout.Target -or $description.WorldStates) {
             [void][IO.Directory]::CreateDirectory($stage)
             foreach ($file in $files) {
                 $relative = $file.FullName.Substring($sourceFolder.Length + 1)
@@ -314,6 +325,7 @@ function Invoke-Install($Layout, [string]$RequestedSource, [string]$Game, [bool]
                 [IO.File]::Copy($file.FullName, $destination)
                 if ((File-Hash $destination) -ne (File-Hash $file.FullName)) { throw "Copy checksum mismatch: $relative" }
             }
+            if ($description.WorldStates) { Write-ReworklWorldStates $description.WorldStates $stage }
             Assert-PlainPath $Layout.Target
             if (Test-Path -LiteralPath $Layout.Target -PathType Leaf) { throw 'Target is a file, not a folder.' }
             if (Test-Path -LiteralPath $Layout.Target -PathType Container) { [IO.Directory]::Move($Layout.Target, $oldTarget); $movedOld = $true }
@@ -439,7 +451,7 @@ function Invoke-Check($Layout, [string]$Report) {
     if ($ok) { return 0 }
     return 2
 }
-function Export-StartupDiagnostics($Layout, [string]$Report) {
+function Export-StartupDiagnostics($Layout, [string]$Report, [switch]$ReportOnly) {
     # Allowlist only. No saves, Steam files, launcher DB, settings or memory dumps.
     $folder = [IO.Path]::GetDirectoryName((Full-Path $Report))
     $token = [guid]::NewGuid().ToString('N')
@@ -450,7 +462,10 @@ function Export-StartupDiagnostics($Layout, [string]$Report) {
     $manifest.Add('Reworkl startup diagnostics. Times below are UTC. Log tails are at most 1 MiB each.')
     try {
         if (Test-Path -LiteralPath $Report -PathType Leaf) { [IO.File]::Copy($Report, (Join-Path $stage 'START_RESULT.txt')) }
-        foreach ($kind in @('system','setup','error')) {
+        if ($ReportOnly) { $manifest.Add('PRELAUNCH ERROR: report only. Unrelated old game logs are intentionally excluded.') }
+        $kinds = @('system','setup','error')
+        if ($ReportOnly) { $kinds = @() }
+        foreach ($kind in $kinds) {
             $path = Join-Path $Layout.User "logs/$kind.log"
             Assert-PlainPath $path
             if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { $manifest.Add("MISSING: $path"); continue }
@@ -557,8 +572,12 @@ if (-not $LibraryOnly) {
         $message = "[ERROR] $($_.Exception.Message)"
         Write-Host $message
         Write-Host 'No launcher database or DLC files were deleted. Backups, if created, are retained.'
-        if ($Action -eq 'Start2026' -and $ReportPath) {
-            try { Write-Atomic (Full-Path $ReportPath) ("[TOOLS_VERSION] $script:ToolVersion`r`n$message`r`n[RESULT] NOT CONFIRMED. Installation/start failed; no success is claimed.") }
+        if ($Action -eq 'Start2026') {
+            if (-not $ReportPath) { $ReportPath = Join-Path $script:ToolRoot 'REWORKL_START_RESULT.txt' }
+            try {
+                Write-Atomic (Full-Path $ReportPath) ("[TOOLS_VERSION] $script:ToolVersion`r`n[ACTION] Start2026`r`n[SOURCE_REQUEST] $Source`r`n[BASE_REQUEST] $BaseDir`r`n$message`r`n[RESULT] NOT CONFIRMED. Installation/start failed; no success is claimed.")
+                Export-StartupDiagnostics (Get-Layout $BaseDir) $ReportPath -ReportOnly
+            }
             catch { Write-Host '[REPORT_WARNING] Could not save the error report. Photograph this window.' }
         }
         exit 1
