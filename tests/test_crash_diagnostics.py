@@ -111,7 +111,7 @@ class CrashDiagnosticsRuntimeTests(unittest.TestCase):
         folder = self.standard / 'crashes' / name
         folder.mkdir(parents=True)
         if with_meta:
-            (folder / 'meta.yml').write_text('DateTime: "' + date + '"\nMods: Reworkl - World 2026 v2.0.0-alpha3\nLaunchArguments: --secret=DO_NOT_LEAK_GAME_ARGS\n', encoding='utf-8')
+            (folder / 'meta.yml').write_text('DateTime: "' + date + '"\nMods: Reworkl - World 2026 v2.0.0-alpha3\nLaunchArguments: "-userdir=C:/Expected profile !" --secret=DO_NOT_LEAK_GAME_ARGS\n', encoding='utf-8')
         (folder / 'exception.txt').write_text('Application: HOI4\nDate/Time: ' + date + '\nUnhandled Exception C0000005\n', encoding='utf-8')
         return folder
 
@@ -143,6 +143,7 @@ class CrashDiagnosticsRuntimeTests(unittest.TestCase):
         self.crash('old_recently_copied', '2020-11-01 14:57:07 +0400')
         report = self.run_collector()
         self.assertIn('[CRASH_CANDIDATE]', report)
+        self.assertIn('[CRASH_RECORDED_USERDIR_ARGUMENT] C:/Expected profile !', report)
         self.assertIn('[OLD_CRASH_EMBEDDED_DATE_SKIPPED]', report)
         self.assertEqual(len([n for n in self.payload if n.endswith('/exception.txt')]), 1)
         self.assertTrue(any(b'Unhandled Exception C0000005' in b for b in self.payload.values()))

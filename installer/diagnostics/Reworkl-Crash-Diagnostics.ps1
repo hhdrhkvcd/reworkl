@@ -266,6 +266,11 @@ function Collect-DiagProfile($Context, $Profile, [int]$Index) {
         $prefix = "profiles/{0:D2}_{1}/crash_{2:D2}" -f $Index,$Profile.Label,$Context.Crashes
         Add-DiagLine $Context "[CRASH_CANDIDATE] $($folder.FullName); declared_utc=$declared; this is evidence, not a diagnosed cause."
         if ($null -eq $declared) { Add-DiagLine $Context '[CRASH_DATE_UNVERIFIED] Only the filesystem modification time links this candidate.' }
+        $arguments = [regex]::Match([string]$meta, '(?m)^LaunchArguments:\s*([^\r\n]+)')
+        if ($arguments.Success) {
+            $argumentText = $arguments.Groups[1].Value.Replace('\"','"')
+            Add-DiagLine $Context "[CRASH_RECORDED_USERDIR_ARGUMENT] $(Get-DiagUserdirArgument $argumentText) (selected argument only; original command line omitted)"
+        }
         foreach ($name in @('meta.yml','exception.txt')) {
             $path = Join-Path $folder.FullName $name
             if ([IO.File]::Exists($path)) { Copy-DiagText $Context $path "$prefix/$name" 131072 -RedactFields }
