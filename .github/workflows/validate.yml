@@ -67,3 +67,6 @@ jobs:
       - name: Test RU2 localisation-only update and rollback
         shell: pwsh
         run: python scripts/run_ci_tests.py -p test_russian_fix.py -v
+      - name: Test read-only crash collector without running HOI4
+        shell: pwsh
+        run: python scripts/run_ci_tests.py -p test_crash_diagnostics.py -v
