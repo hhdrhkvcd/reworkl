@@ -13,7 +13,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_crash_diagnostics import build, HELPERS
+from build_crash_diagnostics import build, build_standalone, HELPERS, STANDALONE_FILENAME, STANDALONE_MARKER
 
 SCRIPT = ROOT / 'installer/diagnostics/Reworkl-Crash-Diagnostics.ps1'
 POWERSHELL = os.environ.get('REWORKL_TEST_POWERSHELL') or shutil.which('pwsh') or shutil.which('powershell')
@@ -46,6 +46,97 @@ class CrashDiagnosticsPackagingTests(unittest.TestCase):
         text = SCRIPT.read_text(encoding='utf-8-sig')
         for forbidden in ('Start-Process', 'Stop-Process', 'taskkill', 'save games/', 'launcher-v2.sqlite', 'Get-ChildItem -Recurse'):
             self.assertNotIn(forbidden, text)
+
+    def test_one_file_bat_is_readable_deterministic_and_contains_the_exact_collector(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / STANDALONE_FILENAME
+            build_standalone(path)
+            first = path.read_bytes()
+            build_standalone(path)
+            self.assertEqual(first, path.read_bytes())
+        self.assertLess(len(first), 65536)
+        self.assertFalse(first.startswith(b'\xef\xbb\xbf'))
+        self.assertNotIn(b'\n', first.replace(b'\r\n', b''))
+        preamble, marker, body = first.decode('utf-8').rpartition(STANDALONE_MARKER)
+        self.assertTrue(marker)
+        self.assertEqual(body.lstrip('\r\n').replace('\r\n', '\n'), SCRIPT.read_text(encoding='utf-8-sig'))
+        self.assertIn('DisableDelayedExpansion', preamble)
+        self.assertIn('chcp 65001', preamble)
+        self.assertIn('СБОР ДИАГНОСТИКИ', preamble)
+        self.assertIn('LastIndexOf', preamble)
+        self.assertIn('exit /b %REWORKL_COLLECT_RESULT%', preamble)
+        self.assertNotIn('Reworkl-Crash-Diagnostics.ps1', preamble)
+        self.assertNotIn('-EncodedCommand', preamble)
+        self.assertLess(max(map(len, preamble.splitlines())), 8000)
+
+
+@unittest.skipUnless(os.name == 'nt' and shutil.which('powershell.exe'), 'Requires real Windows CMD and Windows PowerShell')
+class OneFileCrashCollectorTests(unittest.TestCase):
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.root = Path(self.temporary.name).resolve()
+        self.output = self.root / "Один BAT O'Neil ! & (проверка)"
+        self.public = self.root / 'Public environment'
+        self.base = self.public / 'HOI4MODS'
+        self.user = self.base / 'reworkl-userdata'
+        self.game = self.root / 'Game'
+        self.tempdir = self.root / 'Temporary staging'
+        for p in (self.output, self.user / 'logs', self.game, self.tempdir):
+            p.mkdir(parents=True)
+        self.batch = build_standalone(self.output / STANDALONE_FILENAME)
+        self.log = self.user / 'logs/system.log'
+        self.log.write_bytes(b'ONE_FILE_FIXTURE_NOT_A_REAL_GAME\n')
+        self.executable = self.game / 'hoi4.exe'
+        self.executable.write_bytes(b'NOT_EXECUTABLE_OR_RUN')
+        self.state = self.base / 'reworkl-bat-state.json'
+        self.state.write_text(json.dumps(dict(schema=1, target=str(self.base / 'reworkl'),
+            user_dir=str(self.user), game_dir=str(self.game), version='2.0.0-alpha3',
+            last_launch_utc=(datetime.now(timezone.utc) - timedelta(minutes=1)).isoformat())), encoding='utf-8')
+        self.originals = {p: hashlib.sha256(p.read_bytes()).hexdigest() for p in (self.state, self.log, self.executable)}
+
+    def tearDown(self):
+        self.temporary.cleanup()
+
+    def run_batch(self):
+        env = os.environ.copy()
+        env.update(PUBLIC=str(self.public), REWORKL_NO_PAUSE='1', TEMP=str(self.tempdir), TMP=str(self.tempdir))
+        env.pop('PSModulePath', None)  # The BAT intentionally uses built-in Windows PowerShell 5.1.
+        for name in ('OneDrive', 'OneDriveConsumer', 'OneDriveCommercial'):
+            env[name] = ''
+        comspec = os.environ.get('COMSPEC') or shutil.which('cmd.exe')
+        # Preserve CMD's own /S /C quoting, including &, !, apostrophes and parentheses in paths.
+        command = f'"{comspec}" /d /s /c ""{self.batch}""'
+        return subprocess.run(command, env=env, stdin=subprocess.DEVNULL, capture_output=True,
+            text=True, encoding='utf-8', errors='replace', timeout=60)
+
+    def test_single_download_runs_without_sidecars_and_leaves_game_inputs_unchanged(self):
+        self.assertEqual(list(self.output.iterdir()), [self.batch])
+        result = self.run_batch()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        zips = list(self.output.glob('REWORKL_CRASH_DIAGNOSTICS_*.zip'))
+        self.assertEqual(len(zips), 1, result.stdout + result.stderr)
+        self.assertEqual(len(list(self.output.glob('REWORKL_CRASH_REPORT_*.txt'))), 1)
+        with zipfile.ZipFile(zips[0]) as archive:
+            self.assertIsNone(archive.testzip())
+            self.assertIn('[COLLECTOR_VERSION] 1', archive.read('REPORT.txt').decode('utf-8-sig'))
+            self.assertTrue(any(b'ONE_FILE_FIXTURE_NOT_A_REAL_GAME' in archive.read(n)
+                for n in archive.namelist() if n.endswith('/system.log')))
+        self.assertFalse(list(self.output.glob('*.ps1')))
+        self.assertEqual(list(self.tempdir.iterdir()), [])
+        for p, digest in self.originals.items():
+            self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(), digest, p)
+        self.assertIn('ГОТОВО.', result.stdout)
+        self.assertIn('не START_RESULT.txt', result.stdout)
+
+    def test_single_file_propagates_collection_failure_instead_of_claiming_success(self):
+        preamble, _, _ = self.batch.read_text(encoding='utf-8').rpartition(STANDALONE_MARKER)
+        content = preamble + STANDALONE_MARKER + "\nthrow 'EXPECTED_SINGLE_FILE_FAILURE'\n"
+        self.batch.write_bytes(content.replace('\r\n', '\n').replace('\n', '\r\n').encode('utf-8'))
+        result = self.run_batch()
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn('EXPECTED_SINGLE_FILE_FAILURE', result.stdout + result.stderr)
+        self.assertNotIn('ГОТОВО.', result.stdout)
+        self.assertFalse(list(self.output.glob('REWORKL_CRASH_DIAGNOSTICS_*.zip')))
 
 
 @unittest.skipUnless(POWERSHELL, 'Real PowerShell runtime is not installed on this host')
