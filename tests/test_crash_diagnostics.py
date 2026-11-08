@@ -204,6 +204,9 @@ function Get-CimInstance {{ [pscustomobject]@{{ ProcessId=123; CommandLine='hoi4
 
     def test_windows_event_export_is_scoped_and_omits_unrelated_or_secret_fields(self):
         extra = r'''function Get-WinEvent {
+    param($LogName, $FilterXPath, $MaxEvents, $ErrorAction)
+    $compiled = [Xml.XPath.XPathExpression]::Compile($FilterXPath)
+    if ($compiled.ReturnType -ne [Xml.XPath.XPathResultType]::NodeSet) { throw 'Event query must select nodes, not return a Boolean.' }
     [pscustomobject]@{ TimeCreated=([DateTime]::Now) } | Add-Member -MemberType ScriptMethod -Name ToXml -Value {
         '<Event><EventData><Data Name="AppName">hoi4.exe</Data><Data Name="ModuleName">example.dll</Data><Data Name="ExceptionCode">c0000005</Data><Data Name="AccessToken">DO_NOT_LEAK_EVENT</Data></EventData></Event>'
     } -PassThru

@@ -165,7 +165,7 @@ function Write-DiagCrashEvents($Context) {
     try {
         $since = $Context.Started.AddSeconds(-3).ToString('yyyy-MM-ddTHH:mm:ss.fffZ')
         # The OS query itself is scoped to hoi4.exe, never all application messages.
-        $query = "*[System[(EventID=1000) and TimeCreated[@SystemTime>='$since']]] and *[EventData[Data='hoi4.exe']]"
+        $query = "*[System[(EventID=1000) and TimeCreated[@SystemTime>='$since']] and EventData[Data='hoi4.exe']]"
         $events = @(Get-WinEvent -LogName Application -FilterXPath $query -MaxEvents 5 -ErrorAction Stop)
         foreach ($event in $events) {
             $summary = Get-DiagEventSummary ($event.ToXml())
