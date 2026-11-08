@@ -131,6 +131,48 @@ function Write-DiagProcesses($Context) {
         }
     } catch { Add-DiagLine $Context '[PROCESS_QUERY_UNAVAILABLE] No elevated privileges are requested.' }
 }
+function Get-DiagEventSummary([string]$XmlText) {
+    $xml = New-Object Xml.XmlDocument
+    $xml.XmlResolver = $null
+    $xml.LoadXml($XmlText)
+    $data = @{}
+    $position = 0
+    foreach ($node in $xml.GetElementsByTagName('Data')) {
+        $name = $node.GetAttribute('Name')
+        if (-not $name) { $name = "Index$position" }
+        $data[$name] = $node.InnerText
+        $position += 1
+    }
+    $app = $data['AppName']
+    if (-not $app) { $app = $data['Index0'] }
+    if ($app -ine 'hoi4.exe') { return $null }
+    $fields = [Collections.Generic.List[string]]::new()
+    foreach ($name in @('AppName','AppVersion','ModuleName','ModuleVersion','ExceptionCode','FaultingOffset','AppPath','ModulePath','ProcessId')) {
+        if ($data.ContainsKey($name)) {
+            $value = [string]$data[$name]
+            $value = $value.Replace("`r", ' ').Replace("`n", ' ')
+            if ($value.Length -gt 512) { $value = $value.Substring(0,512) }
+            $fields.Add("$name=$value")
+        }
+    }
+    if ($fields.Count -eq 0) { $fields.Add('AppName=hoi4.exe; named fault fields unavailable') }
+    return $fields -join '; '
+}
+function Write-DiagCrashEvents($Context) {
+    if ($null -eq $Context.Started -or -not (Get-Command Get-WinEvent -ErrorAction SilentlyContinue)) {
+        Add-DiagLine $Context '[APPLICATION_EVENT_QUERY_SKIPPED] No BAT time or Windows event reader.'; return
+    }
+    try {
+        $since = $Context.Started.AddSeconds(-3).ToString('yyyy-MM-ddTHH:mm:ss.fffZ')
+        # The OS query itself is scoped to hoi4.exe, never all application messages.
+        $query = "*[System[(EventID=1000) and TimeCreated[@SystemTime>='$since']]] and *[EventData[Data='hoi4.exe']]"
+        $events = @(Get-WinEvent -LogName Application -FilterXPath $query -MaxEvents 5 -ErrorAction Stop)
+        foreach ($event in $events) {
+            $summary = Get-DiagEventSummary ($event.ToXml())
+            if ($summary) { Add-DiagLine $Context "[HOI4_APPLICATION_ERROR] utc=$($event.TimeCreated.ToUniversalTime().ToString('o')); $summary" }
+        }
+    } catch { Add-DiagLine $Context '[APPLICATION_EVENT_QUERY_EMPTY_OR_UNAVAILABLE] No elevated privileges are requested; other collection continues.' }
+}
 function Copy-DiagText($Context, [string]$Source, [string]$Relative, [long]$Limit, [switch]$Tail, [switch]$RedactFields) {
     Assert-DiagPlainPath $Source
     $item = Get-Item -LiteralPath $Source
@@ -176,7 +218,7 @@ function Collect-DiagProfile($Context, $Profile, [int]$Index) {
     if (-not [IO.Directory]::Exists($root)) { Add-DiagLine $Context '[PROFILE_MISSING]'; return }
     $load = Read-DiagJson $Context (Join-Path $root 'dlc_load.json')
     if ($load) {
-        $mods = @(Get-DiagProperty $load 'enabled_mods' @())
+        $mods = @((Get-DiagProperty $load 'enabled_mods' @()) | Where-Object { $_ -is [string] } | Select-Object -First 32 | ForEach-Object { if ($_.Length -gt 256) { $_.Substring(0,256) } else { $_ } })
         $disabled = @(Get-DiagProperty $load 'disabled_dlcs' @())
         Add-DiagLine $Context "[PROFILE_CONFIG_ONLY] enabled_mods=$($mods -join ', '); disabled_entries=$($disabled.Count); NOT a runtime confirmation."
     }
@@ -270,6 +312,7 @@ function Export-ReworklCrashDiagnostics([string]$Root, [string]$Output, [string]
         Add-DiagLine $context "[BAT_LAST_LAUNCH_UTC] $($context.Started)"
         if ($null -eq $context.Started) { Add-DiagLine $context '[NO_VALID_LAUNCH_TIME] No log/crash contents can be attributed to the last BAT run; contents will be skipped.' }
         Write-DiagProcesses $context
+        Write-DiagCrashEvents $context
         $profiles = @(Get-DiagProfilePaths $context $expected $game $Documents)
         for ($i = 0; $i -lt $profiles.Count; $i++) {
             try { Collect-DiagProfile $context $profiles[$i] $i }

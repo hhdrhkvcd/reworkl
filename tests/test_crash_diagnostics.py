@@ -201,5 +201,19 @@ function Get-CimInstance {{ [pscustomobject]@{{ ProcessId=123; CommandLine='hoi4
         self.assertEqual(len([n for n in self.payload if n.endswith('/system.log')]), 1)
 
 
+    def test_windows_event_export_is_scoped_and_omits_unrelated_or_secret_fields(self):
+        extra = r'''function Get-WinEvent {
+    [pscustomobject]@{ TimeCreated=([DateTime]::Now) } | Add-Member -MemberType ScriptMethod -Name ToXml -Value {
+        '<Event><EventData><Data Name="AppName">hoi4.exe</Data><Data Name="ModuleName">example.dll</Data><Data Name="ExceptionCode">c0000005</Data><Data Name="AccessToken">DO_NOT_LEAK_EVENT</Data></EventData></Event>'
+    } -PassThru
+}
+'''
+        report = self.run_collector(extra)
+        self.assertIn('[HOI4_APPLICATION_ERROR]', report)
+        self.assertIn('ModuleName=example.dll', report)
+        self.assertIn('ExceptionCode=c0000005', report)
+        self.assertNotIn('DO_NOT_LEAK_EVENT', report)
+
+
 if __name__ == '__main__':
     unittest.main()
