@@ -1,0 +1,28 @@
+name: Extract latest HOI4 crash
+on:
+  push:
+    paths:
+      - ".github/workflows/extract-latest-crash.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install 7zip
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y p7zip-full
+      - name: Extract crash archive
+        run: |
+          mkdir -p extracted
+          7z x hoi4_20261121_001626.rar -oextracted
+          cd extracted
+          7z a ../latest-crash-extracted.zip .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: latest-crash-extracted
+          path: latest-crash-extracted.zip
+          retention-days: 2
