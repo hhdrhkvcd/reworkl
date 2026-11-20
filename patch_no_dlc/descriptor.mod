@@ -1,0 +1,5 @@
+name="Balkan Frontier 1999"
+version="0.1.2"
+supported_version="1.20.*"
+replace_path="history/states"
+replace_path="map"
