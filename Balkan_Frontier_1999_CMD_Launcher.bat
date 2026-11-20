@@ -150,7 +150,7 @@ cls
 echo.
 echo  [BF1999] SEARCHING FOR HEARTS OF IRON IV...
 set "GAME_EXE="
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='SilentlyContinue'; $roots=@(); $s=(Get-ItemProperty 'HKLM:\SOFTWARE\WOW6432Node\Valve\Steam').InstallPath; if(!$s){$s=(Get-ItemProperty 'HKCU:\Software\Valve\Steam').SteamPath}; if($s){$roots+= $s; $vf=Join-Path $s 'steamapps\libraryfolders.vdf'; if(Test-Path $vf){$txt=Get-Content $vf -Raw; [regex]::Matches($txt,'(?m)\"path\"\s+\"([^\"]+)\"') | ForEach-Object {$roots+= $_.Groups[1].Value -replace '\\\\','\'}}}; $roots+=@('C:\Program Files (x86)\Steam','C:\Program Files\Steam','D:\Steam','D:\Games\Steam'); $roots=$roots|Select-Object -Unique; foreach($r in $roots){$p=Join-Path $r 'steamapps\common\Hearts of Iron IV\hoi4.exe'; if(Test-Path $p){$p; exit 0}}; exit 1" >"%WORK%\gamepath.txt"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%ROOT%Find-HOI4.ps1" >"%WORK%\gamepath.txt"
 if exist "%WORK%\gamepath.txt" set /p "GAME_EXE="<"%WORK%\gamepath.txt"
 if not defined GAME_EXE (
  echo [ERROR] hoi4.exe was not found in common Steam libraries.
