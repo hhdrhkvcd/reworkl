@@ -1,0 +1,43 @@
+name: Temporary HOI4 archive extraction
+
+on:
+  push:
+    branches:
+      - tmp/inspect-hoi4-crash-20261120
+    paths:
+      - "hoi4_20261120_214304.rar"
+      - ".github/workflows/extract-current-hoi4.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install RAR extractor
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y unar
+
+      - name: Extract archive and index files
+        run: |
+          mkdir -p extracted
+          unar -q -o extracted hoi4_20261120_214304.rar
+          find extracted -type f -printf '%p\t%s bytes\n' | sort > extracted-file-list.txt
+          echo "Extracted file count: $(find extracted -type f | wc -l)"
+          echo "Log-like files:"
+          find extracted -type f | grep -Ei '(^|/)(error|game|setup|system|exception|meta|crash).*\.(log|txt|yml|yaml)$' || true
+
+      - name: Upload extracted archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: hoi4-crash-archive-extracted
+          path: |
+            extracted/
+            extracted-file-list.txt
+          if-no-files-found: error
+          retention-days: 3
