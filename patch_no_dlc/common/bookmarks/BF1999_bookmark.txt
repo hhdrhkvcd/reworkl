@@ -1,0 +1,15 @@
+bookmarks = {
+    bookmark = {
+        name = BF1999_bookmark
+        desc = BF1999_bookmark_desc
+        date = 1999.3.1.12
+        picture = GFX_select_date_1936
+        default = yes
+        default_country = YUG
+
+        YUG = {
+            history = BF1999_bookmark_desc
+            ideology = neutrality
+        }
+    }
+}
