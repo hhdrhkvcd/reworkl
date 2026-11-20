@@ -1,11 +1,11 @@
 # Balkan Frontier 1999 — HOI4 1.20.x
 
-## Исправление дескриптора
-Корневой `descriptor.mod` ранее содержал настройки от The Fire Rises (1.19.*), включая массовые `replace_path`. Они перекрывали стандартные файлы стран и вызывали ошибки отсутствующих тегов (например SOV, CSA, DDR, WGR). Дескриптор заменён на профиль Balkan Frontier 1999 для HOI4 1.20.x; оставлены только `history/states` и `map`.
+## CMD launcher (fixed)
+The current `Balkan_Frontier_1999_CMD_Launcher.bat` no longer performs recursive PowerShell searches or opens a Windows file-picker dialog. It checks only the launcher's folder, immediate child folders and a full ZIP package located beside the BAT. If necessary, it asks for the ZIP path as text and extracts it using Windows `tar.exe`.
 
-## CMD-лаунчер
-Файл [Balkan_Frontier_1999_CMD_Launcher.bat](Balkan_Frontier_1999_CMD_Launcher.bat) создаёт визуальное меню, устанавливает папку мода в Documents\Paradox Interactive\Hearts of Iron IV\mod и запускает `hoi4.exe` напрямую с локальным .mod-файлом, минуя Paradox Launcher.
+Place the full ZIP beside the BAT, or extract the full ZIP and keep the folder `Balkan_Frontier_1999` beside the BAT. Run the BAT normally; administrator privileges are not required.
 
-Для работы BAT нужен распакованный рядом каталог `Balkan_Frontier_1999`. Полный ZIP-пакет с модом и лаунчером приложен в ответе ChatGPT, поскольку бинарные архивы нельзя загрузить через текстовый API коммитов.
+The launcher copies the mod into the user's HOI4 mod directory, generates the local .mod descriptor and passes it to `hoi4.exe` for direct launch. If automatic game detection fails, it asks for the full path to `hoi4.exe`.
 
-Проверка структуры и дескриптора не заменяет тест на реальном клиенте HOI4 1.20.x. Если игра продолжит аварийно завершаться, нужны новые `error.log` и `exception.txt`.
+## Compatibility
+The mod targets HOI4 1.20.x. The root descriptor had previously carried settings copied from another mod (The Fire Rises, 1.19.*) and excessive `replace_path` directives, including a replacement for country tags. That descriptor was replaced with a minimal Balkan Frontier descriptor. File-level checks are not a substitute for testing a full campaign in the user's actual game installation.
