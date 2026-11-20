@@ -17,6 +17,7 @@ jobs:
           sudo apt-get install -y p7zip-full
       - name: Extract crash archive
         run: |
+          rm -rf extracted
           mkdir -p extracted
           7z x hoi4_20261121_001626.rar -oextracted
           cd extracted
