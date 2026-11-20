@@ -15,11 +15,16 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y p7zip-full
-      - name: Extract crash archive
+      - name: Extract newest crash archive
+        shell: bash
         run: |
+          set -euo pipefail
+          archive="$(find . -maxdepth 1 -type f -name 'hoi4_*.rar' -printf '%T@ %p\n' | sort -nr | head -n1 | cut -d' ' -f2-)"
+          test -n "$archive"
+          echo "Extracting: $archive"
           rm -rf extracted
           mkdir -p extracted
-          7z x hoi4_20261121_001626.rar -oextracted
+          7z x "$archive" -oextracted
           cd extracted
           7z a ../latest-crash-extracted.zip .
       - uses: actions/upload-artifact@v4
