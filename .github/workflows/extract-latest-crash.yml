@@ -1,13 +1,14 @@
-name: Extract latest HOI4 crash
+name: Inspect Balkan Frontier archives
 on:
   push:
     paths:
       - ".github/workflows/extract-latest-crash.yml"
+      - "*.rar"
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  extract:
+  inspect:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,20 +16,36 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y p7zip-full
-      - name: Extract newest crash archive
+      - name: Inventory and extract every RAR
         shell: bash
         run: |
           set -euo pipefail
-          archive="$(find . -maxdepth 1 -type f -name 'hoi4_*.rar' -printf '%T@ %p\n' | sort -nr | head -n1 | cut -d' ' -f2-)"
-          test -n "$archive"
-          echo "Extracting: $archive"
-          rm -rf extracted
-          mkdir -p extracted
-          7z x "$archive" -oextracted
-          cd extracted
-          7z a ../latest-crash-extracted.zip .
+          mkdir -p inspected
+          : > archive-inventory.txt
+          shopt -s nullglob
+          archives=(./*.rar)
+          if [ ${#archives[@]} -eq 0 ]; then
+            echo "No RAR archives found in repository root." | tee archive-inventory.txt
+            exit 1
+          fi
+          for archive in "${archives[@]}"; do
+            name="$(basename "$archive" .rar)"
+            echo "===== $archive =====" | tee -a archive-inventory.txt
+            7z l -slt "$archive" >> archive-inventory.txt
+            mkdir -p "inspected/$name"
+            7z x "$archive" "-oinspected/$name" -y
+          done
+          echo "===== FILE SUMMARY =====" >> archive-inventory.txt
+          find inspected -type f -printf '%p\t%s bytes\n' | sort >> archive-inventory.txt
+          echo "Extracted files: $(find inspected -type f | wc -l)" | tee -a archive-inventory.txt
+          du -sh inspected | tee -a archive-inventory.txt
+      - name: Package inspection results
+        run: |
+          7z a inspected-archives.zip inspected archive-inventory.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: latest-crash-extracted
-          path: latest-crash-extracted.zip
-          retention-days: 2
+          name: bf1999-archive-inspection
+          path: |
+            inspected-archives.zip
+            archive-inventory.txt
+          retention-days: 7
